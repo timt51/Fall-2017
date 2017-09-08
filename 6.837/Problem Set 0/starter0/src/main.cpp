@@ -27,7 +27,9 @@ vector<Vector3f> vecn;
 vector<vector<unsigned>> vecf;
 
 // You will need more global variables to implement color and position changes
-
+unsigned char color_index = 0;
+float light_pos_x = 2.0f;
+float light_pos_y = 3.0f;
 
 void keyCallback(GLFWwindow* window, int key,
     int scancode, int action, int mods)
@@ -40,8 +42,21 @@ void keyCallback(GLFWwindow* window, int key,
     // here: http://www.glfw.org/docs/latest/group__keys.html
     if (key == GLFW_KEY_ESCAPE) {
         glfwSetWindowShouldClose(window, GLFW_TRUE);
-    } else if (key == 'A') {
-        printf("Key A pressed\n");
+    } else if (key == 'C') {
+        printf("Key C pressed\n");
+        color_index += 1;
+    } else if (key == GLFW_KEY_UP) {
+        printf("Moving light up\n");
+        light_pos_y += 0.5f;
+    } else if (key == GLFW_KEY_DOWN) {
+        printf("Moving light down\n");
+        light_pos_y -= 0.5f;
+    } else if (key == GLFW_KEY_LEFT) {
+        printf("Moving light left\n");
+        light_pos_x -= 0.5f;
+    } else if (key == GLFW_KEY_RIGHT) {
+        printf("Moving light right\n");
+        light_pos_x += 0.5f;
     } else {
         printf("Unhandled key press %d\n", key);
     }
@@ -157,7 +172,7 @@ void updateMaterialUniforms()
 
     // Here we use the first color entry as the diffuse color
     int loc = glGetUniformLocation(program, "diffColor");
-    glUniform4fv(loc, 1, diffColors[0]);
+    glUniform4fv(loc, 1, diffColors[color_index % 4]);
 
     // Define specular color and shininess
     GLfloat specColor[] = { 0.2f, 0.2f, 0.2f, 1.0f };
@@ -173,7 +188,7 @@ void updateMaterialUniforms()
 void updateLightUniforms()
 {
     // Light Position
-    GLfloat lightPos[] = { 2.0f, 3.0f, 5.0f, 1.0f };
+    GLfloat lightPos[] = { light_pos_x, light_pos_y, 5.0f, 1.0f };
     int loc = glGetUniformLocation(program, "lightPos");
     glUniform4fv(loc, 1, lightPos);
 
