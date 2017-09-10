@@ -31,6 +31,8 @@ unsigned char color_index = 0;
 float light_pos_x = 2.0f;
 float light_pos_y = 3.0f;
 
+const int MAX_BUFFER_SIZE = 4096;
+
 void keyCallback(GLFWwindow* window, int key,
     int scancode, int action, int mods)
 {
@@ -98,13 +100,22 @@ void drawTeapot()
 void drawObjMesh() {
     // draw obj mesh here
     // read vertices and face indices from vecv, vecn, vecf
+    // set the required buffer size exactly.
+   GeometryRecorder rec(vecf.size() * 3);
+    for (unsigned int i=0; i<vecf.size(); i++) {
+        vector<unsigned> indicies = vecf[i];
+        Vector3f position = vecv[indicies[0]];
+        Vector3f normal = vecn[indicies[2]];
+        rec.record(position, normal);
+    }
+    rec.draw();
 }
 
 // This function is responsible for displaying the object.
 void drawScene()
 {
-    // drawObjMesh();
-    drawTeapot();
+    drawObjMesh();
+    //drawTeapot();
 }
 
 void setViewport(GLFWwindow* window)
@@ -200,7 +211,32 @@ void updateLightUniforms()
 
 void loadInput()
 {
-    // load the OBJ file here
+    char buffer[MAX_BUFFER_SIZE];
+    while(cin.getline(buffer, MAX_BUFFER_SIZE)) {
+        stringstream ss(buffer);
+        string line_type;
+        ss >> line_type;
+        if(line_type == "v") {
+            Vector3f vertex;
+            ss >> vertex[0] >> vertex[1] >> vertex[2];
+            vecv.push_back(vertex);
+        } else if (line_type == "vn") {
+            Vector3f normal;
+            ss >> normal[0] >> normal[1] >> normal[2];
+            vecn.push_back(normal);
+        } else if (line_type == "f") {
+            string face_vertex;
+            for (int i=0; i<3; i++) {
+                ss >> face_vertex;
+                stringstream face_vertex_ss(face_vertex);
+                vector<unsigned> indicies;
+                for (string each; getline(face_vertex_ss, each, '/'); indicies.push_back(stoi(each)-1));
+                vecf.push_back(indicies);
+            }
+        } else {
+            continue;
+        }
+    }
 }
 
 // Main routine.
