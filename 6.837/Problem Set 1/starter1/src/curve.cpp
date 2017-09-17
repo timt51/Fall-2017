@@ -1,5 +1,6 @@
 #include "curve.h"
 #include "vertexrecorder.h"
+// #include <stdlib.h>
 using namespace std;
 
 const float c_pi = 3.14159265358979323846f;
@@ -13,11 +14,26 @@ inline bool approx(const Vector3f& lhs, const Vector3f& rhs)
 	const float eps = 1e-8f;
 	return (lhs - rhs).absSquared() < eps;
 }
-
-
 }
 
+// Returns the CurvePoint representation of a point in 3D given
+// the previous CurvePoint on the Curve
+CurvePoint pointToCurvePoint(const Vector3f& point, const Vector3f& tangent, const Vector3f& prevBinormal) {
+	// Vertex - point
+	// Tanget - ???
+	// Normal - binormal from prev cross tangent
+	// Binormal - tangent cross normal
+	const Vector3f normal = Vector3f::cross(prevBinormal, tangent).normalized();
+	return CurvePoint { point, tangent.normalized(), normal, prevBinormal.normalized() };
+}
 
+Curve interpolateBezier(const vector<Vector3f>& points, unsigned steps) {
+	return Curve();
+}
+
+// Want a subroutine interpolateBezier(vector<Vector3f>& points, unsigned steps)
+// it returns points that are not the first or last point 
+// (b/c the caller should already know these points)
 Curve evalBezier(const vector< Vector3f >& P, unsigned steps)
 {
 	// Check
@@ -27,6 +43,36 @@ Curve evalBezier(const vector< Vector3f >& P, unsigned steps)
 		exit(0);
 	}
 
+	Curve curve;
+	// Calculate initial curve point
+	// Create initial binormal B = anything that is not parallel to initial Tangent
+	// Vertex - first point in P
+	// Tangent - (P[1] - P[0]).normalized()
+	// Normal - initial binormal cross tangent
+	// Binormal - tangent cross normal
+	Vector3f firstTangent = (P.at(1)-P.at(0)).normalized();
+	Vector3f firstBinormal;
+	while(firstBinormal == NULL) {
+		Vector3f binormal(rand(), rand(), rand());
+		binormal.normalize();
+		if (Vector3f::dot(firstTangent, binormal) > 1E-6) {
+			firstBinormal = Vector3f(binormal);
+		}
+	}
+	curve.push_back(pointToCurvePoint(P.front(), firstTangent, firstBinormal));
+	for (unsigned segmentIndex=0; segmentIndex<P.size(); segmentIndex+=3) {
+		// compute points on this segment using interpBezier
+		// add those points
+		const vector<Vector3f> controlPoints(P.begin()+segmentIndex, P.begin()+segmentIndex+4);
+		const Curve segmentPoints = interpolateBezier(controlPoints, steps);
+		curve.insert(curve.end(), segmentPoints.begin(), segmentPoints.end());
+		// add the final point of this segment
+		const Vector3f tangent = (P.at(segmentIndex+3)-P.at(segmentIndex+2)).normalized();
+		const Vector3f prevBinormal = curve.back().B;
+		const CurvePoint lastSegmentPoint = pointToCurvePoint(P.at(segmentIndex+3), tangent, prevBinormal);
+		curve.push_back(lastSegmentPoint);
+	}
+	
 	// TODO:
 	// You should implement this function so that it returns a Curve
 	// (e.g., a vector< CurvePoint >).  The variable "steps" tells you
