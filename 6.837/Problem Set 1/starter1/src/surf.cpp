@@ -4,7 +4,6 @@ using namespace std;
 
 namespace
 {
-    
     // We're only implenting swept surfaces where the profile curve is
     // flat on the xy-plane.  This is a check function.
     static bool checkFlat(const Curve &profile)

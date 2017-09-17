@@ -65,6 +65,21 @@ Curve interpolateBezier(const vector<Vector3f>& points, const CurvePoint& first,
 	return curve;
 }
 
+CurvePoint generateFirstCurvePoint(const Vector3f& firstControlPoint, const Vector3f& secondControlPoint) {
+	// Calculate initial curve point
+	// Create initial binormal B = anything that is not parallel to initial Tangent
+	// Vertex - first point in P
+	// Tangent - (P[1] - P[0]).normalized()
+	// Normal - initial binormal cross tangent
+	// Binormal - tangent cross normal
+	Vector3f firstTangent = (secondControlPoint-firstControlPoint).normalized();
+	Vector3f firstBinormal = Vector3f(0,0,1);
+	while(approx(firstBinormal, firstTangent) || approx(firstBinormal, -firstTangent)) {
+		firstBinormal = Vector3f(rand(), rand(), rand()).normalized();
+	}
+	const CurvePoint firstCurvePoint = pointToCurvePoint(firstControlPoint, firstTangent, firstBinormal);
+	return firstCurvePoint;
+}
 // Want a subroutine interpolateBezier(vector<Vector3f>& points, unsigned steps)
 // it returns points that are not the first or last point 
 // (b/c the caller should already know these points)
@@ -78,22 +93,7 @@ Curve evalBezier(const vector< Vector3f >& P, unsigned steps)
 	}
 
 	Curve curve;
-	// Calculate initial curve point
-	// Create initial binormal B = anything that is not parallel to initial Tangent
-	// Vertex - first point in P
-	// Tangent - (P[1] - P[0]).normalized()
-	// Normal - initial binormal cross tangent
-	// Binormal - tangent cross normal
-	Vector3f firstTangent = (P.at(1)-P.at(0)).normalized();
-	Vector3f firstBinormal;
-	while(approx(firstBinormal,Vector3f(0,0,0))) {
-		Vector3f binormal(rand(), rand(), rand());
-		binormal.normalize();
-		if (!approx(binormal, firstTangent) && !approx(binormal, -firstTangent)) {
-			firstBinormal = Vector3f(binormal);
-		}
-	}
-	curve.push_back(pointToCurvePoint(P.front(), firstTangent, firstBinormal));
+	curve.push_back(generateFirstCurvePoint(P[0], P[1]));
 	for (unsigned segmentIndex=0; segmentIndex<P.size()-1; segmentIndex+=3) {
 		// compute points on this segment using interpBezier
 		// add those points
