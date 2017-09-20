@@ -92,7 +92,6 @@ Surface makeSurfRev(const Curve &profile, unsigned steps)
         exit(0);
     }
 
-    // TODO: Here you should build the surface.  See surf.h for details.
     const double radians = 2 * M_PI / (steps + 1);
     const Matrix3f rotationMatrix = rotationMatrixYAxis(radians);
     const Matrix3f normalRotationMatrix = rotationMatrix.transposed().inverse();
@@ -118,7 +117,7 @@ Surface makeSurfRev(const Curve &profile, unsigned steps)
     rotatedProfileNormals.push_back(rotatedProfileNormals.front());
     Surface surface = generateTriangleMesh(rotatedProfiles, rotatedProfileNormals);
 
-    cerr << "\t>>> makeSurfRev called (but not implemented).\n\t>>> Returning empty surface." << endl;
+    cerr << "\t>>> makeSurfRev called." << endl;
  
     return surface;
 }
@@ -131,7 +130,6 @@ Surface makeGenCyl(const Curve &profile, const Curve &sweep )
         exit(0);
     }
 
-    // TODO: Here you should build the surface.  See surf.h for details.
     vector<vector<Vector3f>> profiles;
     vector<vector<Vector3f>> normals;
     for (unsigned sweepIndex=0; sweepIndex<sweep.size(); sweepIndex++) {
@@ -153,7 +151,7 @@ Surface makeGenCyl(const Curve &profile, const Curve &sweep )
     }
     Surface surface = generateTriangleMesh(profiles, normals);
 
-    cerr << "\t>>> makeGenCyl called (but not implemented).\n\t>>> Returning empty surface." <<endl;
+    cerr << "\t>>> makeGenCyl called." <<endl;
 
     return surface;
 }
