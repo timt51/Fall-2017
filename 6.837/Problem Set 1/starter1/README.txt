@@ -12,6 +12,7 @@ Starting from the root directory of the solution folder, run the following:
 where <name_of_swp> should be replaced with the actual name of the swp file
 that you want the program to read. 
 
+The artifact files are located at ./sample_one.png and ./sample_two.png
 The swp file that generates sample_one.png is sample_one.swp
 The swp file that generates sample_two.png is sample_two.swp
 In order to for the program to render sample_one or sample_two,
