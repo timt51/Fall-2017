@@ -41,6 +41,8 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "array": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "*.ipp": "cpp",
+        "*.tcc": "cpp"
     }
 }

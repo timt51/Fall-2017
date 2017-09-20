@@ -1,6 +1,5 @@
 #include "curve.h"
 #include "vertexrecorder.h"
-// #include <stdlib.h>
 using namespace std;
 
 const float c_pi = 3.14159265358979323846f;

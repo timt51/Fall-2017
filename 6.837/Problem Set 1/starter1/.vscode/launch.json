@@ -6,7 +6,7 @@
                 "type": "cppdbg",
                 "request": "launch",
                 "program": "${workspaceRoot}/build/a1",
-                "args": ["${workspaceRoot}/swp/core.swp"],
+                "args": ["${workspaceRoot}/swp/flircle.swp"],
                 "stopAtEntry": false,
                 "cwd": "${workspaceRoot}",
                 "environment": [],
