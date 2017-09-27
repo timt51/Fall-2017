@@ -1,6 +1,5 @@
 #include "curve.h"
 #include "vertexrecorder.h"
-// #include <stdlib.h>
 using namespace std;
 
 const float c_pi = 3.14159265358979323846f;
@@ -11,7 +10,13 @@ const Matrix4f bernstein(1, -3, 3, -1,
 const Matrix4f bernstein_deriv(-3, 6, -3, 0,
 						 	   3, -12, 9, 0,
 						 	   0, 6, -9, 0,
-						 	   0, 0, 3, 0);
+							   0, 0, 3, 0);
+const Matrix4f bernstein_inv = bernstein.inverse();
+const Matrix4f b_spline(1/6., -3/6., 3/6., -1/6.,
+						4/6., 0, -6/6., 3/6.,
+						1/6., 3/6., 3/6., -3/6.,
+						0, 0, 0, 1/6.);
+const Matrix4f b_to_bezier = b_spline*bernstein_inv;
 
 namespace
 {
@@ -43,9 +48,10 @@ Curve interpolateBezier(const vector<Vector3f>& points, const CurvePoint& first,
 	const Matrix4f toPoint = geometry * bernstein;
 	const Matrix4f toVelocity = geometry * bernstein_deriv;
 
+	// TODO: what happens when steps is 1 or something weird?
 	Curve curve;
 	curve.push_back(first);
-	for (unsigned step_index=1; step_index<=steps; steps++) {
+	for (unsigned step_index=1; step_index<=steps; step_index++) {
 		const double t = step_index/(steps+1.0);
 		const Vector4f t_vec(1,t,t*t,t*t*t);
 		const Vector3f point = (toPoint*t_vec).xyz();
@@ -58,6 +64,21 @@ Curve interpolateBezier(const vector<Vector3f>& points, const CurvePoint& first,
 	return curve;
 }
 
+CurvePoint generateFirstCurvePoint(const Vector3f& firstControlPoint, const Vector3f& secondControlPoint) {
+	// Calculate initial curve point
+	// Create initial binormal B = anything that is not parallel to initial Tangent
+	// Vertex - first point in P
+	// Tangent - (P[1] - P[0]).normalized()
+	// Normal - initial binormal cross tangent
+	// Binormal - tangent cross normal
+	Vector3f firstTangent = (secondControlPoint-firstControlPoint).normalized();
+	Vector3f firstBinormal = Vector3f(0,0,1);
+	while(approx(firstBinormal, firstTangent) || approx(firstBinormal, -firstTangent)) {
+		firstBinormal = Vector3f(rand(), rand(), rand()).normalized();
+	}
+	const CurvePoint firstCurvePoint = pointToCurvePoint(firstControlPoint, firstTangent, firstBinormal);
+	return firstCurvePoint;
+}
 // Want a subroutine interpolateBezier(vector<Vector3f>& points, unsigned steps)
 // it returns points that are not the first or last point 
 // (b/c the caller should already know these points)
@@ -71,23 +92,8 @@ Curve evalBezier(const vector< Vector3f >& P, unsigned steps)
 	}
 
 	Curve curve;
-	// Calculate initial curve point
-	// Create initial binormal B = anything that is not parallel to initial Tangent
-	// Vertex - first point in P
-	// Tangent - (P[1] - P[0]).normalized()
-	// Normal - initial binormal cross tangent
-	// Binormal - tangent cross normal
-	Vector3f firstTangent = (P.at(1)-P.at(0)).normalized();
-	Vector3f firstBinormal;
-	while(firstBinormal == NULL) {
-		Vector3f binormal(rand(), rand(), rand());
-		binormal.normalize();
-		if (Vector3f::dot(firstTangent, binormal) > 1E-6) {
-			firstBinormal = Vector3f(binormal);
-		}
-	}
-	curve.push_back(pointToCurvePoint(P.front(), firstTangent, firstBinormal));
-	for (unsigned segmentIndex=0; segmentIndex<P.size(); segmentIndex+=3) {
+	curve.push_back(generateFirstCurvePoint(P[0], P[1]));
+	for (unsigned segmentIndex=0; segmentIndex<P.size()-1; segmentIndex+=3) {
 		// compute points on this segment using interpBezier
 		// add those points
 		const vector<Vector3f> controlPoints(P.begin()+segmentIndex, P.begin()+segmentIndex+4);
@@ -100,36 +106,10 @@ Curve evalBezier(const vector< Vector3f >& P, unsigned steps)
 		curve.push_back(lastSegmentPoint);
 	}
 	
-	// TODO:
-	// You should implement this function so that it returns a Curve
-	// (e.g., a vector< CurvePoint >).  The variable "steps" tells you
-	// the number of points to generate on each piece of the spline.
-	// At least, that's how the sample solution is implemented and how
-	// the SWP files are written.  But you are free to interpret this
-	// variable however you want, so long as you can control the
-	// "resolution" of the discretized spline curve with it.
-
-	// Make sure that this function computes all the appropriate
-	// Vector3fs for each CurvePoint: V,T,N,B.
-	// [NBT] should be unit and orthogonal.
-
-	// Also note that you may assume that all Bezier curves that you
-	// receive have G1 continuity.  Otherwise, the TNB will not be
-	// be defined at points where this does not hold.
-
-	cerr << "\t>>> evalBezier has been called with the following input:" << endl;
-
-	cerr << "\t>>> Control points (type vector< Vector3f >): " << endl;
-	for (int i = 0; i < (int)P.size(); ++i)
-	{
-		cerr << "\t>>> " << P[i] << endl;
-	}
-
+	cerr << "\t>>> evalBezier has been called." << endl;
 	cerr << "\t>>> Steps (type steps): " << steps << endl;
-	cerr << "\t>>> Returning empty curve." << endl;
 
-	// Right now this will just return this empty curve.
-	return Curve();
+	return curve;
 }
 
 Curve evalBspline(const vector< Vector3f >& P, unsigned steps)
@@ -141,24 +121,25 @@ Curve evalBspline(const vector< Vector3f >& P, unsigned steps)
 		exit(0);
 	}
 
-	// TODO:
-	// It is suggested that you implement this function by changing
-	// basis from B-spline to Bezier.  That way, you can just call
-	// your evalBezier function.
-
-	cerr << "\t>>> evalBSpline has been called with the following input:" << endl;
-
-	cerr << "\t>>> Control points (type vector< Vector3f >): " << endl;
-	for (int i = 0; i < (int)P.size(); ++i)
-	{
-		cerr << "\t>>> " << P[i] << endl;
+	vector<Vector3f> bezierPoints;
+	bezierPoints.push_back(Vector3f(0,0,0));
+	for (unsigned segmentIndex=0; segmentIndex<P.size()-3; segmentIndex++) {
+		Matrix4f bControlPoints(Vector4f(P[segmentIndex],0),
+							    Vector4f(P[segmentIndex+1],0),
+							    Vector4f(P[segmentIndex+2],0),
+							    Vector4f(P[segmentIndex+3],0));
+		Matrix4f bernsteinControlPoints = bControlPoints*b_to_bezier;
+		bezierPoints.erase(bezierPoints.end());
+		bezierPoints.push_back(bernsteinControlPoints.getCol(0).xyz());
+		bezierPoints.push_back(bernsteinControlPoints.getCol(1).xyz());
+		bezierPoints.push_back(bernsteinControlPoints.getCol(2).xyz());
+		bezierPoints.push_back(bernsteinControlPoints.getCol(3).xyz());
 	}
 
+	cerr << "\t>>> evalBSpline has been called." << endl;
 	cerr << "\t>>> Steps (type steps): " << steps << endl;
-	cerr << "\t>>> Returning empty curve." << endl;
 
-	// Return an empty curve right now.
-	return Curve();
+	return evalBezier(bezierPoints, steps);
 }
 
 Curve evalCircle(float radius, unsigned steps)
