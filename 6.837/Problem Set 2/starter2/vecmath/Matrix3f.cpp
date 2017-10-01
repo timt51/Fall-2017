@@ -453,3 +453,14 @@ Matrix3f operator * (float f, const Matrix3f& m) {
     }
     return product;
 }
+
+Matrix3f operator + ( const Matrix3f& x, const Matrix3f& y )
+{
+	Matrix3f sum; // zeroes
+
+	sum.setCol(0, x.getCol(0) + y.getCol(0));
+	sum.setCol(1, x.getCol(1) + y.getCol(1));
+	sum.setCol(2, x.getCol(2) + y.getCol(2));
+	
+	return sum;
+}
