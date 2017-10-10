@@ -1,0 +1,323 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+._test_2.py	../Problem Set 0/__MACOSX/assignment0/._test_2.py	1;"	kind:file	line:1
+ACCS	../Problem Set 1/to_zip/src/P16.py	/^ACCS = []$/;"	kind:variable	line:40
+ACCS	../Problem Set 1/to_zip/src/P16.py	/^ACCS = []$/;"	kind:variable	line:84
+BATCH_SIZE	../Problem Set 2/sentiment/src/nn.py	/^BATCH_SIZE = 173$/;"	kind:variable	line:95
+BEST_HIDDEN_DIM	../Problem Set 2/sentiment/src/nn.py	/^BEST_HIDDEN_DIM = RESULTS[0].hidden_dim$/;"	kind:variable	line:161
+BEST_LR	../Problem Set 2/sentiment/src/nn.py	/^BEST_LR = RESULTS[0].learning_rate$/;"	kind:variable	line:162
+BEST_P12_RESULT	../Problem Set 1/to_zip/src/P13.py	/^BEST_P12_RESULT = max(RESULTS, key=lambda res: res.dev)$/;"	kind:variable	line:58
+BEST_P13_RESULT	../Problem Set 1/to_zip/src/P13.py	/^BEST_P13_RESULT = max(RESULTS_NO_STOP_WORDS, key=lambda res: res.dev)$/;"	kind:variable	line:87
+BEST_RESULT	../Problem Set 1/to_zip/src/P12.py	/^BEST_RESULT = max(RESULTS, key=lambda res: res.dev)$/;"	kind:variable	line:57
+BEST_RESULT	../Problem Set 1/to_zip/src/P14.py	/^BEST_RESULT = max(RESULTS, key=lambda res: res.dev)$/;"	kind:variable	line:58
+BEST_RESULT	../Problem Set 1/to_zip/src/P15.py	/^BEST_RESULT = max(RESULTS, key=lambda res: res.dev)$/;"	kind:variable	line:82
+BEST_RESULT	../Problem Set 1/to_zip/src/P16.py	/^    BEST_RESULT = max(RESULTS, key=lambda res: res.dev)$/;"	kind:variable	line:111
+BEST_RESULT	../Problem Set 1/to_zip/src/P16.py	/^    BEST_RESULT = max(RESULTS, key=lambda res: res.dev)$/;"	kind:variable	line:67
+BEST_WEIGHT_DECAY	../Problem Set 2/sentiment/src/nn.py	/^BEST_WEIGHT_DECAY = RESULTS[0].weight_decay$/;"	kind:variable	line:163
+COEFS	../Problem Set 1/to_zip/src/P13.py	/^COEFS = np.abs(BEST_P12_LR.coef_[0]).tolist()$/;"	kind:variable	line:68
+COEFS_NO_STOP_WORDS	../Problem Set 1/to_zip/src/P13.py	/^COEFS_NO_STOP_WORDS = np.abs(BEST_P13_LR.coef_[0]).tolist()$/;"	kind:variable	line:93
+CRITERION	../Problem Set 2/sentiment/src/nn.py	/^CRITERION = nn.NLLLoss().cuda()$/;"	kind:variable	line:94
+CS	../Problem Set 1/to_zip/src/P12.py	/^CS = [1e-1, 1e1, 1e3, 1e5, 1e7]$/;"	kind:variable	line:50
+CS	../Problem Set 1/to_zip/src/P13.py	/^CS = [1e-1, 1e1, 1e3, 1e5, 1e7]$/;"	kind:variable	line:51
+CS	../Problem Set 1/to_zip/src/P14.py	/^CS = [1e-1, 1e1, 1e3, 1e5, 1e7]$/;"	kind:variable	line:51
+CS	../Problem Set 1/to_zip/src/P15.py	/^CS = [1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1,$/;"	kind:variable	line:68
+CS	../Problem Set 1/to_zip/src/P16.py	/^    CS = [0.1]$/;"	kind:variable	line:60
+CS	../Problem Set 1/to_zip/src/P16.py	/^    CS = [10.0]$/;"	kind:variable	line:104
+CountVectorizer	../Problem Set 1/to_zip/src/P12.py	/^from sklearn.feature_extraction.text import CountVectorizer$/;"	kind:namespace	line:5
+CountVectorizer	../Problem Set 1/to_zip/src/P13.py	/^from sklearn.feature_extraction.text import CountVectorizer$/;"	kind:namespace	line:5
+CountVectorizer	../Problem Set 1/to_zip/src/P14.py	/^from sklearn.feature_extraction.text import CountVectorizer$/;"	kind:namespace	line:5
+CountVectorizer	../Problem Set 1/to_zip/src/P15.py	/^from sklearn.feature_extraction.text import CountVectorizer$/;"	kind:namespace	line:5
+CountVectorizer	../Problem Set 1/to_zip/src/P16.py	/^from sklearn.feature_extraction.text import CountVectorizer$/;"	kind:namespace	line:6
+CountVectorizer	../Problem Set 2/sentiment/src/nn.py	/^from sklearn.feature_extraction.text import CountVectorizer$/;"	kind:namespace	line:5
+DATA_PROPORTIONS	../Problem Set 1/to_zip/src/P16.py	/^DATA_PROPORTIONS = [0.005, 0.01, 0.05, 0.1, 0.25, 0.5, 0.75, 1]$/;"	kind:variable	line:38
+DEV_DATA	../Problem Set 2/sentiment/src/nn.py	/^DEV_DATA = data_utils.TensorDataset(torch.from_numpy(DEV_X.T.astype(np.float32)), torch.from_numpy(DEV_Y))$/;"	kind:variable	line:70
+DEV_LOADER	../Problem Set 2/sentiment/src/nn.py	/^DEV_LOADER = data_utils.DataLoader(DEV_DATA, batch_size=1,$/;"	kind:variable	line:71
+DEV_X	../Problem Set 1/to_zip/src/P12.py	/^DEV_X = VECTORIZER.transform(DEV_X_RAW)$/;"	kind:variable	line:43
+DEV_X	../Problem Set 1/to_zip/src/P13.py	/^DEV_X = VECTORIZER.transform(DEV_X_RAW)$/;"	kind:variable	line:43
+DEV_X	../Problem Set 1/to_zip/src/P14.py	/^DEV_X = VECTORIZER.transform(DEV_X_RAW)$/;"	kind:variable	line:43
+DEV_X	../Problem Set 1/to_zip/src/P15.py	/^DEV_X = []$/;"	kind:variable	line:48
+DEV_X	../Problem Set 1/to_zip/src/P16.py	/^    DEV_X = VECTORIZER.transform(DEV_X_RAW)$/;"	kind:variable	line:54
+DEV_X	../Problem Set 1/to_zip/src/P16.py	/^    DEV_X = VECTORIZER.transform(DEV_X_RAW)$/;"	kind:variable	line:98
+DEV_X	../Problem Set 2/sentiment/src/nn.py	/^DEV_X = DEV_X \/ DEV_X.sum(axis=0)$/;"	kind:variable	line:60
+DEV_X	../Problem Set 2/sentiment/src/nn.py	/^DEV_X = VECTORIZER.transform(DEV_X_RAW).T$/;"	kind:variable	line:59
+DEV_X	../Problem Set 2/sentiment/src/nn.py	/^DEV_X = np.matmul(EMBEDDINGS, DEV_X)$/;"	kind:variable	line:61
+DEV_X_NO_STOP_WORDS	../Problem Set 1/to_zip/src/P13.py	/^DEV_X_NO_STOP_WORDS = VECTORIZER_NO_STOP_WORDS.transform(DEV_X_RAW)$/;"	kind:variable	line:78
+Data	../Problem Set 1/to_zip/src/P15.py	/^Data = namedtuple('Data', 'data n_grams min_frequency stop_words')$/;"	kind:variable	line:46
+EM	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^def EM(fileData, num_iter):$/;"	kind:function	line:115
+EM	../Problem Set 1/topic_model_em/q_topic_em.py	/^def EM(fileData, num_iter):$/;"	kind:function	line:115
+EMBEDDINGS	../Problem Set 2/sentiment/src/nn.py	/^EMBEDDINGS = np.zeros((EMBEDDING_SIZE, VOCABULARY_SIZE))$/;"	kind:variable	line:34
+EMBEDDING_SIZE	../Problem Set 2/sentiment/src/nn.py	/^EMBEDDING_SIZE = 300$/;"	kind:variable	line:32
+EPOCHS	../Problem Set 2/sentiment/src/nn.py	/^EPOCHS = 50$/;"	kind:variable	line:96
+F	../Problem Set 2/sentiment/src/nn.py	/^import torch.nn.functional as F$/;"	kind:namespace	line:9
+HIDDEN_LAYER_DIMS	../Problem Set 2/sentiment/src/nn.py	/^HIDDEN_LAYER_DIMS = [EMBEDDING_SIZE\/4, EMBEDDING_SIZE\/2, EMBEDDING_SIZE, EMBEDDING_SIZE*2]$/;"	kind:variable	line:90
+HIDDEN_LAYER_DIMS	../Problem Set 2/sentiment/src/nn.py	/^HIDDEN_LAYER_DIMS = [int(x) for x in HIDDEN_LAYER_DIMS]$/;"	kind:variable	line:91
+LEARNING_RATES	../Problem Set 2/sentiment/src/nn.py	/^LEARNING_RATES = [1E-5, 1E-3, 1E-1, 1E1]$/;"	kind:variable	line:92
+LogisticRegression	../Problem Set 1/to_zip/src/P12.py	/^from sklearn.linear_model import LogisticRegression$/;"	kind:namespace	line:6
+LogisticRegression	../Problem Set 1/to_zip/src/P13.py	/^from sklearn.linear_model import LogisticRegression$/;"	kind:namespace	line:6
+LogisticRegression	../Problem Set 1/to_zip/src/P14.py	/^from sklearn.linear_model import LogisticRegression$/;"	kind:namespace	line:6
+LogisticRegression	../Problem Set 1/to_zip/src/P15.py	/^from sklearn.linear_model import LogisticRegression$/;"	kind:namespace	line:6
+LogisticRegression	../Problem Set 1/to_zip/src/P16.py	/^from sklearn.linear_model import LogisticRegression$/;"	kind:namespace	line:7
+MIN_FREQUENCY	../Problem Set 1/to_zip/src/P15.py	/^MIN_FREQUENCY = [1, 2, 5]$/;"	kind:variable	line:44
+MultinomialNB	../Problem Set 0/assignment0/test_1.py	/^from sklearn.naive_bayes import MultinomialNB$/;"	kind:namespace	line:2
+NUM_DOCS	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^NUM_DOCS = 0 $/;"	kind:variable	line:23
+NUM_DOCS	../Problem Set 1/topic_model_em/q_topic_em.py	/^NUM_DOCS = 0 $/;"	kind:variable	line:23
+NUM_TOPICS	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^NUM_TOPICS = int(sys.argv[2])$/;"	kind:variable	line:22
+NUM_TOPICS	../Problem Set 1/topic_model_em/q_topic_em.py	/^NUM_TOPICS = int(sys.argv[2])$/;"	kind:variable	line:22
+N_GRAMS	../Problem Set 1/to_zip/src/P15.py	/^N_GRAMS = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5),$/;"	kind:variable	line:40
+P12.py	../Problem Set 1/to_zip/src/P12.py	1;"	kind:file	line:1
+P13.py	../Problem Set 1/to_zip/src/P13.py	1;"	kind:file	line:1
+P14.py	../Problem Set 1/to_zip/src/P14.py	1;"	kind:file	line:1
+P15.py	../Problem Set 1/to_zip/src/P15.py	1;"	kind:file	line:1
+P16.py	../Problem Set 1/to_zip/src/P16.py	1;"	kind:file	line:1
+RESULTS	../Problem Set 1/to_zip/src/P12.py	/^RESULTS = []$/;"	kind:variable	line:51
+RESULTS	../Problem Set 1/to_zip/src/P13.py	/^RESULTS = []$/;"	kind:variable	line:52
+RESULTS	../Problem Set 1/to_zip/src/P14.py	/^RESULTS = []$/;"	kind:variable	line:52
+RESULTS	../Problem Set 1/to_zip/src/P15.py	/^RESULTS = []$/;"	kind:variable	line:70
+RESULTS	../Problem Set 1/to_zip/src/P16.py	/^    RESULTS = []$/;"	kind:variable	line:105
+RESULTS	../Problem Set 1/to_zip/src/P16.py	/^    RESULTS = []$/;"	kind:variable	line:61
+RESULTS	../Problem Set 2/sentiment/src/nn.py	/^RESULTS = []$/;"	kind:variable	line:147
+RESULTS	../Problem Set 2/sentiment/src/nn.py	/^RESULTS = sorted(RESULTS, key=lambda x: x.dev)$/;"	kind:variable	line:155
+RESULTS_NO_STOP_WORDS	../Problem Set 1/to_zip/src/P13.py	/^RESULTS_NO_STOP_WORDS = []$/;"	kind:variable	line:81
+RNN	../Problem Set 0/assignment0/test_2.py	/^class RNN(nn.Module):$/;"	kind:class	line:115
+Result	../Problem Set 1/to_zip/src/P12.py	/^Result = namedtuple('LogisticResult', 'c train dev')$/;"	kind:variable	line:49
+Result	../Problem Set 1/to_zip/src/P13.py	/^Result = namedtuple('LogisticResult', 'c train dev')$/;"	kind:variable	line:50
+Result	../Problem Set 1/to_zip/src/P14.py	/^Result = namedtuple('LogisticResult', 'c train dev')$/;"	kind:variable	line:50
+Result	../Problem Set 1/to_zip/src/P15.py	/^Result = namedtuple('LogisticResult', 'c train dev index')$/;"	kind:variable	line:67
+Result	../Problem Set 1/to_zip/src/P16.py	/^    Result = namedtuple('LogisticResult', 'c train dev')$/;"	kind:variable	line:103
+Result	../Problem Set 1/to_zip/src/P16.py	/^    Result = namedtuple('LogisticResult', 'c train dev')$/;"	kind:variable	line:59
+Result	../Problem Set 2/sentiment/src/nn.py	/^Result = namedtuple('Result', 'hidden_dim learning_rate weight_decay dev test')$/;"	kind:variable	line:146
+STOP_WORDS	../Problem Set 1/to_zip/src/P15.py	/^STOP_WORDS = ["english", None]$/;"	kind:variable	line:45
+SentimentNet	../Problem Set 2/sentiment/src/nn.py	/^class SentimentNet(nn.Module):$/;"	kind:class	line:79
+TEST_DATA	../Problem Set 2/sentiment/src/nn.py	/^TEST_DATA = data_utils.TensorDataset(torch.from_numpy(TEST_X.T.astype(np.float32)), torch.from_numpy(TEST_Y))$/;"	kind:variable	line:73
+TEST_LOADER	../Problem Set 2/sentiment/src/nn.py	/^TEST_LOADER = data_utils.DataLoader(TEST_DATA, batch_size=1,$/;"	kind:variable	line:74
+TEST_X	../Problem Set 1/to_zip/src/P12.py	/^TEST_X = VECTORIZER.transform(TEST_X_RAW)$/;"	kind:variable	line:44
+TEST_X	../Problem Set 1/to_zip/src/P13.py	/^TEST_X = VECTORIZER.transform(TEST_X_RAW)$/;"	kind:variable	line:44
+TEST_X	../Problem Set 1/to_zip/src/P14.py	/^TEST_X = VECTORIZER.transform(TEST_X_RAW)$/;"	kind:variable	line:44
+TEST_X	../Problem Set 1/to_zip/src/P15.py	/^TEST_X = []$/;"	kind:variable	line:49
+TEST_X	../Problem Set 1/to_zip/src/P16.py	/^    TEST_X = VECTORIZER.transform(TEST_X_RAW)$/;"	kind:variable	line:55
+TEST_X	../Problem Set 1/to_zip/src/P16.py	/^    TEST_X = VECTORIZER.transform(TEST_X_RAW)$/;"	kind:variable	line:99
+TEST_X	../Problem Set 2/sentiment/src/nn.py	/^TEST_X = TEST_X \/ TEST_X.sum(axis=0)$/;"	kind:variable	line:64
+TEST_X	../Problem Set 2/sentiment/src/nn.py	/^TEST_X = VECTORIZER.transform(TEST_X_RAW).T$/;"	kind:variable	line:63
+TEST_X	../Problem Set 2/sentiment/src/nn.py	/^TEST_X = np.matmul(EMBEDDINGS, TEST_X)$/;"	kind:variable	line:65
+TEST_X_NO_STOP_WORDS	../Problem Set 1/to_zip/src/P13.py	/^TEST_X_NO_STOP_WORDS = VECTORIZER_NO_STOP_WORDS.transform(TEST_X_RAW)$/;"	kind:variable	line:79
+TOP_10	../Problem Set 1/to_zip/src/P13.py	/^TOP_10 = sorted(zip(VOCABULARY, COEFS), key=lambda x: x[1], reverse=True)[:10]$/;"	kind:variable	line:69
+TOP_10	../Problem Set 1/to_zip/src/P13.py	/^TOP_10 = sorted(zip(VOCABULARY_NO_STOP_WORDS, COEFS_NO_STOP_WORDS), key=lambda x: x[1], reverse=True)[:10]$/;"	kind:variable	line:94
+TRAIN_DATA	../Problem Set 2/sentiment/src/nn.py	/^TRAIN_DATA = data_utils.TensorDataset(torch.from_numpy(TRAIN_X.T.astype(np.float32)), torch.from_numpy(TRAIN_Y))$/;"	kind:variable	line:67
+TRAIN_LOADER	../Problem Set 2/sentiment/src/nn.py	/^TRAIN_LOADER = data_utils.DataLoader(TRAIN_DATA, batch_size=173,$/;"	kind:variable	line:68
+TRAIN_X	../Problem Set 1/to_zip/src/P12.py	/^TRAIN_X = VECTORIZER.transform(TRAIN_X_RAW)$/;"	kind:variable	line:42
+TRAIN_X	../Problem Set 1/to_zip/src/P13.py	/^TRAIN_X = VECTORIZER.transform(TRAIN_X_RAW)$/;"	kind:variable	line:42
+TRAIN_X	../Problem Set 1/to_zip/src/P14.py	/^TRAIN_X = VECTORIZER.transform(TRAIN_X_RAW)$/;"	kind:variable	line:42
+TRAIN_X	../Problem Set 1/to_zip/src/P15.py	/^TRAIN_X = []$/;"	kind:variable	line:47
+TRAIN_X	../Problem Set 1/to_zip/src/P16.py	/^    TRAIN_X = VECTORIZER.transform(TRAIN_X_RAW)$/;"	kind:variable	line:53
+TRAIN_X	../Problem Set 1/to_zip/src/P16.py	/^    TRAIN_X = VECTORIZER.transform(TRAIN_X_RAW)$/;"	kind:variable	line:97
+TRAIN_X	../Problem Set 2/sentiment/src/nn.py	/^TRAIN_X = TRAIN_X \/ TRAIN_X.sum(axis=1)$/;"	kind:variable	line:56
+TRAIN_X	../Problem Set 2/sentiment/src/nn.py	/^TRAIN_X = VECTORIZER.transform(TRAIN_X_RAW).todense()$/;"	kind:variable	line:51
+TRAIN_X	../Problem Set 2/sentiment/src/nn.py	/^TRAIN_X = np.matmul(EMBEDDINGS, TRAIN_X.T)$/;"	kind:variable	line:57
+TRAIN_X_NO_STOP_WORDS	../Problem Set 1/to_zip/src/P13.py	/^TRAIN_X_NO_STOP_WORDS = VECTORIZER_NO_STOP_WORDS.transform(TRAIN_X_RAW)$/;"	kind:variable	line:77
+TfidfVectorizer	../Problem Set 0/assignment0/test_1.py	/^from sklearn.feature_extraction.text import TfidfVectorizer$/;"	kind:namespace	line:4
+VECTORIZER	../Problem Set 1/to_zip/src/P12.py	/^VECTORIZER = CountVectorizer()$/;"	kind:variable	line:40
+VECTORIZER	../Problem Set 1/to_zip/src/P13.py	/^VECTORIZER = CountVectorizer()$/;"	kind:variable	line:40
+VECTORIZER	../Problem Set 1/to_zip/src/P14.py	/^VECTORIZER = CountVectorizer(ngram_range=(1, 2))$/;"	kind:variable	line:40
+VECTORIZER	../Problem Set 1/to_zip/src/P16.py	/^    VECTORIZER = CountVectorizer()$/;"	kind:variable	line:51
+VECTORIZER	../Problem Set 1/to_zip/src/P16.py	/^    VECTORIZER = CountVectorizer(ngram_range=(1,2))$/;"	kind:variable	line:95
+VECTORIZER	../Problem Set 2/sentiment/src/nn.py	/^VECTORIZER = CountVectorizer(vocabulary=VOCABULARY_INDEX)$/;"	kind:variable	line:48
+VECTORIZER_NO_STOP_WORDS	../Problem Set 1/to_zip/src/P13.py	/^VECTORIZER_NO_STOP_WORDS = CountVectorizer(stop_words="english")$/;"	kind:variable	line:75
+VOCABULARY	../Problem Set 1/to_zip/src/P13.py	/^VOCABULARY = VECTORIZER.get_feature_names()$/;"	kind:variable	line:67
+VOCABULARY_INDEX	../Problem Set 2/sentiment/src/nn.py	/^VOCABULARY_INDEX = {}$/;"	kind:variable	line:35
+VOCABULARY_NO_STOP_WORDS	../Problem Set 1/to_zip/src/P13.py	/^VOCABULARY_NO_STOP_WORDS = VECTORIZER_NO_STOP_WORDS.get_feature_names()$/;"	kind:variable	line:92
+VOCABULARY_SIZE	../Problem Set 2/sentiment/src/nn.py	/^VOCABULARY_SIZE = 12986$/;"	kind:variable	line:33
+Variable	../Problem Set 0/assignment0/test_2.py	/^from torch.autograd import Variable$/;"	kind:namespace	line:113
+Variable	../Problem Set 2/sentiment/src/nn.py	/^from torch.autograd import Variable$/;"	kind:namespace	line:7
+WEIGHT_DECAYS	../Problem Set 2/sentiment/src/nn.py	/^WEIGHT_DECAYS = [1E-5, 1E-3, 1E1]$/;"	kind:variable	line:93
+X	../Problem Set 2/sentiment/src/nn.py	/^X = []$/;"	kind:variable	line:166
+X	../Problem Set 2/sentiment/src/nn.py	/^X = []$/;"	kind:variable	line:174
+X	../Problem Set 2/sentiment/src/nn.py	/^X = []$/;"	kind:variable	line:182
+Y	../Problem Set 2/sentiment/src/nn.py	/^Y = []$/;"	kind:variable	line:167
+Y	../Problem Set 2/sentiment/src/nn.py	/^Y = []$/;"	kind:variable	line:175
+Y	../Problem Set 2/sentiment/src/nn.py	/^Y = []$/;"	kind:variable	line:183
+__init__	../Problem Set 0/assignment0/test_2.py	/^    def __init__(self, input_size, hidden_size, output_size):$/;"	kind:member	line:116
+__init__	../Problem Set 2/sentiment/src/nn.py	/^    def __init__(self, hidden_dim):$/;"	kind:member	line:80
+accuracy	../Problem Set 1/to_zip/src/P12.py	/^def accuracy(predicted_y, actual_y):$/;"	kind:function	line:21
+accuracy	../Problem Set 1/to_zip/src/P13.py	/^def accuracy(predicted_y, actual_y):$/;"	kind:function	line:21
+accuracy	../Problem Set 1/to_zip/src/P14.py	/^def accuracy(predicted_y, actual_y):$/;"	kind:function	line:21
+accuracy	../Problem Set 1/to_zip/src/P15.py	/^def accuracy(predicted_y, actual_y):$/;"	kind:function	line:21
+accuracy	../Problem Set 1/to_zip/src/P16.py	/^def accuracy(predicted_y, actual_y):$/;"	kind:function	line:22
+accuracy	../Problem Set 2/sentiment/src/nn.py	/^def accuracy(predicted_y, actual_y):$/;"	kind:function	line:26
+all_categories	../Problem Set 0/assignment0/test_2.py	/^all_categories = []$/;"	kind:variable	line:27
+all_letters	../Problem Set 0/assignment0/test_2.py	/^all_letters = string.ascii_letters + " .,;'"$/;"	kind:variable	line:13
+all_losses	../Problem Set 0/assignment0/test_2.py	/^all_losses = []$/;"	kind:variable	line:292
+categories	../Problem Set 0/assignment0/test_1.py	/^categories = ['alt.atheism', 'talk.religion.misc', 'comp.graphics', 'sci.space']$/;"	kind:variable	line:7
+category	../Problem Set 0/assignment0/test_2.py	/^    category = filename.split('\/')[-1].split('.')[0]$/;"	kind:variable	line:35
+categoryFromOutput	../Problem Set 0/assignment0/test_2.py	/^def categoryFromOutput(output):$/;"	kind:function	line:190
+category_i	../Problem Set 0/assignment0/test_2.py	/^    category_i = all_categories.index(category)$/;"	kind:variable	line:349
+category_lines	../Problem Set 0/assignment0/test_2.py	/^category_lines = {}$/;"	kind:variable	line:26
+clf	../Problem Set 0/assignment0/test_1.py	/^clf = MultinomialNB(alpha=.01)$/;"	kind:variable	line:20
+collections	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^import sys, re, collections$/;"	kind:namespace	line:11
+collections	../Problem Set 1/topic_model_em/q_topic_em.py	/^import sys, re, collections$/;"	kind:namespace	line:11
+confusion	../Problem Set 0/assignment0/test_2.py	/^confusion = torch.zeros(n_categories, n_categories)$/;"	kind:variable	line:332
+criterion	../Problem Set 0/assignment0/test_2.py	/^criterion = nn.NLLLoss()$/;"	kind:variable	line:236
+current_loss	../Problem Set 0/assignment0/test_2.py	/^        current_loss = 0$/;"	kind:variable	line:317
+current_loss	../Problem Set 0/assignment0/test_2.py	/^current_loss = 0$/;"	kind:variable	line:291
+data_utils	../Problem Set 2/sentiment/src/nn.py	/^import torch.utils.data as data_utils$/;"	kind:namespace	line:11
+dev_x	../Problem Set 1/to_zip/src/P15.py	/^        dev_x = DEV_X[params_index].data$/;"	kind:variable	line:74
+division	../Problem Set 0/assignment0/test_2.py	/^from __future__ import unicode_literals, print_function, division$/;"	kind:namespace	line:2
+division	../Problem Set 1/to_zip/src/P12.py	/^from __future__ import division$/;"	kind:namespace	line:1
+division	../Problem Set 1/to_zip/src/P13.py	/^from __future__ import division$/;"	kind:namespace	line:1
+division	../Problem Set 1/to_zip/src/P14.py	/^from __future__ import division$/;"	kind:namespace	line:1
+division	../Problem Set 1/to_zip/src/P15.py	/^from __future__ import division$/;"	kind:namespace	line:1
+division	../Problem Set 1/to_zip/src/P16.py	/^from __future__ import division$/;"	kind:namespace	line:1
+division	../Problem Set 2/sentiment/src/nn.py	/^from __future__ import division$/;"	kind:namespace	line:1
+e_step	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^def e_step(fileData, theta_t_z, theta_z_w):$/;"	kind:function	line:61
+e_step	../Problem Set 1/topic_model_em/q_topic_em.py	/^def e_step(fileData, theta_t_z, theta_z_w):$/;"	kind:function	line:61
+evaluate	../Problem Set 0/assignment0/test_2.py	/^def evaluate(line_tensor):$/;"	kind:function	line:336
+fetch_20newsgroups	../Problem Set 0/assignment0/test_1.py	/^from sklearn.datasets import fetch_20newsgroups$/;"	kind:namespace	line:1
+fileData	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^	fileData = readDirectory(input_directory)$/;"	kind:variable	line:139
+fileData	../Problem Set 1/topic_model_em/q_topic_em.py	/^	fileData = readDirectory(input_directory)$/;"	kind:variable	line:139
+findFiles	../Problem Set 0/assignment0/test_2.py	/^def findFiles(path): return glob.glob(path)$/;"	kind:function	line:6
+forward	../Problem Set 0/assignment0/test_2.py	/^    def forward(self, input, hidden):$/;"	kind:member	line:126
+forward	../Problem Set 2/sentiment/src/nn.py	/^    def forward(self, x):$/;"	kind:member	line:85
+get_raw_data	../Problem Set 1/to_zip/src/P12.py	/^def get_raw_data(file_name):$/;"	kind:function	line:11
+get_raw_data	../Problem Set 1/to_zip/src/P13.py	/^def get_raw_data(file_name):$/;"	kind:function	line:11
+get_raw_data	../Problem Set 1/to_zip/src/P14.py	/^def get_raw_data(file_name):$/;"	kind:function	line:11
+get_raw_data	../Problem Set 1/to_zip/src/P15.py	/^def get_raw_data(file_name):$/;"	kind:function	line:11
+get_raw_data	../Problem Set 1/to_zip/src/P16.py	/^def get_raw_data(file_name):$/;"	kind:function	line:13
+get_raw_data	../Problem Set 2/sentiment/src/nn.py	/^def get_raw_data(file_name):$/;"	kind:function	line:16
+glob	../Problem Set 0/assignment0/test_2.py	/^import glob$/;"	kind:namespace	line:4
+gzip	../Problem Set 2/sentiment/src/nn.py	/^import gzip$/;"	kind:namespace	line:3
+hidden	../Problem Set 0/assignment0/test_2.py	/^hidden = Variable(torch.zeros(1, n_hidden))$/;"	kind:variable	line:153
+hidden	../Problem Set 0/assignment0/test_2.py	/^hidden = Variable(torch.zeros(1, n_hidden))$/;"	kind:variable	line:166
+initHidden	../Problem Set 0/assignment0/test_2.py	/^    def initHidden(self):$/;"	kind:member	line:134
+input	../Problem Set 0/assignment0/test_2.py	/^input = Variable(letterToTensor('A'))$/;"	kind:variable	line:152
+input	../Problem Set 0/assignment0/test_2.py	/^input = Variable(lineToTensor('Albert'))$/;"	kind:variable	line:165
+input_directory	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^	input_directory = sys.argv[1]$/;"	kind:variable	line:138
+input_directory	../Problem Set 1/topic_model_em/q_topic_em.py	/^	input_directory = sys.argv[1]$/;"	kind:variable	line:138
+isfile	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^from os.path import isfile, join$/;"	kind:namespace	line:13
+isfile	../Problem Set 1/topic_model_em/q_topic_em.py	/^from os.path import isfile, join$/;"	kind:namespace	line:13
+itemgetter	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^from operator import itemgetter$/;"	kind:namespace	line:15
+itemgetter	../Problem Set 1/topic_model_em/q_topic_em.py	/^from operator import itemgetter$/;"	kind:namespace	line:15
+join	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^from os.path import isfile, join$/;"	kind:namespace	line:13
+join	../Problem Set 1/topic_model_em/q_topic_em.py	/^from os.path import isfile, join$/;"	kind:namespace	line:13
+learning_rate	../Problem Set 0/assignment0/test_2.py	/^learning_rate = 0.005 # If you set this too high, it might explode. If too low, it might not learn$/;"	kind:variable	line:253
+letterToIndex	../Problem Set 0/assignment0/test_2.py	/^def letterToIndex(letter):$/;"	kind:function	line:73
+letterToTensor	../Problem Set 0/assignment0/test_2.py	/^def letterToTensor(letter):$/;"	kind:function	line:77
+lineToTensor	../Problem Set 0/assignment0/test_2.py	/^def lineToTensor(line):$/;"	kind:function	line:84
+lines	../Problem Set 0/assignment0/test_2.py	/^    lines = readLines(filename)$/;"	kind:variable	line:37
+listdir	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^from os import listdir$/;"	kind:namespace	line:12
+listdir	../Problem Set 1/topic_model_em/q_topic_em.py	/^from os import listdir$/;"	kind:namespace	line:12
+logistic_regression	../Problem Set 1/to_zip/src/P12.py	/^def logistic_regression(train_x, train_y, dev_x, dev_y, c):$/;"	kind:function	line:24
+logistic_regression	../Problem Set 1/to_zip/src/P13.py	/^def logistic_regression(train_x, train_y, dev_x, dev_y, c):$/;"	kind:function	line:24
+logistic_regression	../Problem Set 1/to_zip/src/P14.py	/^def logistic_regression(train_x, train_y, dev_x, dev_y, c):$/;"	kind:function	line:24
+logistic_regression	../Problem Set 1/to_zip/src/P15.py	/^def logistic_regression(train_x, train_y, dev_x, dev_y, c):$/;"	kind:function	line:24
+logistic_regression	../Problem Set 1/to_zip/src/P16.py	/^def logistic_regression(train_x, train_y, dev_x, dev_y, c):$/;"	kind:function	line:25
+m_step	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^def m_step(count_t_z, count_w_z):$/;"	kind:function	line:100
+m_step	../Problem Set 1/topic_model_em/q_topic_em.py	/^def m_step(count_t_z, count_w_z):$/;"	kind:function	line:100
+main.py	../Problem Set 0/assignment0/main.py	1;"	kind:file	line:1
+math	../Problem Set 0/assignment0/test_2.py	/^import math$/;"	kind:namespace	line:282
+matplotlib	../Problem Set 1/to_zip/src/P16.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:5
+metrics	../Problem Set 0/assignment0/test_1.py	/^from sklearn import metrics$/;"	kind:namespace	line:3
+n_categories	../Problem Set 0/assignment0/test_2.py	/^n_categories = len(all_categories)$/;"	kind:variable	line:40
+n_confusion	../Problem Set 0/assignment0/test_2.py	/^n_confusion = 10000$/;"	kind:variable	line:333
+n_hidden	../Problem Set 0/assignment0/test_2.py	/^n_hidden = 200$/;"	kind:variable	line:137
+n_iters	../Problem Set 0/assignment0/test_2.py	/^n_iters = 100000$/;"	kind:variable	line:284
+n_letters	../Problem Set 0/assignment0/test_2.py	/^n_letters = len(all_letters)$/;"	kind:variable	line:14
+namedtuple	../Problem Set 1/to_zip/src/P12.py	/^from collections import namedtuple$/;"	kind:namespace	line:2
+namedtuple	../Problem Set 1/to_zip/src/P13.py	/^from collections import namedtuple$/;"	kind:namespace	line:2
+namedtuple	../Problem Set 1/to_zip/src/P14.py	/^from collections import namedtuple$/;"	kind:namespace	line:2
+namedtuple	../Problem Set 1/to_zip/src/P15.py	/^from collections import namedtuple$/;"	kind:namespace	line:2
+namedtuple	../Problem Set 1/to_zip/src/P16.py	/^from collections import namedtuple$/;"	kind:namespace	line:2
+namedtuple	../Problem Set 2/sentiment/src/nn.py	/^from collections import namedtuple$/;"	kind:namespace	line:2
+newsgroups_test	../Problem Set 0/assignment0/test_1.py	/^newsgroups_test = fetch_20newsgroups(subset='test',categories=categories)$/;"	kind:variable	line:16
+newsgroups_train	../Problem Set 0/assignment0/test_1.py	/^newsgroups_train = fetch_20newsgroups(subset='train',categories=categories)$/;"	kind:variable	line:8
+nn	../Problem Set 0/assignment0/test_2.py	/^import torch.nn as nn$/;"	kind:namespace	line:112
+nn	../Problem Set 2/sentiment/src/nn.py	/^import torch.nn as nn$/;"	kind:namespace	line:8
+nn	../Problem Set 2/sentiment/src/nn.py	/^import torch.nn.functional as F$/;"	kind:namespace	line:9
+nn.py	../Problem Set 2/sentiment/src/nn.py	1;"	kind:file	line:1
+normalize	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^from sklearn.preprocessing import normalize$/;"	kind:namespace	line:16
+normalize	../Problem Set 1/topic_model_em/q_topic_em.py	/^from sklearn.preprocessing import normalize$/;"	kind:namespace	line:16
+np	../Problem Set 1/to_zip/src/P12.py	/^import numpy as np$/;"	kind:namespace	line:3
+np	../Problem Set 1/to_zip/src/P13.py	/^import numpy as np$/;"	kind:namespace	line:3
+np	../Problem Set 1/to_zip/src/P14.py	/^import numpy as np$/;"	kind:namespace	line:3
+np	../Problem Set 1/to_zip/src/P15.py	/^import numpy as np$/;"	kind:namespace	line:3
+np	../Problem Set 1/to_zip/src/P16.py	/^import numpy as np$/;"	kind:namespace	line:3
+np	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^import numpy as np$/;"	kind:namespace	line:14
+np	../Problem Set 1/topic_model_em/q_topic_em.py	/^import numpy as np$/;"	kind:namespace	line:14
+np	../Problem Set 2/sentiment/src/nn.py	/^import numpy as np$/;"	kind:namespace	line:4
+num_iter	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^	num_iter = int(sys.argv[3])$/;"	kind:variable	line:140
+num_iter	../Problem Set 1/topic_model_em/q_topic_em.py	/^	num_iter = int(sys.argv[3])$/;"	kind:variable	line:140
+open	../Problem Set 0/assignment0/test_2.py	/^from io import open$/;"	kind:namespace	line:3
+optim	../Problem Set 2/sentiment/src/nn.py	/^import torch.optim as optim$/;"	kind:namespace	line:10
+os	../Problem Set 0/assignment0/main.py	/^import os$/;"	kind:namespace	line:2
+output	../Problem Set 0/assignment0/test_2.py	/^    output = evaluate(line_tensor)$/;"	kind:variable	line:347
+performance	../Problem Set 0/assignment0/test_2.py	/^performance = 0$/;"	kind:variable	line:353
+plot_every	../Problem Set 0/assignment0/test_2.py	/^plot_every = 1000$/;"	kind:variable	line:286
+plt	../Problem Set 1/to_zip/src/P16.py	/^import matplotlib.pyplot as plt$/;"	kind:namespace	line:5
+pred	../Problem Set 0/assignment0/test_1.py	/^pred = clf.predict(vectors_test)$/;"	kind:variable	line:22
+print_every	../Problem Set 0/assignment0/test_2.py	/^print_every = 5000$/;"	kind:variable	line:285
+print_function	../Problem Set 0/assignment0/test_2.py	/^from __future__ import unicode_literals, print_function, division$/;"	kind:namespace	line:2
+q_topic_em.py	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	1;"	kind:file	line:1
+q_topic_em.py	../Problem Set 1/topic_model_em/q_topic_em.py	1;"	kind:file	line:1
+random	../Problem Set 0/assignment0/test_2.py	/^import random$/;"	kind:namespace	line:202
+randomChoice	../Problem Set 0/assignment0/test_2.py	/^def randomChoice(l):$/;"	kind:function	line:204
+randomTestingExample	../Problem Set 0/assignment0/test_2.py	/^def randomTestingExample():$/;"	kind:function	line:214
+randomTrainingExample	../Problem Set 0/assignment0/test_2.py	/^def randomTrainingExample():$/;"	kind:function	line:207
+re	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^import sys, re, collections$/;"	kind:namespace	line:11
+re	../Problem Set 1/topic_model_em/q_topic_em.py	/^import sys, re, collections$/;"	kind:namespace	line:11
+readDirectory	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^def readDirectory(dirname):$/;"	kind:function	line:48
+readDirectory	../Problem Set 1/topic_model_em/q_topic_em.py	/^def readDirectory(dirname):$/;"	kind:function	line:48
+readFile	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^def readFile(filename):$/;"	kind:function	line:29
+readFile	../Problem Set 1/topic_model_em/q_topic_em.py	/^def readFile(filename):$/;"	kind:function	line:29
+readLines	../Problem Set 0/assignment0/test_2.py	/^def readLines(filename):$/;"	kind:function	line:30
+rnn	../Problem Set 0/assignment0/test_2.py	/^rnn = RNN(n_letters, n_hidden, n_categories)$/;"	kind:variable	line:138
+script_name	../Problem Set 0/assignment0/main.py	/^script_name = sys.argv[script_name_argument_index]$/;"	kind:variable	line:5
+script_name_argument_index	../Problem Set 0/assignment0/main.py	/^script_name_argument_index = 1$/;"	kind:variable	line:4
+sk	../Problem Set 1/to_zip/src/P12.py	/^import sklearn as sk$/;"	kind:namespace	line:4
+sk	../Problem Set 1/to_zip/src/P13.py	/^import sklearn as sk$/;"	kind:namespace	line:4
+sk	../Problem Set 1/to_zip/src/P14.py	/^import sklearn as sk$/;"	kind:namespace	line:4
+sk	../Problem Set 1/to_zip/src/P15.py	/^import sklearn as sk$/;"	kind:namespace	line:4
+sk	../Problem Set 1/to_zip/src/P16.py	/^import sklearn as sk$/;"	kind:namespace	line:4
+start	../Problem Set 0/assignment0/test_2.py	/^start = time.time()$/;"	kind:variable	line:301
+stopWords	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^stopWords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', 'couldn', 'didn', 'doesn', 'hadn', 'hasn', 'haven', 'isn', 'ma', 'mightn', 'mustn', 'needn', 'shan', 'shouldn', 'wasn', 'weren', 'won', 'wouldn']$/;"	kind:variable	line:26
+stopWords	../Problem Set 1/topic_model_em/q_topic_em.py	/^stopWords = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', 'couldn', 'didn', 'doesn', 'hadn', 'hasn', 'haven', 'isn', 'ma', 'mightn', 'mustn', 'needn', 'shan', 'shouldn', 'wasn', 'weren', 'won', 'wouldn']$/;"	kind:variable	line:26
+stop_words	../Problem Set 1/to_zip/src/P15.py	/^                                         stop_words=stop_words)$/;"	kind:variable	line:54
+string	../Problem Set 0/assignment0/test_2.py	/^import string$/;"	kind:namespace	line:11
+sys	../Problem Set 0/assignment0/main.py	/^import sys$/;"	kind:namespace	line:1
+sys	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^import sys, re, collections$/;"	kind:namespace	line:11
+sys	../Problem Set 1/topic_model_em/q_topic_em.py	/^import sys, re, collections$/;"	kind:namespace	line:11
+test_1.py	../Problem Set 0/assignment0/test_1.py	1;"	kind:file	line:1
+test_2.py	../Problem Set 0/assignment0/test_2.py	1;"	kind:file	line:1
+time	../Problem Set 0/assignment0/test_2.py	/^import time$/;"	kind:namespace	line:281
+timeSince	../Problem Set 0/assignment0/test_2.py	/^def timeSince(since):$/;"	kind:function	line:294
+torch	../Problem Set 0/assignment0/test_2.py	/^import torch$/;"	kind:namespace	line:70
+torch	../Problem Set 0/assignment0/test_2.py	/^import torch.nn as nn$/;"	kind:namespace	line:112
+torch	../Problem Set 2/sentiment/src/nn.py	/^import torch$/;"	kind:namespace	line:6
+torch	../Problem Set 2/sentiment/src/nn.py	/^import torch.nn as nn$/;"	kind:namespace	line:8
+torch	../Problem Set 2/sentiment/src/nn.py	/^import torch.nn.functional as F$/;"	kind:namespace	line:9
+torch	../Problem Set 2/sentiment/src/nn.py	/^import torch.optim as optim$/;"	kind:namespace	line:10
+torch	../Problem Set 2/sentiment/src/nn.py	/^import torch.utils.data as data_utils$/;"	kind:namespace	line:11
+train	../Problem Set 0/assignment0/test_2.py	/^def train(category_tensor, line_tensor):$/;"	kind:function	line:255
+train	../Problem Set 2/sentiment/src/nn.py	/^def train(hidden_layer_dim, learning_rate, weight_decay):$/;"	kind:function	line:98
+train_test_split	../Problem Set 0/assignment0/test_1.py	/^from sklearn.model_selection import train_test_split$/;"	kind:namespace	line:5
+train_test_split	../Problem Set 1/to_zip/src/P16.py	/^from sklearn.model_selection import train_test_split$/;"	kind:namespace	line:8
+train_x	../Problem Set 1/to_zip/src/P15.py	/^        train_x = TRAIN_X[params_index].data$/;"	kind:variable	line:73
+unicodeToAscii	../Problem Set 0/assignment0/test_2.py	/^def unicodeToAscii(s):$/;"	kind:function	line:17
+unicode_literals	../Problem Set 0/assignment0/test_2.py	/^from __future__ import unicode_literals, print_function, division$/;"	kind:namespace	line:2
+unicodedata	../Problem Set 0/assignment0/test_2.py	/^import unicodedata$/;"	kind:namespace	line:10
+utils	../Problem Set 2/sentiment/src/nn.py	/^import torch.utils.data as data_utils$/;"	kind:namespace	line:11
+vectorizer	../Problem Set 0/assignment0/test_1.py	/^vectorizer = TfidfVectorizer()$/;"	kind:variable	line:17
+vectorizer	../Problem Set 1/to_zip/src/P15.py	/^            vectorizer = CountVectorizer(ngram_range=n_grams, min_df=min_frequency,$/;"	kind:variable	line:53
+vectors	../Problem Set 0/assignment0/test_1.py	/^vectors = vectorizer.fit_transform(newsgroups_train_data)$/;"	kind:variable	line:18
+vectors_test	../Problem Set 0/assignment0/test_1.py	/^vectors_test = vectorizer.transform(newsgroups_test.data)$/;"	kind:variable	line:19
+vocabSize	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^vocabSize = 0$/;"	kind:variable	line:21
+vocabSize	../Problem Set 1/topic_model_em/q_topic_em.py	/^vocabSize = 0$/;"	kind:variable	line:21
+vocabulary	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^vocabulary = []$/;"	kind:variable	line:20
+vocabulary	../Problem Set 1/topic_model_em/q_topic_em.py	/^vocabulary = []$/;"	kind:variable	line:20
+word2Index	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^word2Index = {}$/;"	kind:variable	line:19
+word2Index	../Problem Set 1/topic_model_em/q_topic_em.py	/^word2Index = {}$/;"	kind:variable	line:19
+wordProb	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^		wordProb = [(vocabulary[w], theta_z_w[z][w]) for w in range(vocabSize)]$/;"	kind:variable	line:149
+wordProb	../Problem Set 1/to_zip/topic_model_em/q_topic_em.py	/^		wordProb = sorted(wordProb, key = itemgetter(1), reverse=True)$/;"	kind:variable	line:150
+wordProb	../Problem Set 1/topic_model_em/q_topic_em.py	/^		wordProb = [(vocabulary[w], theta_z_w[z][w]) for w in range(vocabSize)]$/;"	kind:variable	line:149
+wordProb	../Problem Set 1/topic_model_em/q_topic_em.py	/^		wordProb = sorted(wordProb, key = itemgetter(1), reverse=True)$/;"	kind:variable	line:150
