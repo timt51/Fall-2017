@@ -9,6 +9,8 @@ class ClothSystem : public ParticleSystem
 {
     ///ADD MORE FUNCTION AND FIELDS HERE
 public:
+    Vector3f wind;
+    bool smooth;
     ClothSystem();
 
     // evalF is called by the integrator at least once per time step

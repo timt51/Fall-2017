@@ -86,6 +86,26 @@ static void keyCallback(GLFWwindow* window, int key,
         resetTime();
         break;
     }
+    case 'W':
+    {
+        const Vector3f currentWind = clothSystem->wind;
+        if (currentWind == Vector3f::ZERO) {
+            const Vector3f newWind = Vector3f(rand_uniform(-0.5, 0.5), 0, rand_uniform(-0.5, 0.5));
+            cout << "Starting wind at: ";
+            newWind.print();
+            clothSystem->wind = newWind;
+        } else {
+            cout << "Stopping wind" << endl;
+            clothSystem->wind = Vector3f::ZERO;
+        }
+        break;
+    }
+    case 'S':
+    {
+        cout << "Toggling \"smooth\" cloth" << endl;
+        clothSystem->smooth = !clothSystem->smooth;
+        break;
+    }
     default:
         cout << "Unhandled key press " << key << "." << endl;
     }
@@ -316,6 +336,9 @@ int main(int argc, char** argv)
         uint64_t now = glfwGetTimerValue();
         elapsed_s = (double)(now - start_tick) / freq;
         stepSystem();
+        if (clothSystem->wind != Vector3f::ZERO) {
+            clothSystem->wind += Vector3f(rand_uniform(-.05,.05), 0, rand_uniform(-.05,.05));
+        }
 
         // Draw the simulation
         drawSystem();
