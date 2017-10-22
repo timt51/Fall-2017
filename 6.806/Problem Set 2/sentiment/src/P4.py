@@ -88,10 +88,17 @@ class SentimentNet(nn.Module):
         x = F.log_softmax(self.linear2(x))
         return x
 
-HIDDEN_LAYER_DIMS = [EMBEDDING_SIZE/4, EMBEDDING_SIZE/2, EMBEDDING_SIZE, EMBEDDING_SIZE*2]
+##################################################################
+# Parameters for the best result only
+# HIDDEN_LAYER_DIMS = [EMBEDDING_SIZE/4, EMBEDDING_SIZE/2, EMBEDDING_SIZE, EMBEDDING_SIZE*2]
+# HIDDEN_LAYER_DIMS = [int(x) for x in HIDDEN_LAYER_DIMS]
+# LEARNING_RATES = [1E-5, 1E-3, 1E-1, 1E1]
+# WEIGHT_DECAYS = [1E-5, 1E-3, 1E1]
+##################################################################
+HIDDEN_LAYER_DIMS = [EMBEDDING_SIZE*2]
 HIDDEN_LAYER_DIMS = [int(x) for x in HIDDEN_LAYER_DIMS]
-LEARNING_RATES = [1E-5, 1E-3, 1E-1, 1E1]
-WEIGHT_DECAYS = [1E-5, 1E-3, 1E1]
+LEARNING_RATES = [1E-3]
+WEIGHT_DECAYS = [1E-5]
 CRITERION = nn.NLLLoss().cuda()
 BATCH_SIZE = 173
 EPOCHS = 50
@@ -150,9 +157,9 @@ for hidden_layer_dim in HIDDEN_LAYER_DIMS:
     for learning_rate in LEARNING_RATES:
         for weight_decay in WEIGHT_DECAYS:
             start = time.time()
-            print('TRAINING WITH: ', hidden_layer_dim, learning_rate, weight_decay)
+            print('Hidden Layer Dimension: '+str(hidden_layer_dim)+' Learning Rate: '+str(learning_rate)+' Weight Decay: '+str(weight_decay))
             dev_acc, test_acc = train(hidden_layer_dim, learning_rate, weight_decay)
-            print('Result: ', dev_acc)
+            print('Dev Accuracy: ', dev_acc)
             RESULTS.append(Result(hidden_layer_dim, learning_rate, weight_decay, dev_acc, test_acc))
             print('Time: ', time.time() - start)
 RESULTS = sorted(RESULTS, key=lambda x: x.dev, reverse=True)
@@ -160,54 +167,54 @@ print('Best Result:', RESULTS[0])
 
 ##################################################################
 # Graphs
+# BEST_HIDDEN_DIM = RESULTS[0].hidden_dim
+# BEST_LR = RESULTS[0].learning_rate
+# BEST_WEIGHT_DECAY = RESULTS[0].weight_decay
+
+# # Holding hidden dim and lr constant
+# X = []
+# Y = []
+# for result in RESULTS:
+#     if (result.hidden_dim == BEST_HIDDEN_DIM and result.learning_rate == BEST_LR):
+#         X.append(result.weight_decay)
+#         Y.append(result.dev)
+# X = np.log10(X)
+# X, Y = (list(t) for t in zip(*sorted(zip(X, Y))))
+# plt.plot(X, Y)
+# plt.axis([-6, 2, 0.45, 1])
+# plt.title("Weight Decay vs Accuracy")
+# plt.xlabel('log Weight Decay')
+# plt.ylabel('Accuracy')
+# plt.show()
+
+# # Holding hidden dim and weight decay constant
+# X = []
+# Y = []
+# for result in RESULTS:
+#     if (result.hidden_dim == BEST_HIDDEN_DIM and result.weight_decay == BEST_WEIGHT_DECAY):
+#         X.append(result.learning_rate)
+#         Y.append(result.dev)
+# X = np.log10(X)
+# X, Y = (list(t) for t in zip(*sorted(zip(X, Y))))
+# plt.plot(X, Y)
+# plt.axis([-6, 2, 0.45, 1])
+# plt.title("Learning Rate vs Accuracy")
+# plt.xlabel('log Learning Rate')
+# plt.ylabel('Accuracy')
+# plt.show()
+
+# # Holding learning rate and weight decay constant
+# X = []
+# Y = []
+# for result in RESULTS:
+#     if (result.learning_rate == BEST_LR and result.weight_decay == BEST_WEIGHT_DECAY):
+#         X.append(result.hidden_dim)
+#         Y.append(result.dev)
+# X, Y = (list(t) for t in zip(*sorted(zip(X, Y))))
+# plt.plot(X, Y)
+# plt.axis([0, 650, 0.45, 1])
+# plt.title("Hidden Layer Dimension vs Accuracy")
+# plt.xlabel('Hidden Layer Dimension')
+# plt.ylabel('Accuracy')
+# plt.show()
 ##################################################################
-BEST_HIDDEN_DIM = RESULTS[0].hidden_dim
-BEST_LR = RESULTS[0].learning_rate
-BEST_WEIGHT_DECAY = RESULTS[0].weight_decay
-
-# Holding hidden dim and lr constant
-X = []
-Y = []
-for result in RESULTS:
-    if (result.hidden_dim == BEST_HIDDEN_DIM and result.learning_rate == BEST_LR):
-        X.append(result.weight_decay)
-        Y.append(result.dev)
-X = np.log10(X)
-X, Y = (list(t) for t in zip(*sorted(zip(X, Y))))
-plt.plot(X, Y)
-plt.axis([-6, 2, 0.45, 1])
-plt.title("Weight Decay vs Accuracy")
-plt.xlabel('log Weight Decay')
-plt.ylabel('Accuracy')
-plt.show()
-
-# Holding hidden dim and weight decay constant
-X = []
-Y = []
-for result in RESULTS:
-    if (result.hidden_dim == BEST_HIDDEN_DIM and result.weight_decay == BEST_WEIGHT_DECAY):
-        X.append(result.learning_rate)
-        Y.append(result.dev)
-X = np.log10(X)
-X, Y = (list(t) for t in zip(*sorted(zip(X, Y))))
-plt.plot(X, Y)
-plt.axis([-6, 2, 0.45, 1])
-plt.title("Learning Rate vs Accuracy")
-plt.xlabel('log Learning Rate')
-plt.ylabel('Accuracy')
-plt.show()
-
-# Holding learning rate and weight decay constant
-X = []
-Y = []
-for result in RESULTS:
-    if (result.learning_rate == BEST_LR and result.weight_decay == BEST_WEIGHT_DECAY):
-        X.append(result.hidden_dim)
-        Y.append(result.dev)
-X, Y = (list(t) for t in zip(*sorted(zip(X, Y))))
-plt.plot(X, Y)
-plt.axis([0, 650, 0.45, 1])
-plt.title("Hidden Layer Dimension vs Accuracy")
-plt.xlabel('Hidden Layer Dimension')
-plt.ylabel('Accuracy')
-plt.show()
