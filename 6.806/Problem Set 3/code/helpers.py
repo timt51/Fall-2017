@@ -153,6 +153,21 @@ def evaluateLogisticRegressionModel(dev_x_raw, dev_identifiers, dev_predicted_y)
     dev_f1_score = evaluation_results[6]
     return dev_p, dev_r, dev_f1_score
 
+def evaluateLogisticRegressionModelPrint(dev_x_raw, dev_identifiers, dev_predicted_y):
+    index = 0
+    for word_sequence, identifier in zip(dev_x_raw, dev_identifiers):
+        print(identifier)
+        word_sequence = word_sequence.split(' ')
+        tagged_sequence = ""
+        for word in word_sequence:
+            if dev_predicted_y[index] == 0:
+                tagged_sequence += (word + '_' + 'TAG ')
+            else:
+                tagged_sequence += (word + '_' + 'GENE1 ')
+            index += 1
+        print(tagged_sequence[:-1])
+    return
+
 class RNN(nn.Module):
     def __init__(self, input_size, hidden_size, output_size, batch_size):
         super(RNN, self).__init__()

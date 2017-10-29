@@ -27,6 +27,7 @@ ARGS.dev_set_path = 'data/dev.tag'
 TRAIN_IDENTIFIERS, TRAIN_X_RAW, TRAIN_Y = helpers.parse_data(ARGS.training_set_path)
 DEV_IDENTIFIERS, DEV_X_RAW, DEV_Y = helpers.parse_data(ARGS.dev_set_path)
 TEST_IDENTIFIERS, TEST_X_RAW, TEST_Y = helpers.parse_data(ARGS.test_set_path)
+DEV_IDENTIFIERS, DEV_X_RAW, DEV_Y = TEST_IDENTIFIERS, TEST_X_RAW, TEST_Y
 
 # Convert data sets to feature representations, train model(s),
 # and evaluate model(s)
@@ -62,7 +63,7 @@ else:
     N_CHARS = [0]
     N_TAGS = [1]
     NGRAMS_MAX = [4]
-TO_CACHE = True
+TO_CACHE = None
 Result = namedtuple('Result', 'n_words n_chars n_tags ngram_max dev_p dev_r dev_f1')
 RESULTS = []
 for n_words, n_chars, n_tags, ngram_max in (itertools.product(N_WORDS, N_CHARS, N_TAGS, NGRAMS_MAX)):
@@ -98,8 +99,7 @@ for n_words, n_chars, n_tags, ngram_max in (itertools.product(N_WORDS, N_CHARS, 
         dev_x = helpers.extractMaxEntFeatures(DEV_X_RAW, word_vectorizer, char_vectorizer, n_words, n_chars, n_tags, num_samples, cache, predicted_ys=DEV_Y)
         dev_predicted_y = lr.predict(dev_x)
         dev_accuracy = helpers.accuracy(dev_predicted_y, DEV_Y)
-        dev_p, dev_r, dev_f1_score = helpers.evaluateLogisticRegressionModel(DEV_X_RAW, DEV_IDENTIFIERS, dev_predicted_y)
-        RESULTS.append(Result(n_words, n_chars, n_tags, ngram_max, dev_p, dev_r, dev_f1_score))
+        helpers.evaluateLogisticRegressionModelPrint(DEV_X_RAW, DEV_IDENTIFIERS, dev_predicted_y)
 
     elif ARGS.model_type == 2 or ARGS.model_type == 5:
         word_vocabulary_size = len(word_vectorizer.vocabulary_)
@@ -123,8 +123,7 @@ for n_words, n_chars, n_tags, ngram_max in (itertools.product(N_WORDS, N_CHARS, 
             cache = None
         dev_predicted_y = np.array(predicted_ys).T[0]
         dev_accuracy = helpers.accuracy(dev_predicted_y, DEV_Y)
-        dev_p, dev_r, dev_f1_score = helpers.evaluateLogisticRegressionModel(DEV_X_RAW, DEV_IDENTIFIERS, dev_predicted_y)
-        RESULTS.append(Result(n_words, n_chars, n_tags, ngram_max, dev_p, dev_r, dev_f1_score))
+        helpers.evaluateLogisticRegressionModelPrint(DEV_X_RAW, DEV_IDENTIFIERS, dev_predicted_y)
 
     elif ARGS.model_type == 3 or ARGS.model_type == 6:
         word_vocabulary_size = len(word_vectorizer.vocabulary_)
@@ -176,7 +175,6 @@ for n_words, n_chars, n_tags, ngram_max in (itertools.product(N_WORDS, N_CHARS, 
         
         dev_predicted_y = np.array(predicted_ys)
         dev_accuracy = helpers.accuracy(dev_predicted_y, DEV_Y)
-        dev_p, dev_r, dev_f1_score = helpers.evaluateLogisticRegressionModel(DEV_X_RAW, DEV_IDENTIFIERS, dev_predicted_y)
-        RESULTS.append(Result(n_words, n_chars, n_tags, ngram_max, dev_p, dev_r, dev_f1_score))
+        helpers.evaluateLogisticRegressionModelPrint(DEV_X_RAW, DEV_IDENTIFIERS, dev_predicted_y)
 
     # Predict on the test set
