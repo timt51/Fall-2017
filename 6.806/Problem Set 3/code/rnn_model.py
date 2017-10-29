@@ -15,6 +15,7 @@ import torch.utils.data as data_utils
 from torch.autograd import Variable
 import torch.optim as optim
 from scipy import sparse
+from collections import namedtuple
 from tqdm import tqdm
 
 # Create parser for input arguments
@@ -40,15 +41,17 @@ print('Proportion of GENE in dev set', sum(DEV_Y)/len(DEV_Y))
 # Run the model
 N_WORDS = [0]
 N_CHARS = [0]
-N_TAGS = [0]
-NGRAMS_MAX = [4]
+N_TAGS = [1]
+NGRAMS_MAX = [2]
 HIDDEN_DIM = 100
-BATCH_SIZE = 32
+BATCH_SIZE = 128
 MAX_EPOCHS = 10
 MAX_SEQ_LENGTH = 30
 LEARNING_RATE = 1E-3
 WEIGHT_DECAY = 1E-5
 TO_CACHE = True
+Result = namedtuple('Result', 'n_words n_chars n_tags ngram_max dev_p dev_r dev_f1')
+RESULTS = []
 for n_words, n_chars, n_tags, ngram_max in itertools.product(N_WORDS, N_CHARS, N_TAGS, NGRAMS_MAX):
     # Generate feature vectors for training data
     print('Training with n_words=' + str(n_words) + ' n_chars=' + str(n_chars) + ' n_tags=' + str(n_tags) + ' ngram_max=' + str(ngram_max))
@@ -91,48 +94,55 @@ for n_words, n_chars, n_tags, ngram_max in itertools.product(N_WORDS, N_CHARS, N
 
     # Create the RNN model
     output_size = 2
-    model = helpers.RNN(num_features, HIDDEN_DIM, output_size, BATCH_SIZE).cuda()
+    model = helpers.RNN(num_features, HIDDEN_DIM, output_size, BATCH_SIZE)
 
     # Train the RNN model
     print('Training...')
-    model.train()
     optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE, weight_decay=WEIGHT_DECAY)
-    for epoch in range(MAX_EPOCHS):
+    for epoch in tqdm(range(MAX_EPOCHS)):
+        model.train()
         # shuffle trainx and trainy
         p = np.random.permutation(len(train_y))
         train_x, train_y = train_x[p], train_y[p]
-        for batch_start_index in tqdm(range(0,len(train_y),BATCH_SIZE)):
+        for batch_start_index in tqdm(range(0,len(train_y)-BATCH_SIZE,BATCH_SIZE)):
             batch_train_x = train_x[batch_start_index:batch_start_index+BATCH_SIZE]
             batch_train_y = train_y[batch_start_index:batch_start_index+BATCH_SIZE]
             # s = time.time()
-            xs = Variable(torch.from_numpy(np.array([x.todense() for x in batch_train_x]).astype(np.float32))).cuda()
-            ys = Variable(torch.from_numpy(batch_train_y.astype(np.float32))).cuda()
+            xs = Variable(torch.from_numpy(np.array([x.todense() for x in batch_train_x]).astype(np.float32)))
+            ys = Variable(torch.from_numpy(batch_train_y.astype(np.float32)))
             # print("time to convert...", s - time.time())
             loss = helpers.train(model, xs, ys, optimizer)
         print(epoch, loss)
 
-    # Evaluate on the dev set
-    print('Generating dev set predictions...')
-    predicted_ys = []
-    for word_sequence in DEV_X_RAW:
-        word_sequence = word_sequence.split(' ')
-        predicted_sequence_ys = []
-        for word_index in range(len(word_sequence)):
-            x = helpers.featurize(word_index, word_sequence, word_vectorizer, char_vectorizer, n_words, n_chars, n_tags, word_vocabulary_size, char_vocabulary_size, num_features, predicted_ys=predicted_sequence_ys)
-            x = Variable(torch.from_numpy(np.expand_dims(x.todense(),axis=0).astype(np.float32)))
-            output, hidden = model(x, hidden)
-            _, predicted_y = torch.max(output, 0)
-            predicted_sequence_ys.append(predicted_y)
+        # Evaluate on the dev set
+        model.eval()
+        print('Generating dev set predictions...')
+        predicted_ys = []
+        for word_sequence in tqdm(DEV_X_RAW):
+            word_sequence = word_sequence.split(' ')
+            predicted_sequence_ys = []
+            hidden = Variable(torch.zeros(1, 1, HIDDEN_DIM))
+            for word_index in range(len(word_sequence)):
+                x = helpers.featurize(word_index, word_sequence, word_vectorizer, char_vectorizer, n_words, n_chars, n_tags, word_vocabulary_size, char_vocabulary_size, num_features, predicted_ys=predicted_sequence_ys)
+                x = Variable(torch.from_numpy(np.expand_dims(x.todense(),axis=0).astype(np.float32)))
+                _, output, hidden = model(x, hidden)
+                predicted_y = np.argmax(output.data.numpy())
+                predicted_sequence_ys.append(predicted_y)
             predicted_ys.extend(predicted_sequence_ys)
         
-    print('Generating dev set evaluations...')
-    if TO_CACHE is True:
-        cache = 'dev'
-    else:
-        cache = None
-    dev_predicted_y = np.array(predicted_ys).T[0]
-    dev_accuracy = helpers.accuracy(dev_predicted_y, DEV_Y)
-    print('Dev accuracy: ' + str(dev_accuracy))
-    dev_f1_score = helpers.evaluateLogisticRegressionModel(DEV_X_RAW, DEV_IDENTIFIERS, dev_predicted_y)
-    print('Dev F1 score: ' + str(dev_f1_score))
-    # RESULTS.append(Result(n_words, n_chars, n_tags, ngram_max, dev_f1_score))
+        print('Generating dev set evaluations...')
+        if TO_CACHE is True:
+            cache = 'dev'
+        else:
+            cache = None
+        dev_predicted_y = np.array(predicted_ys)
+        dev_accuracy = helpers.accuracy(dev_predicted_y, DEV_Y)
+        print('Dev accuracy: ' + str(dev_accuracy))
+        dev_p, dev_r, dev_f1_score = helpers.evaluateLogisticRegressionModel(DEV_X_RAW, DEV_IDENTIFIERS, dev_predicted_y)
+        print('Dev F1 score: ' + str(dev_f1_score))
+        RESULTS.append(Result(n_words, n_chars, n_tags, ngram_max, dev_p, dev_r, dev_f1_score))
+
+print('Results sorted by F1 score on dev set...')
+RESULTS = sorted(RESULTS, key=lambda x: x.dev_f1, reverse=True)
+for result in RESULTS:
+    print(result)

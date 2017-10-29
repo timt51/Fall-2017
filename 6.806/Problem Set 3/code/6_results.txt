@@ -5,784 +5,1228 @@ Using model type 6
 Assuming dev set located at data/dev.tag
 ('Proportion of GENE in training set', 0.098571590982914306)
 ('Proportion of GENE in dev set', 0.13614463256484149)
-Training with n_words=0 n_chars=0 n_tags=1 ngram_max=1
+Training with n_words=2 n_chars=0 n_tags=1 ngram_max=3
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.968707366985
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.981671863834
 Highest Impact Features
-(u'e', 2.0067716506526434)
-(u'f', 1.8796731670628648)
-(u'"', 0.863322160619606)
-(u's', 0.582949148938258)
-(u'g', 0.5460834322946838)
-(u'o', 0.49005983637888)
-(u'z', 0.4058352848108261)
-(u'k', 0.38787802223703044)
-(u'n', 0.34565777069972586)
-(u'q', 0.33029981648235995)
+(u'Ina', 5.7471564235648565)
+(u'wol', 5.50598483395486)
+(u'xtu', 5.469825011593975)
+(u'LON', 4.543816832325872)
+(u'm I', 4.531695695397144)
+(u'v i', 3.8685890368410445)
+(u'vie', 3.7504792286373823)
+(u'ckc', 3.6601081522333248)
+(u'#', 3.4345571127140873)
+(u'dP ', 3.403144356455082)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.899765850144
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.921199567723
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.752019386106624 Recall: 0.36682427107959 F1: 0.493114406779661
-Dev F1 Score: 0.493114406779661
-Training with n_words=0 n_chars=0 n_tags=1 ngram_max=2
+Dev Results: Precision: 0.817302525523912 Recall: 0.599290780141844 F1: 0.691520800181859
+Dev F1 Score: 0.691520800181859
+('Loop time...', 145.42577195167542)
+Training with n_words=2 n_chars=0 n_tags=1 ngram_max=4
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.974188754629
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.98274377964
 Highest Impact Features
-(u'aj', 5.447431575430771)
-(u'c.', 4.235932240895945)
-(u'iQ', 3.8749552153518403)
-(u'g4', 3.864215483221732)
-(u'N.', 3.561414489893981)
-(u'us', 3.5419426510532994)
-(u'c7', 3.499996851201926)
-(u'Mc', 3.4310049430973595)
-(u'eL', 3.2648508374683622)
-(u'dG', 3.150500610327686)
+(u' ini', 5.65897234773411)
+(u'G to', 5.600756537421494)
+(u'Hsp6', 5.565050336357826)
+(u'ark', 4.927282328972218)
+(u' ome', 4.576343353705924)
+(u'2 P', 4.41555982709929)
+(u'Ser1', 4.155872725617592)
+(u'h 97', 4.011785355468828)
+(u'EP', 3.9565615071553295)
+(u'FI ', 3.8353441937002786)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.911563400576
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.923856268012
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.783081570996979 Recall: 0.51063829787234 F1: 0.618173145719056
-Dev F1 Score: 0.618173145719056
-Training with n_words=0 n_chars=0 n_tags=1 ngram_max=3
+Dev Results: Precision: 0.807712350182387 Recall: 0.610717100078802 F1: 0.695535113304913
+Dev F1 Score: 0.695535113304913
+('Loop time...', 95.82382893562317)
+Training with n_words=2 n_chars=0 n_tags=1 ngram_max=5
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.977599395829
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.983157928929
 Highest Impact Features
-(u'Ina', 6.094443629920928)
-(u'xtu', 5.6230601192768965)
-(u'wol', 5.573146855978887)
-(u'm I', 4.789733844765417)
-(u'LON', 4.586831559920096)
-(u'dP ', 4.055192076837157)
-(u'ckc', 4.016389004988495)
-(u'v i', 3.816747339542904)
-(u'vie', 3.785310580680303)
-(u'CMC', 3.6653472693254123)
+(u'463 ', 5.630172956366664)
+(u'881 c', 5.593770547374395)
+(u' ABO ', 5.5839128786499685)
+(u'PTB ', 4.961401163024783)
+(u' Anom', 4.527695225387375)
+(u' Perf', 4.300044802056507)
+(u'I R', 4.17995016072599)
+(u'b14 ', 4.065852812355635)
+(u'270 b', 3.9825672031420383)
+(u'3h00', 3.860054132880559)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.918025036023
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.924666786744
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.785870755750274 Recall: 0.565405831363278 F1: 0.657653528872594
-Dev F1 Score: 0.657653528872594
-Training with n_words=0 n_chars=0 n_tags=1 ngram_max=4
+Dev Results: Precision: 0.803405572755418 Recall: 0.613475177304965 F1: 0.695710455764075
+Dev F1 Score: 0.695710455764075
+('Loop time...', 97.02365207672119)
+Training with n_words=2 n_chars=0 n_tags=2 ngram_max=3
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.978740336517
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.982589488729
 Highest Impact Features
-(u' ini', 5.979874746886027)
-(u'Hsp6', 5.70635685007146)
-(u'G to', 5.655107579985188)
-(u'ark', 5.208829993964691)
-(u'2 P', 4.692105356614377)
-(u' ome', 4.625926909002968)
-(u'h 97', 4.2168977116304704)
-(u'Ser1', 4.115313073886307)
-(u'EP', 3.8951800111013863)
-(u'.64 ', 3.8903769043110814)
+(u'Ina', 5.897542336570756)
+(u'wol', 5.666828229769935)
+(u'xtu', 5.6665249341954445)
+(u'LON', 4.693840051977506)
+(u'm I', 4.605847650348969)
+(u'v i', 4.098583453915957)
+(u'vie', 3.7807550067928286)
+(u'ckc', 3.6704677985478975)
+(u'TFs', 3.4006715458195216)
+(u'#', 3.3505919297251356)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.919623559078
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.920208933718
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.778784648187633 Recall: 0.57565011820331 F1: 0.661984594472134
-Dev F1 Score: 0.661984594472134
-Training with n_words=0 n_chars=0 n_tags=1 ngram_max=5
+Dev Results: Precision: 0.798421052631579 Recall: 0.597714736012608 F1: 0.683641279855791
+Dev F1 Score: 0.683641279855791
+('Loop time...', 178.647127866745)
+Training with n_words=2 n_chars=0 n_tags=2 ngram_max=4
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.979113882934
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.98365328396
 Highest Impact Features
-(u' ABO ', 5.885953834491755)
-(u'881 c', 5.728571026336595)
-(u'463 ', 5.677731304165497)
-(u'PTB ', 5.236604519380726)
-(u' Anom', 4.582304084494199)
-(u' Perf', 4.574617170079417)
-(u'b14 ', 4.2730398390613935)
-(u'I R', 4.132857793452639)
-(u'270 b', 3.914978424347655)
-(u'3h00', 3.883393152708649)
+(u' ini', 5.824039265068861)
+(u'Hsp6', 5.777172780737477)
+(u'G to', 5.774784118562505)
+(u'ark', 5.027895122179146)
+(u' ome', 4.70943853877929)
+(u'2 P', 4.4862903373739575)
+(u'Ser1', 4.345013461677999)
+(u'EP', 4.200166277941259)
+(u'h 97', 4.072745027717962)
+(u'FI ', 3.8759929732977074)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.922527917867
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.791052364006101 Recall: 0.613081166272656 F1: 0.690788013318535
+Dev F1 Score: 0.690788013318535
+('Loop time...', 185.1333019733429)
+Training with n_words=2 n_chars=0 n_tags=2 ngram_max=5
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.984071493536
+Highest Impact Features
+(u'881 c', 5.8110973614805275)
+(u'463 ', 5.8095145487780115)
+(u' ABO ', 5.759001697481552)
+(u'PTB ', 5.060763735576518)
+(u' Anom', 4.654077380129176)
+(u'I R', 4.372761299185278)
+(u' Perf', 4.366660049614013)
+(u'270 b', 4.2311583656402485)
+(u'b14 ', 4.135263272953882)
+(u'3h00', 3.9047718380560466)
+Evaluating on dev set...
+Generating features for dev set...
+Generating dev set predictions...
+44416
+44416
+Generating dev set evaluations...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.922910662824
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.789818548387097 Recall: 0.617415287628054 F1: 0.693056169836356
+Dev F1 Score: 0.693056169836356
+('Loop time...', 188.9161069393158)
+Training with n_words=2 n_chars=0 n_tags=3 ngram_max=3
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.982613850452
+Highest Impact Features
+(u'Ina', 5.911244394173263)
+(u'wol', 5.700278083216678)
+(u'xtu', 5.687891277704626)
+(u'LON', 4.713506325541363)
+(u'm I', 4.590759084368986)
+(u'v i', 4.130517686915028)
+(u'vie', 3.8682765270642814)
+(u'ckc', 3.6425589966898393)
+(u'TFs', 3.3885822400250465)
+(u'#', 3.3538583180558743)
+Evaluating on dev set...
+Generating features for dev set...
+Generating dev set predictions...
+44416
+44416
+Generating dev set evaluations...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.917146974063
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.756208819057273 Recall: 0.587864460204886 F1: 0.661494125471071
+Dev F1 Score: 0.661494125471071
+('Loop time...', 371.7849950790405)
+Training with n_words=2 n_chars=0 n_tags=3 ngram_max=4
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.98362486195
+Highest Impact Features
+(u' ini', 5.840650480246527)
+(u'G to', 5.808521697126544)
+(u'Hsp6', 5.800289880394044)
+(u'ark', 5.025421297375749)
+(u' ome', 4.7316326316467565)
+(u'2 P', 4.469569932659555)
+(u'Ser1', 4.376516664937679)
+(u'EP', 4.2337610393673595)
+(u'h 97', 4.0902546794119345)
+(u'FI ', 3.9667719866036535)
+Evaluating on dev set...
+Generating features for dev set...
+Generating dev set predictions...
+44416
+44416
+Generating dev set evaluations...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.919713616715
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.748050682261209 Recall: 0.604806934594169 F1: 0.668845315904139
+Dev F1 Score: 0.668845315904139
+('Loop time...', 369.74688696861267)
+Training with n_words=2 n_chars=0 n_tags=3 ngram_max=5
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.984063372962
+Highest Impact Features
+(u'463 ', 5.845603696713876)
+(u'881 c', 5.835439415367432)
+(u' ABO ', 5.776424344075215)
+(u'PTB ', 5.054072785589358)
+(u' Anom', 4.677873175331683)
+(u'I R', 4.405652377016165)
+(u' Perf', 4.351436027989275)
+(u'270 b', 4.266368285604149)
+(u'b14 ', 4.153480516580584)
+(u'3h00', 3.9978435146224043)
+Evaluating on dev set...
+Generating features for dev set...
+Generating dev set predictions...
+44416
+44416
+Generating dev set evaluations...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.920479106628
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.749878581835843 Recall: 0.608353033884949 F1: 0.67174244072221
+Dev F1 Score: 0.67174244072221
+('Loop time...', 439.39724707603455)
+Training with n_words=2 n_chars=1 n_tags=1 ngram_max=3
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.984213603586
+Highest Impact Features
+(u'pig', 5.967140956250903)
+(u'piQ', 4.795382981297042)
+(u'Ina', 4.468315275295484)
+(u'm I', 4.107310546088865)
+(u'LON', 4.073817478270525)
+(u'409', 3.714071918338591)
+(u'Kk', 3.6779010226576063)
+(u'ckc', 3.630316127917578)
+(u' WP', 3.5661738285441564)
+(u' ur', 3.452103293291273)
+Evaluating on dev set...
+Generating features for dev set...
+Generating dev set predictions...
+44416
+44416
+Generating dev set evaluations...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.917732348703
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.808617795187465 Recall: 0.569345941686367 F1: 0.668208092485549
+Dev F1 Score: 0.668208092485549
+('Loop time...', 98.10131096839905)
+Training with n_words=2 n_chars=1 n_tags=1 ngram_max=4
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.988424121354
+Highest Impact Features
+(u'3e ', 6.011133370856402)
+(u'3A ', 4.876993607538841)
+(u'ma ', 4.115479318101383)
+(u' ini', 3.789707199261442)
+(u'2 P', 3.563949162392463)
+(u' ome', 3.2647593335535787)
+(u'G tr', 3.2227019121288607)
+(u'5S', 3.2209095200804985)
+(u'in', 2.9997894524407887)
+(u'Hsp7', 2.98271201687441)
+Evaluating on dev set...
+Generating features for dev set...
+Generating dev set predictions...
+44416
+44416
+Generating dev set evaluations...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.922640489914
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.824532453245325 Recall: 0.590622537431048 F1: 0.688246097337006
+Dev F1 Score: 0.688246097337006
+('Loop time...', 102.11927795410156)
+Training with n_words=2 n_chars=1 n_tags=1 ngram_max=5
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.990848112779
+Highest Impact Features
+(u' bacl', 6.0039976515562605)
+(u' X. ', 4.894579211175204)
+(u'e fig', 3.747309038473725)
+(u' ABO ', 3.7235438682203275)
+(u' Perf', 3.352276061937351)
+(u'463 ,', 3.2931681954760283)
+(u' own ', 3.19822715444654)
+(u' Anom', 3.0344809394273895)
+(u'881 f', 2.9921432166791573)
+(u' VAS ', 2.877494992107012)
+Evaluating on dev set...
+Generating features for dev set...
+Generating dev set predictions...
+44416
+44416
+Generating dev set evaluations...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.921627341499
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.806539509536785 Recall: 0.583136327817179 F1: 0.676880859821633
+Dev F1 Score: 0.676880859821633
+('Loop time...', 113.90697598457336)
+Training with n_words=2 n_chars=1 n_tags=2 ngram_max=3
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.98496069642
+Highest Impact Features
+(u'pig', 6.2225086167246415)
+(u'piQ', 4.829410393250187)
+(u'Ina', 4.43094962269396)
+(u'm I', 4.276813152457143)
+(u'LON', 4.229537106842201)
+(u'ckc', 3.686407686474085)
+(u'409', 3.6820513329104556)
+(u' WP', 3.5663224255927903)
+(u'Kk', 3.5050804778237423)
+(u' ur', 3.441985223184456)
+Evaluating on dev set...
+Generating features for dev set...
+Generating dev set predictions...
+44416
+44416
+Generating dev set evaluations...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.917462175793
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.800870511425463 Recall: 0.579984239558708 F1: 0.672760511882998
+Dev F1 Score: 0.672760511882998
+('Loop time...', 189.4798891544342)
+Training with n_words=2 n_chars=1 n_tags=2 ngram_max=4
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.988907295524
+Highest Impact Features
+(u'3e ', 6.270486376861492)
+(u'3A ', 4.901060277340087)
+(u'ma ', 4.09403098312904)
+(u' ini', 3.7371218855243113)
+(u'2 P', 3.733087189091469)
+(u' ome', 3.3566795867982773)
+(u'5S', 3.349019732672773)
+(u'G tr', 3.0812172157022366)
+(u'Y74', 3.041338434181948)
+(u'.64 ', 2.890002947892192)
+Evaluating on dev set...
+Generating features for dev set...
+Generating dev set predictions...
+44416
+44416
+Generating dev set evaluations...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
 Dev accuracy: 0.920389048991
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.777660695468915 Recall: 0.581560283687943 F1: 0.66546438232642
-Dev F1 Score: 0.66546438232642
-Training with n_words=0 n_chars=0 n_tags=2 ngram_max=1
+Dev Results: Precision: 0.794102159031069 Recall: 0.594168636721828 F1: 0.679738562091503
+Dev F1 Score: 0.679738562091503
+('Loop time...', 198.29490900039673)
+Training with n_words=2 n_chars=1 n_tags=2 ngram_max=5
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.969361073215
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.991168875463
 Highest Impact Features
-(u'e', 2.073789099117844)
-(u'f', 1.8395440462128951)
-(u'"', 0.88100067306318)
-(u'g', 0.5880344130507926)
-(u's', 0.5475463385067355)
-(u'o', 0.45775540215302385)
-(u'z', 0.38746916322489705)
-(u'k', 0.3712305028858188)
-(u'n', 0.31805120268592574)
-(u'x', 0.3056868478795521)
+(u' bacl', 6.278287948112512)
+(u' X. ', 4.933418884522737)
+(u'e fig', 3.6902232862059723)
+(u' ABO ', 3.679348903702649)
+(u' Perf', 3.5040629729145696)
+(u' own ', 3.3448704467213184)
+(u'463 ,', 3.160917915513346)
+(u' Anom', 3.1071945533609795)
+(u'Mean ', 3.0273168785206948)
+(u'AO ac', 2.8983290850507224)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.897987211816
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.920816822767
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.736502820306205 Recall: 0.360126083530339 F1: 0.48372585340037
-Dev F1 Score: 0.48372585340037
-Training with n_words=0 n_chars=0 n_tags=2 ngram_max=2
+Dev Results: Precision: 0.795778364116095 Recall: 0.594168636721828 F1: 0.680351906158358
+Dev F1 Score: 0.680351906158358
+('Loop time...', 211.32868814468384)
+Training with n_words=2 n_chars=1 n_tags=3 ngram_max=3
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.974805918275
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.985041902163
 Highest Impact Features
-(u'aj', 5.54132916750251)
-(u'c.', 4.131206605420294)
-(u'g4', 4.071712042296174)
-(u'iQ', 4.06639666610203)
-(u'us', 3.6720981070217094)
-(u'N.', 3.6521942014259237)
-(u'c7', 3.4828337109448357)
-(u'Mc', 3.4525102057402366)
-(u'dG', 3.2451838500839227)
-(u'eL', 3.180925363085938)
+(u'pig', 6.241548192220927)
+(u'piQ', 4.858293944208802)
+(u'Ina', 4.44059202345003)
+(u'm I', 4.247421157626462)
+(u'LON', 4.237922053934466)
+(u'409', 3.686990560528007)
+(u'ckc', 3.640659892005108)
+(u' WP', 3.55788225376086)
+(u'Kk', 3.4996143539690725)
+(u' ur', 3.4399381407427048)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.910212536023
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.916719200288
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.762529832935561 Recall: 0.50354609929078 F1: 0.606549596582819
-Dev F1 Score: 0.606549596582819
-Training with n_words=0 n_chars=0 n_tags=2 ngram_max=3
+Dev Results: Precision: 0.762027935851009 Recall: 0.580378250591017 F1: 0.658912994855737
+Dev F1 Score: 0.658912994855737
+('Loop time...', 361.7249159812927)
+Training with n_words=2 n_chars=1 n_tags=3 ngram_max=4
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.978082569999
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.98895601897
 Highest Impact Features
-(u'Ina', 6.328003072284186)
-(u'xtu', 5.900792881188989)
-(u'wol', 5.739965751100466)
-(u'm I', 4.948299911101831)
-(u'LON', 4.806005631316139)
-(u'v i', 4.135448118668633)
-(u'ckc', 4.0888154455928865)
-(u'dP ', 3.912840641433128)
-(u'vie', 3.7652977465457225)
-(u'TFs', 3.6659589817019254)
+(u'3e ', 6.294481504131928)
+(u'3A ', 4.933205436176925)
+(u'ma ', 4.079911980243982)
+(u' ini', 3.752657554428614)
+(u'2 P', 3.7050826226746434)
+(u' ome', 3.366044344861791)
+(u'5S', 3.3641769896848452)
+(u'G tr', 3.1024502827885914)
+(u'Y74', 3.0272200338074087)
+(u'L1 (', 2.8754837094202053)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.91667417147
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.918880583573
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.762720942688806 Recall: 0.56107171000788 F1: 0.646538024971623
-Dev F1 Score: 0.646538024971623
-Training with n_words=0 n_chars=0 n_tags=2 ngram_max=4
+Dev Results: Precision: 0.759878419452888 Recall: 0.591016548463357 F1: 0.664893617021277
+Dev F1 Score: 0.664893617021277
+('Loop time...', 337.4290611743927)
+Training with n_words=2 n_chars=1 n_tags=3 ngram_max=5
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.979296595855
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.991140453453
 Highest Impact Features
-(u' ini', 6.22266524339805)
-(u'Hsp6', 6.000387105808077)
-(u'G to', 5.83585887599647)
-(u'ark', 5.440716882464829)
-(u'2 P', 4.8434719994610616)
-(u' ome', 4.8256903057373)
-(u'Ser1', 4.363338681684013)
-(u'h 97', 4.3019454919638775)
-(u'EP', 4.2291930396404025)
-(u'.64 ', 3.965844833143602)
+(u' bacl', 6.304886803452484)
+(u' X. ', 4.968707802446238)
+(u' ABO ', 3.6957439177174587)
+(u'e fig', 3.6803335395975005)
+(u' Perf', 3.47661419541314)
+(u' own ', 3.361098750753898)
+(u'463 ,', 3.186081465654358)
+(u' Anom', 3.1184868324420734)
+(u'Mean ', 3.01223815035878)
+(u'AO ac', 2.9386097026712723)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.918835554755
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.919601044669
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.758494511238892 Recall: 0.571710007880221 F1: 0.651988317232083
-Dev F1 Score: 0.651988317232083
-Training with n_words=0 n_chars=0 n_tags=2 ngram_max=5
+Dev Results: Precision: 0.763775510204082 Recall: 0.58983451536643 F1: 0.665629168519342
+Dev F1 Score: 0.665629168519342
+('Loop time...', 383.8884720802307)
+Training with n_words=3 n_chars=0 n_tags=1 ngram_max=3
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.979682323134
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.983279737543
 Highest Impact Features
-(u' ABO ', 6.1352739033932995)
-(u'881 c', 6.029571429713462)
-(u'463 ', 5.863989737746415)
-(u'PTB ', 5.4721776608039905)
-(u' Anom', 4.773835392539745)
-(u' Perf', 4.725572546211925)
-(u'I R', 4.38609854734482)
-(u'b14 ', 4.366737369447594)
-(u'270 b', 4.256127161286597)
-(u' JRE', 3.8814915142028323)
+(u'Ina', 5.82648860538614)
+(u'wol', 5.57761624801618)
+(u'xtu', 5.516372469007716)
+(u'm I', 4.577237450900058)
+(u'LON', 4.559218397902255)
+(u'v i', 3.9758662296758773)
+(u'vie', 3.8684593722681555)
+(u'ckc', 3.61499802761872)
+(u'#', 3.4150245602210396)
+(u'CMC', 3.341399412868639)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.919893731988
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.921875
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.7573264781491 Recall: 0.580378250591017 F1: 0.657149230426054
-Dev F1 Score: 0.657149230426054
-Training with n_words=0 n_chars=0 n_tags=3 ngram_max=1
+Dev Results: Precision: 0.811501597444089 Recall: 0.600472813238771 F1: 0.690217391304348
+Dev F1 Score: 0.690217391304348
+('Loop time...', 120.636146068573)
+Training with n_words=3 n_chars=0 n_tags=1 ngram_max=4
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.969292048334
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.984347593062
 Highest Impact Features
-(u'e', 2.0564504849835523)
-(u'f', 1.8363727070664762)
-(u'"', 0.8825655837186384)
-(u'g', 0.5939937362042633)
-(u's', 0.5447905553379608)
-(u'o', 0.45689327177294536)
-(u'z', 0.38625598871947986)
-(u'k', 0.36606484201506306)
-(u'n', 0.31696606737528216)
-(u'x', 0.3043133307181755)
+(u' ini', 5.746496990529971)
+(u'G to', 5.674142637447952)
+(u'Hsp6', 5.611175538522224)
+(u'ark', 4.846714988238195)
+(u' ome', 4.585073710009676)
+(u'2 P', 4.450758331612811)
+(u'Ser1', 4.112415929016031)
+(u'EP', 4.066666696370429)
+(u'FI ', 3.9541092564851925)
+(u'h 97', 3.9280173903465405)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.896771433718
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.924396613833
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.691785983421251 Recall: 0.361702127659574 F1: 0.47503234152652
-Dev F1 Score: 0.47503234152652
-Training with n_words=0 n_chars=0 n_tags=3 ngram_max=2
+Dev Results: Precision: 0.80987012987013 Recall: 0.614263199369582 F1: 0.698633206363433
+Dev F1 Score: 0.698633206363433
+('Loop time...', 140.4334750175476)
+Training with n_words=3 n_chars=0 n_tags=1 ngram_max=5
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.974818099136
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.984729260053
 Highest Impact Features
-(u'aj', 5.536611061495088)
-(u'c.', 4.129887791352882)
-(u'g4', 4.069342765425182)
-(u'iQ', 4.065490207373583)
-(u'us', 3.6701444849688287)
-(u'N.', 3.6430780997217567)
-(u'c7', 3.484101031673947)
-(u'Mc', 3.4568614393591703)
-(u'dG', 3.2405222503640974)
-(u'lf', 3.175140823918284)
+(u'463 ', 5.704912470792753)
+(u' ABO ', 5.677376334434695)
+(u'881 c', 5.640814035609174)
+(u'PTB ', 4.880846763238803)
+(u' Anom', 4.537724756332417)
+(u' Perf', 4.334672130778944)
+(u'I R', 4.139597427692422)
+(u'270 b', 4.093835423168131)
+(u'b14 ', 3.980900828561278)
+(u'3h00', 3.978121513169736)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.908546469741
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.924981988473
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.717268623024831 Recall: 0.500788022064618 F1: 0.589791183294664
-Dev F1 Score: 0.589791183294664
-Training with n_words=0 n_chars=0 n_tags=3 ngram_max=3
+Dev Results: Precision: 0.807950438822922 Recall: 0.616627265563436 F1: 0.699441340782123
+Dev F1 Score: 0.699441340782123
+('Loop time...', 152.4566740989685)
+Training with n_words=3 n_chars=0 n_tags=2 ngram_max=3
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.978123172871
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.984225784447
 Highest Impact Features
-(u'Ina', 6.34078269155383)
-(u'xtu', 5.918220312761555)
-(u'wol', 5.76583457153245)
-(u'm I', 4.937473053521297)
-(u'LON', 4.81565211630015)
-(u'v i', 4.165362239350175)
-(u'ckc', 4.066654866474886)
-(u'dP ', 3.910907843110791)
-(u'vie', 3.8374837226210374)
-(u'TFs', 3.6628777183460426)
+(u'Ina', 5.9763531941925585)
+(u'wol', 5.722731021998831)
+(u'xtu', 5.70328483002645)
+(u'LON', 4.696496299866589)
+(u'm I', 4.623398938497053)
+(u'v i', 4.211529353306287)
+(u'vie', 3.856269624444512)
+(u'ckc', 3.6139273738646773)
+(u'TFs', 3.371275331230633)
+(u'#', 3.333337918622514)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.915098162824
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.920884365994
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.724652599073598 Recall: 0.554767533490938 F1: 0.628431153760321
-Dev F1 Score: 0.628431153760321
-Training with n_words=0 n_chars=0 n_tags=3 ngram_max=4
+Dev Results: Precision: 0.794832041343669 Recall: 0.605988967691095 F1: 0.687681645428124
+Dev F1 Score: 0.687681645428124
+('Loop time...', 274.606516122818)
+Training with n_words=3 n_chars=0 n_tags=2 ngram_max=4
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.979320957578
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.985269278243
 Highest Impact Features
-(u' ini', 6.234086930854626)
-(u'Hsp6', 6.017351288203698)
-(u'G to', 5.860720628964668)
-(u'ark', 5.442606780167887)
-(u' ome', 4.8350282759978604)
-(u'2 P', 4.832694757815524)
-(u'Ser1', 4.3922366395474715)
-(u'h 97', 4.314687477970655)
-(u'EP', 4.259381562386321)
-(u'.64 ', 3.9457315259635273)
+(u' ini', 5.913477125188574)
+(u'G to', 5.8318203539920335)
+(u'Hsp6', 5.814274671899584)
+(u'ark', 4.93039138107907)
+(u' ome', 4.7076247178908)
+(u'2 P', 4.493541503366557)
+(u'EP', 4.315699784317059)
+(u'Ser1', 4.295329535738537)
+(u'h 97', 3.9723378451489806)
+(u'FI ', 3.9538693577845603)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.91782240634
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.923135806916
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.722083124687031 Recall: 0.568163908589441 F1: 0.635942668136715
-Dev F1 Score: 0.635942668136715
-Training with n_words=0 n_chars=0 n_tags=3 ngram_max=5
+Dev Results: Precision: 0.788568538189175 Recall: 0.614263199369582 F1: 0.690586932447398
+Dev F1 Score: 0.690586932447398
+('Loop time...', 231.50009202957153)
+Training with n_words=3 n_chars=0 n_tags=2 ngram_max=5
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.979726986292
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.985679367245
 Highest Impact Features
-(u' ABO ', 6.14719985981944)
-(u'881 c', 6.047425701034226)
-(u'463 ', 5.89075768880801)
-(u'PTB ', 5.476228724916249)
-(u' Anom', 4.7834094877181235)
-(u' Perf', 4.7141213480188195)
-(u'I R', 4.41621312340615)
-(u'b14 ', 4.378383577956578)
-(u'270 b', 4.287077432059936)
-(u'3h00', 3.9489566282204773)
+(u'463 ', 5.870230596432185)
+(u' ABO ', 5.852639767223056)
+(u'881 c', 5.851420687217604)
+(u'PTB ', 4.968355432075887)
+(u' Anom', 4.655961443399286)
+(u' Perf', 4.376110725207397)
+(u'270 b', 4.349633665906136)
+(u'I R', 4.326480353102132)
+(u'b14 ', 4.035598039432856)
+(u'3h00', 3.9837309063526667)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.918632925072
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.923743695965
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.72106824925816 Recall: 0.574468085106383 F1: 0.639473684210526
-Dev F1 Score: 0.639473684210526
-Training with n_words=0 n_chars=1 n_tags=1 ngram_max=1
+Dev Results: Precision: 0.785177766649975 Recall: 0.617809298660362 F1: 0.691510474090408
+Dev F1 Score: 0.691510474090408
+('Loop time...', 215.51044487953186)
+Training with n_words=3 n_chars=0 n_tags=3 ngram_max=3
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.959717891249
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.98427856818
 Highest Impact Features
-(u'f', 1.4729636575927376)
-(u'e', 1.3320067268457727)
-(u'u', 0.6226665135580259)
-(u'"', 0.43530567128590303)
-(u's', 0.3902226437217895)
-(u'g', 0.25952734338072686)
-(u'>', 0.2160432368485267)
-(u'<', 0.2093558839643423)
-(u'r', 0.19883270426823868)
-(u'x', 0.16392568057219206)
+(u'Ina', 5.995286086398467)
+(u'wol', 5.75928981222745)
+(u'xtu', 5.727252606404423)
+(u'LON', 4.719729198572261)
+(u'm I', 4.593477727109541)
+(u'v i', 4.248676248156306)
+(u'vie', 3.9567099714533978)
+(u'ckc', 3.581079524096484)
+(u'TFs', 3.3563687195985836)
+(u'#', 3.33844686584528)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.891367975504
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.918497838617
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.692893401015228 Recall: 0.215130023640662 F1: 0.328322309079976
-Dev F1 Score: 0.328322309079976
-Training with n_words=0 n_chars=1 n_tags=1 ngram_max=2
+Dev Results: Precision: 0.754887218045113 Recall: 0.59338061465721 F1: 0.664460622104566
+Dev F1 Score: 0.664460622104566
+('Loop time...', 443.2304949760437)
+Training with n_words=3 n_chars=0 n_tags=3 ngram_max=4
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.973157441694
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.985253037095
 Highest Impact Features
-(u'aj', 5.272142517676601)
-(u'Mc', 5.076379413419365)
-(u'N.', 4.329688384477103)
-(u'T', 4.289274568334081)
-(u'c.', 4.072545157116797)
-(u'g4', 3.9276341233457477)
-(u'UO', 3.8601710750105047)
-(u'us', 3.779896213614699)
-(u'dG', 3.536127551633247)
-(u'iQ', 3.416011612501608)
+(u' ini', 5.934980637022704)
+(u'G to', 5.8705745655869395)
+(u'Hsp6', 5.840511813020752)
+(u'ark', 4.92302127021507)
+(u' ome', 4.73300080906834)
+(u'2 P', 4.4653391651943455)
+(u'EP', 4.3550703912080975)
+(u'Ser1', 4.3418344799181705)
+(u'FI ', 4.057124524264548)
+(u'h 97', 3.996156778553756)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.908298811239
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.920524135447
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.775700934579439 Recall: 0.457840819542947 F1: 0.57581764122894
-Dev F1 Score: 0.57581764122894
-Training with n_words=0 n_chars=1 n_tags=1 ngram_max=3
+Dev Results: Precision: 0.75 Recall: 0.607565011820331 F1: 0.671310404875925
+Dev F1 Score: 0.671310404875925
+('Loop time...', 473.7825791835785)
+Training with n_words=3 n_chars=0 n_tags=3 ngram_max=5
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.980924771
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.985642824661
 Highest Impact Features
-(u'pig', 5.892080921357335)
-(u'KPE', 5.260084505831482)
-(u'Ina', 5.070192467424934)
-(u'lhe', 4.9667623497914315)
-(u'Kk', 4.826814691600959)
-(u'piQ', 4.743920530912744)
-(u'409', 4.739356998675729)
-(u'ckc', 4.727810821054878)
-(u'm I', 4.233286808350739)
-(u'LON', 4.224308550390328)
+(u'463 ', 5.908938709140454)
+(u'881 c', 5.876824553313181)
+(u' ABO ', 5.875274287224702)
+(u'PTB ', 4.951981438610066)
+(u' Anom', 4.681352549302465)
+(u'270 b', 4.389030385433825)
+(u'I R', 4.373775973288435)
+(u' Perf', 4.347789121018559)
+(u'3h00', 4.0878576253931485)
+(u'b14 ', 4.057674939632987)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.917980007205
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.920974423631
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.814456459874787 Recall: 0.563829787234043 F1: 0.666356228172293
-Dev F1 Score: 0.666356228172293
-Training with n_words=0 n_chars=1 n_tags=1 ngram_max=4
+Dev Results: Precision: 0.745287578540358 Recall: 0.607565011820331 F1: 0.669416105925765
+Dev F1 Score: 0.669416105925765
+('Loop time...', 494.3834900856018)
+Training with n_words=3 n_chars=1 n_tags=1 ngram_max=3
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.986333073475
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.985772753849
 Highest Impact Features
-(u'3e ', 5.935797169426451)
-(u'3A ', 4.840842182359205)
-(u' ini', 4.192181704766047)
-(u'ma ', 4.179031499580459)
-(u'n /', 3.7887900692237877)
-(u'2 P', 3.6809280266338176)
-(u'.64 ', 3.343573812983402)
-(u' ome', 3.310220546775433)
-(u' mel', 3.1942117534561745)
-(u'5S', 3.1524536273851713)
+(u'pig', 6.007464442893023)
+(u'piQ', 4.848740273266796)
+(u'Ina', 4.520333891887634)
+(u'm I', 4.117969363640486)
+(u'LON', 4.112201853942316)
+(u'Kk', 3.659236690945538)
+(u'409', 3.6237528853210876)
+(u'ckc', 3.60493792197831)
+(u' ur', 3.5138237950391016)
+(u' WP', 3.4720650329544167)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.922010086455
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.919375900576
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.819436775262286 Recall: 0.584712371946414 F1: 0.682455736951023
-Dev F1 Score: 0.682455736951023
-Training with n_words=0 n_chars=1 n_tags=1 ngram_max=5
+Dev Results: Precision: 0.806855277475517 Recall: 0.584318360914106 F1: 0.677787934186472
+Dev F1 Score: 0.677787934186472
+('Loop time...', 138.4424650669098)
+Training with n_words=3 n_chars=1 n_tags=1 ngram_max=4
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.989370168258
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.989800558696
 Highest Impact Features
-(u' bacl', 5.949926872126909)
-(u' X. ', 4.866844127781982)
-(u' ABO ', 4.066355716279715)
-(u'e fig', 3.843533540362171)
-(u' Perf', 3.4611087131439757)
-(u'463 ,', 3.205380077092745)
-(u' own ', 3.1450736608614034)
-(u' Anom', 3.0760070679126574)
-(u' JRE', 3.0292793006209413)
-(u'881 f', 2.9348880587487036)
+(u'3e ', 6.049420806340676)
+(u'3A ', 4.930793192166217)
+(u'ma ', 4.104691185069385)
+(u' ini', 3.8303154372249395)
+(u'2 P', 3.5908907190954644)
+(u' ome', 3.2881454917090074)
+(u'G tr', 3.2457207739764833)
+(u'5S', 3.1971571588793077)
+(u'in', 2.9896946601835985)
+(u'36B', 2.9212708963743093)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.922010086455
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.922325288184
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.807480748074808 Recall: 0.578408195429472 F1: 0.674012855831038
-Dev F1 Score: 0.674012855831038
-Training with n_words=0 n_chars=1 n_tags=2 ngram_max=1
+Dev Results: Precision: 0.808886509635974 Recall: 0.595350669818755 F1: 0.68588288697231
+Dev F1 Score: 0.68588288697231
+('Loop time...', 125.97333288192749)
+Training with n_words=3 n_chars=1 n_tags=1 ngram_max=5
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.960298512311
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.992106801793
 Highest Impact Features
-(u'e', 1.5125049709165348)
-(u'f', 1.4359265814808764)
-(u'u', 0.5425080838312489)
-(u'"', 0.5409141128962787)
-(u's', 0.383223625332919)
-(u'g', 0.25993001424882867)
-(u'<', 0.1876514311048638)
-(u'k', 0.1592773256114111)
-(u'r', 0.15850669423420305)
-(u'x', 0.14212226027055871)
+(u' bacl', 6.04300910155692)
+(u' X. ', 4.947376679416846)
+(u' ABO ', 3.754159819633967)
+(u'e fig', 3.729959601301898)
+(u' Perf', 3.4014672685423815)
+(u'463 ,', 3.3170616003120394)
+(u' own ', 3.1753925908339777)
+(u' Anom', 3.0513687379321106)
+(u' VAS ', 2.972132963279379)
+(u'881 f', 2.9281321524440083)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.889341678674
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.921267110951
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.673027989821883 Recall: 0.208431836091411 F1: 0.318291215403129
-Dev F1 Score: 0.318291215403129
-Training with n_words=0 n_chars=1 n_tags=2 ngram_max=2
+Dev Results: Precision: 0.802801724137931 Recall: 0.587076438140268 F1: 0.678197542102868
+Dev F1 Score: 0.678197542102868
+('Loop time...', 130.5698699951172)
+Training with n_words=3 n_chars=1 n_tags=2 ngram_max=3
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.974103488599
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.986426460079
 Highest Impact Features
-(u'aj', 5.534828942571079)
-(u'Mc', 5.106717612034245)
-(u'N.', 4.442694663147741)
-(u'T', 4.308155785032456)
-(u'g4', 4.215277615937366)
-(u'c.', 3.998560221457769)
-(u'UO', 3.9979206730273407)
-(u'us', 3.9837115304699786)
-(u'iQ', 3.576501663368408)
-(u'dG', 3.5712314847743736)
+(u'pig', 6.250410775677826)
+(u'piQ', 4.875329593078724)
+(u'Ina', 4.466926712126258)
+(u'm I', 4.25944277436133)
+(u'LON', 4.2493509677938315)
+(u'ckc', 3.6429248857153973)
+(u'409', 3.5879766078721653)
+(u' ur', 3.5044102159687314)
+(u'Kk', 3.4952057399925756)
+(u' WP', 3.478534239328923)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.90739823487
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.919150756484
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.773963730569948 Recall: 0.470843183609141 F1: 0.585497305242528
-Dev F1 Score: 0.585497305242528
-Training with n_words=0 n_chars=1 n_tags=2 ngram_max=3
+Dev Results: Precision: 0.790832455216017 Recall: 0.591410559495666 F1: 0.676735798016231
+Dev F1 Score: 0.676735798016231
+('Loop time...', 239.37223291397095)
+Training with n_words=3 n_chars=1 n_tags=2 ngram_max=4
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.98191954135
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.9901781654
 Highest Impact Features
-(u'pig', 6.241119514517801)
-(u'lhe', 4.989957032422515)
-(u'Ina', 4.948796300223717)
-(u'ckc', 4.834832011155666)
-(u'KPE', 4.822058899193502)
-(u'piQ', 4.7764416910547896)
-(u'409', 4.641063442706471)
-(u'Kk', 4.512280025223612)
-(u'm I', 4.431399189047775)
-(u'LON', 4.392239603924367)
+(u'3e ', 6.29123370002225)
+(u'3A ', 4.944926748599978)
+(u'ma ', 4.064994538296843)
+(u' ini', 3.7597309973032877)
+(u'2 P', 3.7329560950937206)
+(u' ome', 3.3687522152303657)
+(u'5S', 3.335920712017341)
+(u'G tr', 3.0912592654964026)
+(u'Y74', 2.9854174428018276)
+(u'35,', 2.8715789576463173)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.917574747839
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.921222082133
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.799778761061947 Recall: 0.569739952718676 F1: 0.665439484583525
-Dev F1 Score: 0.665439484583525
-Training with n_words=0 n_chars=1 n_tags=2 ngram_max=4
+Dev Results: Precision: 0.789364997418689 Recall: 0.602442868400315 F1: 0.683351955307263
+Dev F1 Score: 0.683351955307263
+('Loop time...', 252.50004601478577)
+Training with n_words=3 n_chars=1 n_tags=2 ngram_max=5
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.987076106022
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.992431624765
 Highest Impact Features
-(u'3e ', 6.281158201871976)
-(u'3A ', 4.851170714843302)
-(u'ma ', 4.217331553533543)
-(u' ini', 4.057006237402331)
-(u'2 P', 3.8707846727809296)
-(u' ome', 3.41020032806391)
-(u'n /', 3.3832288550407204)
-(u'.64 ', 3.3698501719392877)
-(u'5S', 3.2913919868225285)
-(u'Y74', 3.0885361904259447)
+(u' bacl', 6.297903739064929)
+(u' X. ', 4.973530845741438)
+(u' ABO ', 3.6939948949480033)
+(u'e fig', 3.6622195737190255)
+(u' Perf', 3.5251295492244843)
+(u' own ', 3.3278647465172337)
+(u'463 ,', 3.1702694876688584)
+(u' Anom', 3.1181080575250593)
+(u'Mean ', 2.9585671186049898)
+(u' TCD', 2.930849164349533)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.919218299712
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.921086995677
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.78927813163482 Recall: 0.585894405043341 F1: 0.672546359113523
-Dev F1 Score: 0.672546359113523
-Training with n_words=0 n_chars=1 n_tags=2 ngram_max=5
+Dev Results: Precision: 0.795800524934383 Recall: 0.597320724980299 F1: 0.682421787080801
+Dev F1 Score: 0.682421787080801
+('Loop time...', 258.57157802581787)
+Training with n_words=3 n_chars=1 n_tags=3 ngram_max=3
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.989869583577
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.986532027545
 Highest Impact Features
-(u' bacl', 6.307395060873011)
-(u' X. ', 4.887527241240433)
-(u' ABO ', 3.947182902619206)
-(u'e fig', 3.8078986835658424)
-(u' Perf', 3.61990089030044)
-(u' own ', 3.300624291307929)
-(u' Anom', 3.147493140050812)
-(u'Mean ', 3.0910415578421353)
-(u' JRE', 3.04236606685163)
-(u'463 ,', 2.9622182290057215)
+(u'pig', 6.271013323778926)
+(u'piQ', 4.905452201596657)
+(u'Ina', 4.4846859412347575)
+(u'LON', 4.253335017148394)
+(u'm I', 4.219780411290976)
+(u'ckc', 3.595140110604192)
+(u'409', 3.5940658125872598)
+(u' ur', 3.5048122537135495)
+(u'Kk', 3.4872167728303025)
+(u' WP', 3.4702355723727303)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.918385266571
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.917439661383
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.788104089219331 Recall: 0.584712371946414 F1: 0.67134132549197
-Dev F1 Score: 0.67134132549197
-Training with n_words=0 n_chars=1 n_tags=3 ngram_max=1
+Dev Results: Precision: 0.756619144602851 Recall: 0.585500394011032 F1: 0.660151043980453
+Dev F1 Score: 0.660151043980453
+('Loop time...', 461.1606888771057)
+Training with n_words=3 n_chars=1 n_tags=3 ngram_max=4
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.960294452024
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.990275612291
 Highest Impact Features
-(u'e', 1.507859729912778)
-(u'f', 1.435184330811434)
-(u'u', 0.5441154648562189)
-(u'"', 0.5401752719448757)
-(u's', 0.38242094493800294)
-(u'g', 0.25734985068919547)
-(u'<', 0.18826297967350597)
-(u'k', 0.15970803211598356)
-(u'r', 0.15874513102966373)
-(u'x', 0.1415950442551219)
+(u'3e ', 6.315569890913812)
+(u'3A ', 4.976718451572113)
+(u'ma ', 4.047435114354023)
+(u' ini', 3.7773223917831174)
+(u'2 P', 3.697738264791661)
+(u' ome', 3.37491963480067)
+(u'5S', 3.350277912333821)
+(u'G tr', 3.115402331027609)
+(u'Y74', 2.9697227285476746)
+(u'36B', 2.8999530221511236)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.889071505764
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.91955601585
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.632183908045977 Recall: 0.216706067769898 F1: 0.322769953051643
-Dev F1 Score: 0.322769953051643
-Training with n_words=0 n_chars=1 n_tags=3 ngram_max=2
+Dev Results: Precision: 0.758861707438842 Recall: 0.598896769109535 F1: 0.669456066945607
+Dev F1 Score: 0.669456066945607
+('Loop time...', 481.7630741596222)
+Training with n_words=3 n_chars=1 n_tags=3 ngram_max=5
 Generating feature vectors for training set...
 Training...
-Train accuracy: 0.97411566946
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.99250877022
 Highest Impact Features
-(u'aj', 5.535416822635213)
-(u'Mc', 5.10771494597469)
-(u'N.', 4.418704564119353)
-(u'T', 4.305170444374293)
-(u'g4', 4.2129240725965955)
-(u'c.', 3.9978551848649966)
-(u'UO', 3.9792141105991305)
-(u'us', 3.974657625889521)
-(u'iQ', 3.5625299145584575)
-(u'dG', 3.5469424116691717)
+(u' bacl', 6.324537304752543)
+(u' X. ', 5.008879340002445)
+(u' ABO ', 3.712812933922372)
+(u'e fig', 3.650515393498264)
+(u' Perf', 3.4919991113069346)
+(u' own ', 3.345036913415452)
+(u'463 ,', 3.196926760125137)
+(u' Anom', 3.1251080640689497)
+(u' VAS ', 2.974626603253229)
+(u' TCD', 2.9532261290236304)
 Evaluating on dev set...
 Generating features for dev set...
 Generating dev set predictions...
 44416
 44416
 Generating dev set evaluations...
-Dev accuracy: 0.905822226225
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.919308357349
 Writing output to file...
 Evaluating with provided perl scripts...
-Dev Results: Precision: 0.733996270975761 Recall: 0.465327029156816 F1: 0.569568362671811
-Dev F1 Score: 0.569568362671811
-Training with n_words=0 n_chars=1 n_tags=3 ngram_max=3
-Generating feature vectors for training set...
-Training...
-Train accuracy: 0.981878938479
-Highest Impact Features
-(u'pig', 6.25902351150038)
-(u'lhe', 5.014390009255571)
-(u'Ina', 4.957552680673764)
-(u'piQ', 4.80044162452579)
-(u'KPE', 4.800244555502874)
-(u'ckc', 4.794626593052241)
-(u'409', 4.6528653142742105)
-(u'Kk', 4.494911578747323)
-(u'm I', 4.406000879291493)
-(u'LON', 4.387071190857619)
-Evaluating on dev set...
-Generating features for dev set...
-Generating dev set predictions...
-44416
-44416
-Generating dev set evaluations...
-Dev accuracy: 0.915098162824
-Writing output to file...
-Evaluating with provided perl scripts...
-Dev Results: Precision: 0.756498673740053 Recall: 0.561859732072498 F1: 0.644811214108072
-Dev F1 Score: 0.644811214108072
-Training with n_words=0 n_chars=1 n_tags=3 ngram_max=4
-Generating feature vectors for training set...
-Training...
-Train accuracy: 0.987145130904
-Highest Impact Features
-(u'3e ', 6.304776755219279)
-(u'3A ', 4.878148802014693)
-(u'ma ', 4.207807381010293)
-(u' ini', 4.067140840511983)
-(u'2 P', 3.8461792767652963)
-(u' ome', 3.4119891037844465)
-(u'n /', 3.3621333005588636)
-(u'.64 ', 3.3458576626532723)
-(u'5S', 3.299725007831562)
-(u'Y74', 3.0911202188155538)
-Evaluating on dev set...
-Generating features for dev set...
-Generating dev set predictions...
-44416
-44416
-Generating dev set evaluations...
-Dev accuracy: 0.917889949568
-Writing output to file...
-Evaluating with provided perl scripts...
-Dev Results: Precision: 0.752786220871327 Recall: 0.585500394011032 F1: 0.658687943262411
-Dev F1 Score: 0.658687943262411
-Training with n_words=0 n_chars=1 n_tags=3 ngram_max=5
-Generating feature vectors for training set...
-Training...
-Train accuracy: 0.989902065874
-Highest Impact Features
-(u' bacl', 6.332672319111732)
-(u' X. ', 4.9154158793498)
-(u' ABO ', 3.9578866598926483)
-(u'e fig', 3.801260339507894)
-(u' Perf', 3.5952257886644903)
-(u' own ', 3.309823004188011)
-(u' Anom', 3.1508654368468867)
-(u'Mean ', 3.0930806271337272)
-(u' JRE', 3.0221878548289367)
-(u'463 ,', 2.975133605863613)
-Evaluating on dev set...
-Generating features for dev set...
-Generating dev set predictions...
-44416
-44416
-Generating dev set evaluations...
-Dev accuracy: 0.916629142651
-Writing output to file...
-Evaluating with provided perl scripts...
-Dev Results: Precision: 0.756535110199897 Recall: 0.581560283687943 F1: 0.657607484963244
-Dev F1 Score: 0.657607484963244
-Training with n_words=0 n_chars=2 n_tags=
+Dev Results: Precision: 0.756390977443609 Recall: 0.594562647754137 F1: 0.665784248841827
+Dev F1 Score: 0.665784248841827
+('Loop time...', 474.38467812538147)
+Results sorted by F1 score on dev set...
+Result(n_words=3, n_chars=0, n_tags=1, ngram_max=5, dev_p=u'0.807950438822922', dev_r=u'0.616627265563436', dev_f1=u'0.699441340782123')
+Result(n_words=3, n_chars=0, n_tags=1, ngram_max=4, dev_p=u'0.80987012987013', dev_r=u'0.614263199369582', dev_f1=u'0.698633206363433')
+Result(n_words=2, n_chars=0, n_tags=1, ngram_max=5, dev_p=u'0.803405572755418', dev_r=u'0.613475177304965', dev_f1=u'0.695710455764075')
+Result(n_words=2, n_chars=0, n_tags=1, ngram_max=4, dev_p=u'0.807712350182387', dev_r=u'0.610717100078802', dev_f1=u'0.695535113304913')
+Result(n_words=2, n_chars=0, n_tags=2, ngram_max=5, dev_p=u'0.789818548387097', dev_r=u'0.617415287628054', dev_f1=u'0.693056169836356')
+Result(n_words=2, n_chars=0, n_tags=1, ngram_max=3, dev_p=u'0.817302525523912', dev_r=u'0.599290780141844', dev_f1=u'0.691520800181859')
+Result(n_words=3, n_chars=0, n_tags=2, ngram_max=5, dev_p=u'0.785177766649975', dev_r=u'0.617809298660362', dev_f1=u'0.691510474090408')
+Result(n_words=2, n_chars=0, n_tags=2, ngram_max=4, dev_p=u'0.791052364006101', dev_r=u'0.613081166272656', dev_f1=u'0.690788013318535')
+Result(n_words=3, n_chars=0, n_tags=2, ngram_max=4, dev_p=u'0.788568538189175', dev_r=u'0.614263199369582', dev_f1=u'0.690586932447398')
+Result(n_words=3, n_chars=0, n_tags=1, ngram_max=3, dev_p=u'0.811501597444089', dev_r=u'0.600472813238771', dev_f1=u'0.690217391304348')
+Result(n_words=2, n_chars=1, n_tags=1, ngram_max=4, dev_p=u'0.824532453245325', dev_r=u'0.590622537431048', dev_f1=u'0.688246097337006')
+Result(n_words=3, n_chars=0, n_tags=2, ngram_max=3, dev_p=u'0.794832041343669', dev_r=u'0.605988967691095', dev_f1=u'0.687681645428124')
+Result(n_words=3, n_chars=1, n_tags=1, ngram_max=4, dev_p=u'0.808886509635974', dev_r=u'0.595350669818755', dev_f1=u'0.68588288697231')
+Result(n_words=2, n_chars=0, n_tags=2, ngram_max=3, dev_p=u'0.798421052631579', dev_r=u'0.597714736012608', dev_f1=u'0.683641279855791')
+Result(n_words=3, n_chars=1, n_tags=2, ngram_max=4, dev_p=u'0.789364997418689', dev_r=u'0.602442868400315', dev_f1=u'0.683351955307263')
+Result(n_words=3, n_chars=1, n_tags=2, ngram_max=5, dev_p=u'0.795800524934383', dev_r=u'0.597320724980299', dev_f1=u'0.682421787080801')
+Result(n_words=2, n_chars=1, n_tags=2, ngram_max=5, dev_p=u'0.795778364116095', dev_r=u'0.594168636721828', dev_f1=u'0.680351906158358')
+Result(n_words=2, n_chars=1, n_tags=2, ngram_max=4, dev_p=u'0.794102159031069', dev_r=u'0.594168636721828', dev_f1=u'0.679738562091503')
+Result(n_words=3, n_chars=1, n_tags=1, ngram_max=5, dev_p=u'0.802801724137931', dev_r=u'0.587076438140268', dev_f1=u'0.678197542102868')
+Result(n_words=3, n_chars=1, n_tags=1, ngram_max=3, dev_p=u'0.806855277475517', dev_r=u'0.584318360914106', dev_f1=u'0.677787934186472')
+Result(n_words=2, n_chars=1, n_tags=1, ngram_max=5, dev_p=u'0.806539509536785', dev_r=u'0.583136327817179', dev_f1=u'0.676880859821633')
+Result(n_words=3, n_chars=1, n_tags=2, ngram_max=3, dev_p=u'0.790832455216017', dev_r=u'0.591410559495666', dev_f1=u'0.676735798016231')
+Result(n_words=2, n_chars=1, n_tags=2, ngram_max=3, dev_p=u'0.800870511425463', dev_r=u'0.579984239558708', dev_f1=u'0.672760511882998')
+Result(n_words=2, n_chars=0, n_tags=3, ngram_max=5, dev_p=u'0.749878581835843', dev_r=u'0.608353033884949', dev_f1=u'0.67174244072221')
+Result(n_words=3, n_chars=0, n_tags=3, ngram_max=4, dev_p=u'0.75', dev_r=u'0.607565011820331', dev_f1=u'0.671310404875925')
+Result(n_words=3, n_chars=1, n_tags=3, ngram_max=4, dev_p=u'0.758861707438842', dev_r=u'0.598896769109535', dev_f1=u'0.669456066945607')
+Result(n_words=3, n_chars=0, n_tags=3, ngram_max=5, dev_p=u'0.745287578540358', dev_r=u'0.607565011820331', dev_f1=u'0.669416105925765')
+Result(n_words=2, n_chars=0, n_tags=3, ngram_max=4, dev_p=u'0.748050682261209', dev_r=u'0.604806934594169', dev_f1=u'0.668845315904139')
+Result(n_words=2, n_chars=1, n_tags=1, ngram_max=3, dev_p=u'0.808617795187465', dev_r=u'0.569345941686367', dev_f1=u'0.668208092485549')
+Result(n_words=3, n_chars=1, n_tags=3, ngram_max=5, dev_p=u'0.756390977443609', dev_r=u'0.594562647754137', dev_f1=u'0.665784248841827')
+Result(n_words=2, n_chars=1, n_tags=3, ngram_max=5, dev_p=u'0.763775510204082', dev_r=u'0.58983451536643', dev_f1=u'0.665629168519342')
+Result(n_words=2, n_chars=1, n_tags=3, ngram_max=4, dev_p=u'0.759878419452888', dev_r=u'0.591016548463357', dev_f1=u'0.664893617021277')
+Result(n_words=3, n_chars=0, n_tags=3, ngram_max=3, dev_p=u'0.754887218045113', dev_r=u'0.59338061465721', dev_f1=u'0.664460622104566')
+Result(n_words=2, n_chars=0, n_tags=3, ngram_max=3, dev_p=u'0.756208819057273', dev_r=u'0.587864460204886', dev_f1=u'0.661494125471071')
+Result(n_words=3, n_chars=1, n_tags=3, ngram_max=3, dev_p=u'0.756619144602851', dev_r=u'0.585500394011032', dev_f1=u'0.660151043980453')
+Result(n_words=2, n_chars=1, n_tags=3, ngram_max=3, dev_p=u'0.762027935851009', dev_r=u'0.580378250591017', dev_f1=u'0.658912994855737')

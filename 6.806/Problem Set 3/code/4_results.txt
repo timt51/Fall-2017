@@ -1,0 +1,188 @@
+Beginning gene tag training and evaluation...
+Using training set at data/train.tag
+Using test set at data/test.tag
+Using model type 4
+Assuming dev set located at data/dev.tag
+('Proportion of GENE in training set', 0.098571590982914306)
+('Proportion of GENE in dev set', 0.13614463256484149)
+Training with n_words=0 n_chars=0 n_tags=0 ngram_max=1
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.932798187488
+Highest Impact Features
+(u'f', 2.563741192694541)
+(u'e', 2.056015502653535)
+(u'g', 0.9061500038553839)
+(u's', 0.8585410797847141)
+(u'o', 0.754392070037733)
+(u'i', 0.7349248266497387)
+(u'n', 0.6577250964388539)
+(u'q', 0.5434191542557362)
+(u'x', 0.5131046287305638)
+(u'&', 0.47885415365623185)
+Evaluating on dev set...
+Generating features for dev set...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.899900936599
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.433359621451104 Recall: 0.433018124507486 F1: 0.433188805675995
+Dev F1 Score: 0.433188805675995
+('Loop time...', 5.648470878601074)
+Training with n_words=0 n_chars=0 n_tags=0 ngram_max=2
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.93846634834
+Highest Impact Features
+(u'aj', 4.659666934230343)
+(u'Ik', 4.5405277261008505)
+(u'c7', 4.327745060067188)
+(u'us', 3.855780426329723)
+(u'c.', 3.363027043372728)
+(u'Mc', 3.3135192076729623)
+(u'YK', 3.309299106228019)
+(u'iQ', 3.1935749341426654)
+(u'ca', 3.056650990798496)
+(u'UO', 2.9717600945779323)
+Evaluating on dev set...
+Generating features for dev set...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.907173090778
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.467236467236467 Recall: 0.516942474389283 F1: 0.490834268612046
+Dev F1 Score: 0.490834268612046
+('Loop time...', 7.256510019302368)
+Training with n_words=0 n_chars=0 n_tags=0 ngram_max=3
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.942449490028
+Highest Impact Features
+(u'Ina', 4.517890236937326)
+(u'm I', 4.190724851927854)
+(u'xtu', 3.9346255743093472)
+(u'ckc', 3.6388854482580175)
+(u'CMC', 3.50513220781451)
+(u'Dun', 3.3954333501023197)
+(u' SR', 3.3951618073986647)
+(u'ups', 3.386417007845674)
+(u'a19', 3.3516459551261857)
+(u'dP ', 3.3172254156052356)
+Evaluating on dev set...
+Generating features for dev set...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.909874819885
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.459314055144586 Recall: 0.538219070133964 F1: 0.495645863570392
+Dev F1 Score: 0.495645863570392
+('Loop time...', 10.48882794380188)
+Training with n_words=0 n_chars=0 n_tags=0 ngram_max=4
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.943553888131
+Highest Impact Features
+(u' ini', 4.405658018477885)
+(u'2 P', 4.081851106541777)
+(u'Hsp6', 3.9678684215940385)
+(u'ma', 3.657235886308881)
+(u'.64 ', 3.53565688077003)
+(u'EB f', 3.422790279669185)
+(u'ark', 3.2361863250697303)
+(u'G to', 3.2271388642324905)
+(u' SFC', 3.1500164736070713)
+(u' Uro', 3.0823406483579228)
+Evaluating on dev set...
+Generating features for dev set...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.909852305476
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.457915831663327 Recall: 0.540189125295508 F1: 0.495661605206074
+Dev F1 Score: 0.495661605206074
+('Loop time...', 18.402852058410645)
+Training with n_words=0 n_chars=0 n_tags=0 ngram_max=5
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.944065484311
+Highest Impact Features
+(u' ABO ', 4.340247023596048)
+(u' Perf', 4.002607788876419)
+(u'881 c', 3.97587677604125)
+(u'e fie', 3.5816833046228216)
+(u' JRE', 3.459006178623974)
+(u'22 +', 3.4331636541915804)
+(u'463 ', 3.2424386805739953)
+(u'PTB ', 3.2292166675414617)
+(u'subty', 3.2210064458708962)
+(u' 434', 3.0474893466368886)
+Evaluating on dev set...
+Generating features for dev set...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.910167507205
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.455507773734701 Recall: 0.542553191489362 F1: 0.495234670023377
+Dev F1 Score: 0.495234670023377
+('Loop time...', 21.365495920181274)
+Training with n_words=0 n_chars=0 n_tags=0 ngram_max=6
+Generating feature vectors for training set...
+Training...
+(246288, 246288)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Train accuracy: 0.944288800104
+Highest Impact Features
+(u' - clo', 4.295523200088201)
+(u'3 . r', 3.977077155353969)
+(u' 5q', 3.9648232095544933)
+(u'corin ', 3.511861223193078)
+(u'. For', 3.4362811649632383)
+(u' 27 kD', 3.4079314910930276)
+(u'1 / V', 3.247095871984735)
+(u'ri sy', 3.240050498828933)
+(u'M*P )', 3.228458699130459)
+(u' , hum', 2.989038450042085)
+Evaluating on dev set...
+Generating features for dev set...
+(44416, 44416)
+[0 0 0 ..., 0 0 0]
+[0 0 0 ..., 0 0 0]
+Dev accuracy: 0.910235050432
+Writing output to file...
+Evaluating with provided perl scripts...
+Dev Results: Precision: 0.455083909180652 Recall: 0.544917257683215 F1: 0.49596557288865
+Dev F1 Score: 0.49596557288865
+('Loop time...', 32.99294996261597)
+Results sorted by F1 score on dev set...
+Result(n_words=0, n_chars=0, n_tags=0, ngram_max=6, dev_p=u'0.455083909180652', dev_r=u'0.544917257683215', dev_f1=u'0.49596557288865')
+Result(n_words=0, n_chars=0, n_tags=0, ngram_max=4, dev_p=u'0.457915831663327', dev_r=u'0.540189125295508', dev_f1=u'0.495661605206074')
+Result(n_words=0, n_chars=0, n_tags=0, ngram_max=3, dev_p=u'0.459314055144586', dev_r=u'0.538219070133964', dev_f1=u'0.495645863570392')
+Result(n_words=0, n_chars=0, n_tags=0, ngram_max=5, dev_p=u'0.455507773734701', dev_r=u'0.542553191489362', dev_f1=u'0.495234670023377')
+Result(n_words=0, n_chars=0, n_tags=0, ngram_max=2, dev_p=u'0.467236467236467', dev_r=u'0.516942474389283', dev_f1=u'0.490834268612046')
+Result(n_words=0, n_chars=0, n_tags=0, ngram_max=1, dev_p=u'0.433359621451104', dev_r=u'0.433018124507486', dev_f1=u'0.433188805675995')

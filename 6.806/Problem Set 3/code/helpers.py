@@ -10,6 +10,7 @@ import torch
 import torch.nn as nn
 from torch.autograd import Variable
 import torch.nn.functional as F
+import random
 
 F1_REGEX = '(.*)(Precision: )(0.[0-9]*)( Recall: )(0.[0-9]*)( F1: )(0.[0-9]*)'
 
@@ -66,12 +67,10 @@ def extractMaxEntFeatures(X, word_vectorizer, char_vectorizer, n_words, n_chars,
                 X_features.append(x)
                 count += 1
                 if count % 20000 == 0:
-                    print('Time to generate first ' + str(count) + ' sample features: ' + str(time.time() - s) + 's')
                     s = time.time()
             sequence_start_index += len(word_sequence)
         s = time.time()
         X_features = sparse.vstack(X_features).tocsr()
-        print('Time to stack... ' + str(time.time()-s) + 's')
         try:
             if cache is not None:
                 if not os.path.exists('cache/'):
@@ -127,8 +126,9 @@ def accuracy(predicted_y, actual_y):
     return np.sum(predicted_y == actual_y)/len(actual_y)
 
 def evaluateLogisticRegressionModel(dev_x_raw, dev_identifiers, dev_predicted_y):
-    print('Writing output to file...')
-    with open('output.tag', 'w') as f:
+    front = './outputs/output' + str(random.randint(0,100000000))
+    tags_filename = front + '.tag'
+    with open(tags_filename, 'w') as f:
         index = 0
         for word_sequence, identifier in zip(dev_x_raw, dev_identifiers):
             f.write(identifier+'\n')
@@ -142,16 +142,16 @@ def evaluateLogisticRegressionModel(dev_x_raw, dev_identifiers, dev_predicted_y)
                 index += 1
             f.write(tagged_sequence[:-1]+'\n')
 
-    print('Evaluating with provided perl scripts...')
-    formatted_output = subprocess.check_output(['perl', 'eval/format.perl', 'output.tag'])
-    with open('output.format', 'w') as f:
+    formatted_output = subprocess.check_output(['perl', 'eval/format.perl', tags_filename])
+    output_filename = front + '.format'
+    with open(output_filename, 'w') as f:
         f.write(formatted_output.decode('utf-8'))
-    evaluation = subprocess.check_output(['perl', 'eval/alt_eval.perl', 'data/dev.gold', 'output.format', 'data/Correct.data']).decode('utf-8')
+    evaluation = subprocess.check_output(['perl', 'eval/alt_eval.perl', 'data/dev.gold', output_filename, 'data/Correct.data']).decode('utf-8')
     evaluation_results = re.findall(F1_REGEX, evaluation)[0]
+    dev_p = evaluation_results[2]
+    dev_r= evaluation_results[4]
     dev_f1_score = evaluation_results[6]
-    print('Dev Results: ' + reduce(add, evaluation_results))
-    print('Dev F1 Score: ' + str(dev_f1_score))
-    return dev_f1_score
+    return dev_p, dev_r, dev_f1_score
 
 class RNN(nn.Module):
     def __init__(self, input_size, hidden_size, output_size, batch_size):
@@ -161,22 +161,28 @@ class RNN(nn.Module):
         self.batch_size = batch_size
 
         self.rnn = nn.RNN(input_size=input_size, hidden_size=hidden_size,\
-                            num_layers=1, batch_first=True)
+                            num_layers=1, batch_first=True, nonlinearity='relu')
         self.W_o = nn.Linear(hidden_size, output_size)
         self.log_softmax = nn.LogSoftmax()
     
-    def forward(self, all_x):
-        h0 = Variable(torch.zeros(1, self.batch_size, self.hidden_size))
+    def forward(self, all_x, h0=None):
+        h0_orig = h0
+        if h0 is None:
+            h0 = Variable(torch.zeros(1, self.batch_size, self.hidden_size))
         output, h_n = self.rnn(all_x, h0)
-        h_n = h_n.squeeze(0)
-        last_out = self.log_softmax(self.W_o(h_n))
-        all_out = [self.log_softmax(self.W_o(x)) for x in output]
-        return all_out, last_out
+        last_out = self.log_softmax(self.W_o(h_n.squeeze(0)))
+        if h0_orig is None:
+            all_out = [self.log_softmax(self.W_o(output[:,b,:])) for b in range(30)]
+        else:
+            all_out = None
+        return all_out, last_out, h_n
 
+CRITERION = torch.nn.NLLLoss(weight=torch.Tensor([1, 10]))
 def train(model, xs, ys, optimizer):
-    model.zero_grad()
-    _, last_out = model(xs)
-    loss = F.nll_loss(last_out, ys[:,-1].long())
-    loss.backward()
-    optimizer.step()
+    all_out, last_out, _ = model(xs)
+    for index, out in enumerate(all_out):
+        model.zero_grad()
+        loss = CRITERION(out, ys[:,index].long())
+        loss.backward(retain_graph=True)
+        optimizer.step()
     return loss
