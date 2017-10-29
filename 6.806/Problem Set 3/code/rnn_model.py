@@ -43,7 +43,7 @@ MAX_EPOCHS = 7
 MAX_SEQ_LENGTH = 30
 LEARNING_RATE = 1E-3
 WEIGHT_DECAY = 1E-5
-TO_CACHE = True
+TO_CACHE = False
 Result = namedtuple('Result', 'n_words n_chars n_tags ngram_max dev_p dev_r dev_f1')
 RESULTS = []
 for n_words, n_chars, n_tags, ngram_max in itertools.product(N_WORDS, N_CHARS, N_TAGS, NGRAMS_MAX):
