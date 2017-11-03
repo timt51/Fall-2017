@@ -1,4 +1,4 @@
-#include <math.h>
+#include <stdlib.h>
 #include "Material.h"
 
 Vector3f Material::shade(const Ray &ray,

@@ -1,4 +1,4 @@
-#include "math.h"
+#include <stdlib.h>
 #include "Object3D.h"
 
 bool Sphere::intersect(const Ray &r, float tmin, Hit &h) const
