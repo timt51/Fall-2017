@@ -42,7 +42,7 @@ Renderer::Render()
 
             Hit h;
             Vector3f color = traceRay(r, cam->getTMin(), _args.bounces, h);
-
+    
             image.setPixel(x, y, color);
             nimage.setPixel(x, y, (h.getNormal() + 1.0f) / 2.0f);
             float range = (_args.depth_max - _args.depth_min);
@@ -78,9 +78,34 @@ Renderer::traceRay(const Ray &r,
 
     // TODO: IMPLEMENT 
     if (_scene.getGroup()->intersect(r, tmin, h)) {
-        return h.getMaterial()->getDiffuseColor();
+        Vector3f color;
+
+        color += h.getMaterial()->getDiffuseColor() * _scene.getAmbientLight();
+        for (const Light* light : _scene.lights) {
+            Vector3f dirToLight;
+            Vector3f lightIntensity;
+            float distToLight;
+            light->getIllumination(r.pointAtParameter(h.getT()), dirToLight, lightIntensity, distToLight);
+
+            const Ray rayToLight(r.pointAtParameter(h.getT()), dirToLight);
+            Hit shadowH;
+            if (!_args.shadows || !(_scene.getGroup()->intersect(rayToLight, 1E-2, shadowH) && shadowH.getT() <= distToLight)) {
+                color += h.getMaterial()->shade(r, h, dirToLight, lightIntensity);
+            }
+        }
+
+        if (bounces > 0) {
+            const Vector3f rayDir = r.getDirection();
+            const Vector3f newRayOrigin = r.pointAtParameter(h.getT());
+            const Vector3f newRayDir = rayDir - 2 * Vector3f::dot(rayDir, h.normal) * h.normal;
+            const Ray newRay(newRayOrigin, newRayDir);
+            Hit newH;
+            color += h.getMaterial()->getSpecularColor() * traceRay(newRay, 1E-2, bounces-1, newH);
+        }
+        
+        return color;
     } else {
-        return Vector3f(0, 0, 0);
+        return _scene.getBackgroundColor(r.getDirection());
     };
 }
 
