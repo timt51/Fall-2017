@@ -38,7 +38,10 @@ Matrix4f getLightProjection();
 objparser scene;
 Vector3f  light_dir;
 glfwtimer timer;
-
+std::map<std::string, GLuint> gltextures;
+GLuint fb;
+GLuint fb_depthtex;
+GLuint fb_colortex;
 
 // FUNCTION IMPLEMENTATIONS
 
@@ -56,6 +59,27 @@ void updateLightDirection() {
 
 
 void drawScene(GLint program, Matrix4f V, Matrix4f P) {
+    Matrix4f M = Matrix4f::identity();
+    updateTransformUniforms(program, M, V, P);
+    int loc = glGetUniformLocation(program, "light_VP");
+    glUniformMatrix4fv(loc, 1, false, getLightProjection() * getLightView());
+
+    for (const draw_batch batch : scene.batches) {
+        VertexRecorder recorder;
+        for (int indiciesIndex = batch.start_index; 
+                indiciesIndex < batch.start_index+batch.nindices; ++indiciesIndex) {
+            
+            const int index = scene.indices[indiciesIndex];
+            recorder.record(scene.positions[index], scene.normals[index], 
+                            Vector3f(scene.texcoords[index], 0.0));
+        }
+        glBindTexture(GL_TEXTURE_2D, gltextures[batch.mat.diffuse_texture]);
+        recorder.draw();
+    }
+
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, fb_depthtex);
+    glActiveTexture(GL_TEXTURE0);
 }
 
 void draw() {
@@ -64,6 +88,11 @@ void draw() {
     // - configure viewport
     // - compute camera matrices (light source as camera)
     // - call drawScene
+    glBindFramebuffer(GL_FRAMEBUFFER, fb);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
+    glUseProgram(program_color);
+    drawScene(program_color, getLightView(), getLightProjection());
 
     // 1. LIGHT PASS
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -76,7 +105,78 @@ void draw() {
     drawScene(program_light, camera.GetViewMatrix(), camera.GetPerspective());
 
     // 3. DRAW DEPTH TEXTURE AS QUAD
-    // drawTexturedQuad() helper in main.h is useful here.
+    glViewport(0, 0, 256, 256);
+    drawTexturedQuad(fb_depthtex);
+    glViewport(256, 0, 256, 256);
+    drawTexturedQuad(fb_colortex);
+}
+
+Matrix4f getLightView() {
+    const Vector3f center(0.1, 0.1, 0.1);
+    const float eyeY = 1;
+    const Vector3f eye = center + (light_dir * 20);
+    Vector3f up = Vector3f::cross(Vector3f(0,0,1), eye).normalized();
+    return Matrix4f::lookAt(eye, center, up);
+}
+
+Matrix4f getLightProjection() {
+    const float width = 50;
+    const float height = 50;
+    const float zNear = 1;
+    const float zFar = 35;
+    return Matrix4f::orthographicProjection(width, height, zNear, zFar);
+}
+
+void loadFramebuffer() {
+    const GLuint border = 0;
+    glGenTextures(1, &fb_colortex);
+    glBindTexture(GL_TEXTURE_2D, fb_colortex);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, SHADOW_WIDTH, SHADOW_HEIGHT, border, GL_RGB, GL_UNSIGNED_BYTE, nullptr);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    
+    glGenTextures(1, &fb_depthtex);
+    glBindTexture(GL_TEXTURE_2D, fb_depthtex);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT32F, SHADOW_WIDTH, SHADOW_HEIGHT, border, GL_DEPTH_COMPONENT, GL_FLOAT, nullptr);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+
+    glGenFramebuffers(1, &fb);
+    glBindFramebuffer(GL_FRAMEBUFFER, fb);
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, fb_colortex, 0);
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, fb_depthtex, 0);
+
+    GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
+    if (status != GL_FRAMEBUFFER_COMPLETE) {
+        printf("Error, incomplete frame buffer\n");
+        exit(-1);
+    }
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+}
+
+void freeFramebuffer() {
+    glDeleteFramebuffers(1, &fb);
+    glDeleteTextures(1, &fb_colortex);
+    glDeleteTextures(1, &fb_depthtex);
+}
+
+void loadTextures() {
+    const GLint border = 0;
+    for (auto it = scene.textures.begin(); it != scene.textures.end(); ++it) {
+        const std::string name = it->first;
+        const rgbimage& im = it->second;
+
+        GLuint gltexture;
+        glGenTextures(1, &gltexture);
+        glBindTexture(GL_TEXTURE_2D, gltexture);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, im.w, im.h, border, GL_RGB, GL_UNSIGNED_BYTE, im.data.data());
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        gltextures.insert(std::make_pair(name, gltexture));
+    }
+}
+
+void freeTextures() {
+    for (auto it = gltextures.begin(); it != gltextures.end(); ++it) {
+        glDeleteTextures(1, &it->second);
+    }
 }
 
 // Main routine.
@@ -113,8 +213,8 @@ int main(int argc, char* argv[])
     glEnable(GL_BLEND);
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
     // TODO add loadXYZ() function calls here
-    // loadTextures();
-    // loadFramebuffer();
+    loadTextures();
+    loadFramebuffer();
 
     camera.SetDimensions(600, 600);
     camera.SetPerspective(50);
@@ -158,8 +258,8 @@ int main(int argc, char* argv[])
     // All OpenGL resource that are created with
     // glGen* or glCreate* must be freed.
     // TODO: add freeXYZ() function calls here
-    // freeFramebuffer();
-    // freeTextures();
+    freeFramebuffer();
+    freeTextures();
 
     glfwDestroyWindow(window);
 

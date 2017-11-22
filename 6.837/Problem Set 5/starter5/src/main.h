@@ -169,6 +169,9 @@ void updateTransformUniforms(uint32_t program, Matrix4f M, Matrix4f V, Matrix4f 
     Matrix4f N = M.inverse().transposed();
     loc = glGetUniformLocation(program, "N");
     glUniformMatrix4fv(loc, 1, false, N);
+
+    loc = glGetUniformLocation(program, "shadowTex");
+    glUniform1i(loc, 1);
 }
 
 

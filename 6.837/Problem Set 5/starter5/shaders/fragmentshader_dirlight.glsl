@@ -17,6 +17,9 @@ uniform float shininess;
 uniform float alpha;
 
 // TODO add more uniforms
+uniform sampler2D diffuseTex;
+uniform sampler2D shadowTex;
+uniform mat4 light_VP;
 
 uniform vec3 lightPos;
 uniform vec3 lightDiff;
@@ -50,8 +53,21 @@ vec4 blinn_phong(vec3 kd) {
 
 void main () {
 	// TODO implement texture mapping here
+    vec4 diffuseReflectance = texture(diffuseTex, var_Color.xy);
 	// TODO implement shadow mapping here
 
-    vec3 kd = diffColor;
-    out_Color = vec4(ambientColor + blinn_phong(kd).xyz, 1);
+    vec4 posWorld = vec4(var_Position, 1);
+    vec4 xNDC = light_VP * posWorld;
+    xNDC = (xNDC + vec4(1, 1, 1, 0)) / 2;
+
+    float thisDepth = xNDC.z;
+    vec4 occluderDepth = texture(shadowTex, xNDC.xy);
+
+    if (occluderDepth.x +.002 < thisDepth) {
+        vec3 kd = diffuseReflectance.xyz;
+        out_Color = vec4(ambientColor + blinn_phong(kd).xyz, 1);
+   } else {
+        vec3 kd = diffuseReflectance.xyz;
+        out_Color = vec4(ambientColor + blinn_phong(kd).xyz, 1);
+    }
 }
