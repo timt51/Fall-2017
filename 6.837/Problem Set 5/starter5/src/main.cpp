@@ -35,6 +35,7 @@ Matrix4f getLightView();
 Matrix4f getLightProjection();
 
 // Globals here.
+VertexRecorder *recorder;
 objparser scene;
 Vector3f  light_dir;
 glfwtimer timer;
@@ -59,22 +60,23 @@ void updateLightDirection() {
 
 
 void drawScene(GLint program, Matrix4f V, Matrix4f P) {
-    Matrix4f M = Matrix4f::identity();
-    updateTransformUniforms(program, M, V, P);
     int loc = glGetUniformLocation(program, "light_VP");
     glUniformMatrix4fv(loc, 1, false, getLightProjection() * getLightView());
+    Matrix4f M = Matrix4f::identity();
+    updateTransformUniforms(program, M, V, P);
 
     for (const draw_batch batch : scene.batches) {
-        VertexRecorder recorder;
         for (int indiciesIndex = batch.start_index; 
                 indiciesIndex < batch.start_index+batch.nindices; ++indiciesIndex) {
             
             const int index = scene.indices[indiciesIndex];
-            recorder.record(scene.positions[index], scene.normals[index], 
+            recorder->record(scene.positions[index], scene.normals[index], 
                             Vector3f(scene.texcoords[index], 0.0));
         }
+        updateMaterialUniforms(program, batch.mat.diffuse, batch.mat.ambient, batch.mat.specular, batch.mat.shininess, 1.0);
         glBindTexture(GL_TEXTURE_2D, gltextures[batch.mat.diffuse_texture]);
-        recorder.draw();
+        recorder->draw();
+        recorder->clear();
     }
 
     glActiveTexture(GL_TEXTURE1);
@@ -183,6 +185,7 @@ void freeTextures() {
 // Set up OpenGL, define the callbacks and start the main loop
 int main(int argc, char* argv[])
 {
+    recorder = new VertexRecorder();
     std::string basepath = "./";
     if (argc > 2) {
         printf("Usage: %s [basepath]\n", argv[0]);

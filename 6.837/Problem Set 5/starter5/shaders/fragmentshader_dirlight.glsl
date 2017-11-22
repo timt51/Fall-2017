@@ -65,7 +65,7 @@ void main () {
 
     if (occluderDepth.x +.002 < thisDepth) {
         vec3 kd = diffuseReflectance.xyz;
-        out_Color = vec4(ambientColor + blinn_phong(kd).xyz, 1);
+        out_Color = vec4(ambientColor + blinn_phong(kd).xyz, 1) * .35;
    } else {
         vec3 kd = diffuseReflectance.xyz;
         out_Color = vec4(ambientColor + blinn_phong(kd).xyz, 1);
