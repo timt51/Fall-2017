@@ -1,0 +1,3 @@
+[submodule "6.806/question_retrieval"]
+	path = 6.806/question_retrieval
+	url = https://github.com/timt51/question_retrieval.git
