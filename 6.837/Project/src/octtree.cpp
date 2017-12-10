@@ -11,10 +11,10 @@ void Node::insertParticle(Particle& particle) {
         if (!hasChildren) {
             createChildren();
         }
-        insertParticleIntoChildren(this->particle);
+        insertParticleIntoChildren(*this->particle);
         insertParticleIntoChildren(particle);
     } else {
-        particle = particle;
+        this->particle = &particle;
         hasParticle = true;
     }
 }
@@ -24,7 +24,7 @@ Vector3f Node::particleAcceleration(const Particle& particle) {
     const float distance = displacement.abs();
     if (!hasChildren) {
         if (hasParticle) {
-            return this->particle.mass * displacement / (std::pow(distance, 3.0) + EPSILON);
+            return this->particle->mass * displacement / (std::pow(distance, 3.0) + EPSILON);
         } else {
             return Vector3f::ZERO;
         }
@@ -98,19 +98,24 @@ void Node::establishRepInvariant() {
         }
     } else {
         if (hasParticle) {
-            mass = particle.mass;
-            centerOfMass = particle.position;
+            mass = particle->mass;
+            centerOfMass = particle->position;
         }
     }
 }
 
 void OctTree::insertParticles(const std::vector<Particle>& particles) {
     for (auto particle : particles) {
-        root->insertParticle(particle);
+        if (root->contains(particle)) {
+            root->insertParticle(particle);
+        }
     }
     root->establishRepInvariant();
 }
 
 Vector3f OctTree::particleAcceleration(const Particle& particle){
-    return root->particleAcceleration(particle);
+    if (root->contains(particle)) {
+        return root->particleAcceleration(particle);
+    }
+    return Vector3f::ZERO;
 }

@@ -22,7 +22,7 @@ public:
     std::vector<Vector3f> getState() { return m_vVecState; };
 
     // setter method for the system's state
-    void setState(const std::vector<Vector3f>  & newState) { m_vVecState = newState; };
+    virtual void setState(const std::vector<Vector3f>  & newState) { m_vVecState = newState; };
 
  protected:
     std::vector<Vector3f> m_vVecState;

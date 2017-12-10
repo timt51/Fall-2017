@@ -4,6 +4,7 @@
 #include <vector>
 
 #include "particlesystem.h"
+#include "octtree.h"
 
 class GalaxySystem : public ParticleSystem
 {
@@ -11,10 +12,14 @@ public:
     GalaxySystem();
 
     std::vector<Vector3f> evalF(const std::vector<Vector3f>& state) override;
+    void setState(const std::vector<Vector3f>  & newState) override;
     void draw(GLProgram&);
 
     // inherits 
     // std::vector<Vector3f> m_vVecState;
+private:
+    OctTree* octTree;
+    void createOctTree();
 };
 
 #endif
