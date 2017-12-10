@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -46,7 +46,7 @@ GL/glew.h
 windows.h
 -
 
-/home/timt51/code/Fall-2017/6.837/Project/3rd_party/glew/src/glew.c
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/3rd_party/glew/src/glew.c
 GL/glew.h
 -
 GL/osmesa.h

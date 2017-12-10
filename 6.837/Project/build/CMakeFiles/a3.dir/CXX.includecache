@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -102,61 +102,61 @@ Vector3f.h
 Vector4f.h
 ../vecmath/include/Vector4f.h
 
-/home/timt51/code/Fall-2017/6.837/Project/src/camera.cpp
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/camera.cpp
 camera.h
-/home/timt51/code/Fall-2017/6.837/Project/src/camera.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/camera.h
 iostream
 -
 gl.h
-/home/timt51/code/Fall-2017/6.837/Project/src/gl.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/gl.h
 
-/home/timt51/code/Fall-2017/6.837/Project/src/camera.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/camera.h
 vecmath.h
 -
 cstdint
 -
 
-/home/timt51/code/Fall-2017/6.837/Project/src/clothsystem.cpp
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/clothsystem.cpp
 clothsystem.h
-/home/timt51/code/Fall-2017/6.837/Project/src/clothsystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/clothsystem.h
 camera.h
-/home/timt51/code/Fall-2017/6.837/Project/src/camera.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/camera.h
 vertexrecorder.h
-/home/timt51/code/Fall-2017/6.837/Project/src/vertexrecorder.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/vertexrecorder.h
 math.h
-/home/timt51/code/Fall-2017/6.837/Project/src/math.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/math.h
 
-/home/timt51/code/Fall-2017/6.837/Project/src/clothsystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/clothsystem.h
 vector
 -
 particlesystem.h
-/home/timt51/code/Fall-2017/6.837/Project/src/particlesystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/particlesystem.h
 
-/home/timt51/code/Fall-2017/6.837/Project/src/galaxysystem.cpp
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/galaxysystem.cpp
 galaxysystem.h
-/home/timt51/code/Fall-2017/6.837/Project/src/galaxysystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/galaxysystem.h
 cassert
 -
 camera.h
-/home/timt51/code/Fall-2017/6.837/Project/src/camera.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/camera.h
 vertexrecorder.h
-/home/timt51/code/Fall-2017/6.837/Project/src/vertexrecorder.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/vertexrecorder.h
 
-/home/timt51/code/Fall-2017/6.837/Project/src/galaxysystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/galaxysystem.h
 vector
 -
 particlesystem.h
-/home/timt51/code/Fall-2017/6.837/Project/src/particlesystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/particlesystem.h
 
-/home/timt51/code/Fall-2017/6.837/Project/src/gl.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/gl.h
 OpenGL/gl3.h
 -
 GL/glew.h
 -
 
-/home/timt51/code/Fall-2017/6.837/Project/src/main.cpp
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/main.cpp
 gl.h
-/home/timt51/code/Fall-2017/6.837/Project/src/gl.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/gl.h
 GLFW/glfw3.h
 -
 cmath
@@ -172,49 +172,49 @@ vector
 chrono
 -
 vertexrecorder.h
-/home/timt51/code/Fall-2017/6.837/Project/src/vertexrecorder.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/vertexrecorder.h
 starter3_util.h
-/home/timt51/code/Fall-2017/6.837/Project/src/starter3_util.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/starter3_util.h
 camera.h
-/home/timt51/code/Fall-2017/6.837/Project/src/camera.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/camera.h
 timestepper.h
-/home/timt51/code/Fall-2017/6.837/Project/src/timestepper.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/timestepper.h
 simplesystem.h
-/home/timt51/code/Fall-2017/6.837/Project/src/simplesystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/simplesystem.h
 pendulumsystem.h
-/home/timt51/code/Fall-2017/6.837/Project/src/pendulumsystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/pendulumsystem.h
 clothsystem.h
-/home/timt51/code/Fall-2017/6.837/Project/src/clothsystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/clothsystem.h
 galaxysystem.h
-/home/timt51/code/Fall-2017/6.837/Project/src/galaxysystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/galaxysystem.h
 
-/home/timt51/code/Fall-2017/6.837/Project/src/octtree.cpp
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/octtree.cpp
 Vector3f.h
-/home/timt51/code/Fall-2017/6.837/Project/src/Vector3f.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/Vector3f.h
 octtree.h
-/home/timt51/code/Fall-2017/6.837/Project/src/octtree.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/octtree.h
 vector
 -
 
-/home/timt51/code/Fall-2017/6.837/Project/src/octtree.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/octtree.h
 vector
 -
 vecmath.h
 -
 
-/home/timt51/code/Fall-2017/6.837/Project/src/particlesystem.cpp
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/particlesystem.cpp
 particlesystem.h
-/home/timt51/code/Fall-2017/6.837/Project/src/particlesystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/particlesystem.h
 gl.h
-/home/timt51/code/Fall-2017/6.837/Project/src/gl.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/gl.h
 camera.h
-/home/timt51/code/Fall-2017/6.837/Project/src/camera.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/camera.h
 random
 -
 cstdio
 -
 
-/home/timt51/code/Fall-2017/6.837/Project/src/particlesystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/particlesystem.h
 vector
 -
 vecmath.h
@@ -222,41 +222,41 @@ vecmath.h
 cstdint
 -
 
-/home/timt51/code/Fall-2017/6.837/Project/src/pendulumsystem.cpp
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/pendulumsystem.cpp
 pendulumsystem.h
-/home/timt51/code/Fall-2017/6.837/Project/src/pendulumsystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/pendulumsystem.h
 cassert
 -
 camera.h
-/home/timt51/code/Fall-2017/6.837/Project/src/camera.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/camera.h
 vertexrecorder.h
-/home/timt51/code/Fall-2017/6.837/Project/src/vertexrecorder.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/vertexrecorder.h
 
-/home/timt51/code/Fall-2017/6.837/Project/src/pendulumsystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/pendulumsystem.h
 vector
 -
 particlesystem.h
-/home/timt51/code/Fall-2017/6.837/Project/src/particlesystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/particlesystem.h
 
-/home/timt51/code/Fall-2017/6.837/Project/src/simplesystem.cpp
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/simplesystem.cpp
 simplesystem.h
-/home/timt51/code/Fall-2017/6.837/Project/src/simplesystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/simplesystem.h
 camera.h
-/home/timt51/code/Fall-2017/6.837/Project/src/camera.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/camera.h
 vertexrecorder.h
-/home/timt51/code/Fall-2017/6.837/Project/src/vertexrecorder.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/vertexrecorder.h
 
-/home/timt51/code/Fall-2017/6.837/Project/src/simplesystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/simplesystem.h
 vector
 -
 particlesystem.h
-/home/timt51/code/Fall-2017/6.837/Project/src/particlesystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/particlesystem.h
 
-/home/timt51/code/Fall-2017/6.837/Project/src/starter3_util.cpp
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/starter3_util.cpp
 starter3_util.h
-/home/timt51/code/Fall-2017/6.837/Project/src/starter3_util.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/starter3_util.h
 gl.h
-/home/timt51/code/Fall-2017/6.837/Project/src/gl.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/gl.h
 GLFW/glfw3.h
 -
 cstdio
@@ -266,15 +266,15 @@ cstring
 cassert
 -
 
-/home/timt51/code/Fall-2017/6.837/Project/src/starter3_util.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/starter3_util.h
 cstdint
 -
 gl.h
-/home/timt51/code/Fall-2017/6.837/Project/src/gl.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/gl.h
 
-/home/timt51/code/Fall-2017/6.837/Project/src/timestepper.cpp
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/timestepper.cpp
 timestepper.h
-/home/timt51/code/Fall-2017/6.837/Project/src/timestepper.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/timestepper.h
 iostream
 -
 cstdio
@@ -282,29 +282,29 @@ cstdio
 vector
 -
 
-/home/timt51/code/Fall-2017/6.837/Project/src/timestepper.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/timestepper.h
 vecmath.h
-/home/timt51/code/Fall-2017/6.837/Project/src/vecmath.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/vecmath.h
 vector
 -
 particlesystem.h
-/home/timt51/code/Fall-2017/6.837/Project/src/particlesystem.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/particlesystem.h
 
-/home/timt51/code/Fall-2017/6.837/Project/src/vertexrecorder.cpp
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/vertexrecorder.cpp
 vertexrecorder.h
-/home/timt51/code/Fall-2017/6.837/Project/src/vertexrecorder.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/vertexrecorder.h
 cassert
 -
 cstdint
 -
 gl.h
-/home/timt51/code/Fall-2017/6.837/Project/src/gl.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/gl.h
 
-/home/timt51/code/Fall-2017/6.837/Project/src/vertexrecorder.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/vertexrecorder.h
 vector
 -
 vecmath.h
 -
 gl.h
-/home/timt51/code/Fall-2017/6.837/Project/src/gl.h
+/mnt/c/Users/TimT5/OneDrive/2016-2017/Fall 2017/6.837/Project/src/gl.h
 
