@@ -4,6 +4,7 @@
 #include <vector>
 
 const float MAX_MAC = 0.5;
+const float EPSILON = 0.01f;
 
 void Node::insertParticle(Particle& particle) {
     if (hasParticle) {
@@ -21,24 +22,26 @@ void Node::insertParticle(Particle& particle) {
 }
 
 Vector3f Node::particleAcceleration(const Particle& particle) {
-    Vector3f acc;
-
+    const Vector3f displacement = centerOfMass - particle.position;
+    const float distance = displacement.abs();
     if (!hasChildren) {
         if (hasParticle) {
-        }
-    } else {
-        float distanceToNode = (particle.position - centerOfMass).abs();
-        float mac = bounds.width / distanceToNode;
-        if (mac < MAX_MAC) {
-
+            return this->particle.mass * displacement / (std::pow(distance, 3.0) + EPSILON);
         } else {
-            for (auto child : children) {
-                acc += child->particleAcceleration(particle);
-            }
+            return Vector3f::ZERO;
         }
     }
 
-    return acc;
+    const float mac = bounds.width / distance;
+    if (mac < MAX_MAC) {
+        return mass * displacement / (std::pow(distance, 3.0) + EPSILON);
+    } else {
+        Vector3f acc;
+        for (auto child : children) {
+            acc += child->particleAcceleration(particle);
+        }
+        return acc;
+    }
 }
 
 bool Node::contains(const Particle& particle){
