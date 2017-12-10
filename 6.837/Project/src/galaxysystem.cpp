@@ -56,26 +56,8 @@ std::vector<Vector3f> GalaxySystem::evalF(const std::vector<Vector3f>& state)
         const auto currentVelocity = state[idx+1];
 
         const auto nextPositionDerivative = currentVelocity;
-        auto nextVelocityDerivative = Vector3f::ZERO;
-        for (unsigned otherIdx = 0; otherIdx < 2*NUM_PARTICLES; otherIdx += 2) {
-            if (otherIdx == idx) {
-                continue;
-            }
-            const auto positionOfOther = state[otherIdx];
-            const auto displacement = positionOfOther - currentPosition;
-            nextVelocityDerivative += displacement / (std::pow(displacement.abs(), 3.0) + EPSILON);
-        }
-        // // calculate vel change due to gravity
-        // nextVelocityDerivative += MASS*ACC_DUE_TO_GRAVITY;
-        // // calculate vel change due to drag
-        // nextVelocityDerivative += -DRAG_COEF*currentVelocity;
-        // // calculate vel change due to springs
-        // const auto prevParticlePosition = state[idx-2];
-        // nextVelocityDerivative += -STIFFNESS*((currentPosition-prevParticlePosition).abs()-REST_LENGTH)*(currentPosition-prevParticlePosition).normalized();
-        // if (idx != 2*(NUM_PARTICLES - 1)) {
-        //     const auto nextParticlePosition = state[idx+2];
-        //     nextVelocityDerivative += -STIFFNESS*((currentPosition-nextParticlePosition).abs()-REST_LENGTH)*(currentPosition-nextParticlePosition).normalized();
-        // }
+        const Particle particle(currentPosition, MASS);
+        const auto nextVelocityDerivative = octTree->particleAcceleration(particle);
 
         f[idx] = nextPositionDerivative;
         f[idx+1] = nextVelocityDerivative;
