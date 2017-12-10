@@ -16,26 +16,35 @@ struct Node
     float width;
     bool hasChildren;
 
-    Node() {
+    Node(Vector3f minCoords, Vector3f maxCoords) {
         for (unsigned i = 0; i < NUMBER_OF_CHILDREN; ++i) {
             children[i] = nullptr;
         }
     }
+
     ~Node() {
         for (unsigned i = 0; i < NUMBER_OF_CHILDREN; ++i) {
             delete children[i];
         }
     }
+
+    void insertParticle(Vector3f position, float mass);
+    Vector3f forceOnParticle(Vector3f position, float mass);
 };
 
 class OctTree
 {
 public:
-    OctTree();
+    OctTree(Vector3f minCoords, Vector3f maxCoords) {
+        root = new Node(minCoords, maxCoords);
+    };
+    ~OctTree() {
+        delete root;
+    };
     void insertParticle(Vector3f position, float mass);
-    Vector3f forceOnParticle(Vector3f position);
+    Vector3f forceOnParticle(Vector3f position, float mass);
 private:
-    Node root;
+    Node* root;
 };
 
 #endif

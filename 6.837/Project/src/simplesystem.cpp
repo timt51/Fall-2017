@@ -10,7 +10,7 @@ SimpleSystem::SimpleSystem()
     m_vVecState.push_back(Vector3f(0.5, 0, 0));
 }
 
-std::vector<Vector3f> SimpleSystem::evalF(std::vector<Vector3f> state)
+std::vector<Vector3f> SimpleSystem::evalF(const std::vector<Vector3f>& state)
 {
     std::vector<Vector3f> f;
 

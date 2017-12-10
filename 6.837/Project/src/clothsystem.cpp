@@ -33,7 +33,7 @@ ClothSystem::ClothSystem()
 }
 
 
-std::vector<Vector3f> ClothSystem::evalF(std::vector<Vector3f> state)
+std::vector<Vector3f> ClothSystem::evalF(const std::vector<Vector3f>& state)
 {
     std::vector<Vector3f> f(state.size());
     // TODO 5. implement evalF

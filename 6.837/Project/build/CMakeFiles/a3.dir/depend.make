@@ -74,6 +74,17 @@ CMakeFiles/a3.dir/src/main.cpp.o: ../src/starter3_util.h
 CMakeFiles/a3.dir/src/main.cpp.o: ../src/timestepper.h
 CMakeFiles/a3.dir/src/main.cpp.o: ../src/vertexrecorder.h
 
+CMakeFiles/a3.dir/src/octtree.cpp.o: ../vecmath/include/Matrix2f.h
+CMakeFiles/a3.dir/src/octtree.cpp.o: ../vecmath/include/Matrix3f.h
+CMakeFiles/a3.dir/src/octtree.cpp.o: ../vecmath/include/Matrix4f.h
+CMakeFiles/a3.dir/src/octtree.cpp.o: ../vecmath/include/Quat4f.h
+CMakeFiles/a3.dir/src/octtree.cpp.o: ../vecmath/include/Vector2f.h
+CMakeFiles/a3.dir/src/octtree.cpp.o: ../vecmath/include/Vector3f.h
+CMakeFiles/a3.dir/src/octtree.cpp.o: ../vecmath/include/Vector4f.h
+CMakeFiles/a3.dir/src/octtree.cpp.o: ../vecmath/include/vecmath.h
+CMakeFiles/a3.dir/src/octtree.cpp.o: ../src/octtree.cpp
+CMakeFiles/a3.dir/src/octtree.cpp.o: ../src/octtree.h
+
 CMakeFiles/a3.dir/src/particlesystem.cpp.o: ../3rd_party/glew/include/GL/glew.h
 CMakeFiles/a3.dir/src/particlesystem.cpp.o: ../vecmath/include/Matrix2f.h
 CMakeFiles/a3.dir/src/particlesystem.cpp.o: ../vecmath/include/Matrix3f.h

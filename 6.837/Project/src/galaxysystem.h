@@ -10,7 +10,7 @@ class GalaxySystem : public ParticleSystem
 public:
     GalaxySystem();
 
-    std::vector<Vector3f> evalF(std::vector<Vector3f> state) override;
+    std::vector<Vector3f> evalF(const std::vector<Vector3f>& state) override;
     void draw(GLProgram&);
 
     // inherits 

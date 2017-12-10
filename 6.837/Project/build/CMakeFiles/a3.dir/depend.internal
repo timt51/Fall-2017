@@ -74,6 +74,17 @@ CMakeFiles/a3.dir/src/main.cpp.o
  /home/timt51/code/Fall-2017/6.837/Project/src/starter3_util.h
  /home/timt51/code/Fall-2017/6.837/Project/src/timestepper.h
  /home/timt51/code/Fall-2017/6.837/Project/src/vertexrecorder.h
+CMakeFiles/a3.dir/src/octtree.cpp.o
+ ../vecmath/include/Matrix2f.h
+ ../vecmath/include/Matrix3f.h
+ ../vecmath/include/Matrix4f.h
+ ../vecmath/include/Quat4f.h
+ ../vecmath/include/Vector2f.h
+ ../vecmath/include/Vector3f.h
+ ../vecmath/include/Vector4f.h
+ ../vecmath/include/vecmath.h
+ /home/timt51/code/Fall-2017/6.837/Project/src/octtree.cpp
+ /home/timt51/code/Fall-2017/6.837/Project/src/octtree.h
 CMakeFiles/a3.dir/src/particlesystem.cpp.o
  ../3rd_party/glew/include/GL/glew.h
  ../vecmath/include/Matrix2f.h

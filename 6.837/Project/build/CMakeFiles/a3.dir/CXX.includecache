@@ -188,6 +188,20 @@ clothsystem.h
 galaxysystem.h
 /home/timt51/code/Fall-2017/6.837/Project/src/galaxysystem.h
 
+/home/timt51/code/Fall-2017/6.837/Project/src/octtree.cpp
+Vector3f.h
+/home/timt51/code/Fall-2017/6.837/Project/src/Vector3f.h
+octtree.h
+/home/timt51/code/Fall-2017/6.837/Project/src/octtree.h
+vector
+-
+
+/home/timt51/code/Fall-2017/6.837/Project/src/octtree.h
+vector
+-
+vecmath.h
+-
+
 /home/timt51/code/Fall-2017/6.837/Project/src/particlesystem.cpp
 particlesystem.h
 /home/timt51/code/Fall-2017/6.837/Project/src/particlesystem.h

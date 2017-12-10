@@ -26,6 +26,9 @@
         "system_error": "cpp",
         "type_traits": "cpp",
         "typeinfo": "cpp",
-        "utility": "cpp"
-    }
+        "utility": "cpp",
+        "chrono": "cpp",
+        "ratio": "cpp"
+    },
+    "C_Cpp.intelliSenseEngineFallback": "Enabled"
 }

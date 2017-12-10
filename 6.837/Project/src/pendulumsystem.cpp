@@ -30,7 +30,7 @@ PendulumSystem::PendulumSystem()
 }
 
 
-std::vector<Vector3f> PendulumSystem::evalF(std::vector<Vector3f> state)
+std::vector<Vector3f> PendulumSystem::evalF(const std::vector<Vector3f>& state)
 {
     std::vector<Vector3f> f(state.size());
     // TODO 4.1: implement evalF

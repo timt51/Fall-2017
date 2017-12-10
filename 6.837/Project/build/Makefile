@@ -284,6 +284,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/a3.dir/build.make CMakeFiles/a3.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/octtree.o: src/octtree.cpp.o
+
+.PHONY : src/octtree.o
+
+# target to build an object file
+src/octtree.cpp.o:
+	$(MAKE) -f CMakeFiles/a3.dir/build.make CMakeFiles/a3.dir/src/octtree.cpp.o
+.PHONY : src/octtree.cpp.o
+
+src/octtree.i: src/octtree.cpp.i
+
+.PHONY : src/octtree.i
+
+# target to preprocess a source file
+src/octtree.cpp.i:
+	$(MAKE) -f CMakeFiles/a3.dir/build.make CMakeFiles/a3.dir/src/octtree.cpp.i
+.PHONY : src/octtree.cpp.i
+
+src/octtree.s: src/octtree.cpp.s
+
+.PHONY : src/octtree.s
+
+# target to generate assembly for a file
+src/octtree.cpp.s:
+	$(MAKE) -f CMakeFiles/a3.dir/build.make CMakeFiles/a3.dir/src/octtree.cpp.s
+.PHONY : src/octtree.cpp.s
+
 src/particlesystem.o: src/particlesystem.cpp.o
 
 .PHONY : src/particlesystem.o
@@ -472,6 +499,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/octtree.o"
+	@echo "... src/octtree.i"
+	@echo "... src/octtree.s"
 	@echo "... src/particlesystem.o"
 	@echo "... src/particlesystem.i"
 	@echo "... src/particlesystem.s"

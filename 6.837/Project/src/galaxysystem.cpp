@@ -34,7 +34,7 @@ GalaxySystem::GalaxySystem()
     }
 }
 
-std::vector<Vector3f> GalaxySystem::evalF(std::vector<Vector3f> state)
+std::vector<Vector3f> GalaxySystem::evalF(const std::vector<Vector3f>& state)
 {
     std::vector<Vector3f> f(state.size());
 

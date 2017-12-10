@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/a3.dir/src/pendulumsystem.cpp.o"
   "CMakeFiles/a3.dir/src/simplesystem.cpp.o"
   "CMakeFiles/a3.dir/src/galaxysystem.cpp.o"
+  "CMakeFiles/a3.dir/src/octtree.cpp.o"
   "a3.pdb"
   "a3"
 )

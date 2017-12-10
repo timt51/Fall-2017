@@ -16,7 +16,7 @@ public:
     virtual ~ParticleSystem() {}
 
     // for a given state, evaluate derivative f(X,t)
-    virtual std::vector<Vector3f> evalF(std::vector<Vector3f> state) = 0;
+    virtual std::vector<Vector3f> evalF(const std::vector<Vector3f>& state) = 0;
 
     // getter method for the system's state
     std::vector<Vector3f> getState() { return m_vVecState; };
