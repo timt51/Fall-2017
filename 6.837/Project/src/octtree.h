@@ -24,18 +24,21 @@ struct BoundingBox
 
 struct Particle
 {
-    const Vector3f position;
-    const float mass;
+    Vector3f position;
+    float mass;
     
-    Particle();
-    Particle(const Vector3f& position, const float& mass) : position(position), mass(mass) {};
+    Particle() {};
+    Particle(const Vector3f& position, const float& mass) {
+        this->position = position;
+        this->mass = mass;
+    };
 };
 
 struct Node
 {
     const BoundingBox bounds;
     Node* children[NUMBER_OF_CHILDREN];
-    Particle* particle;
+    Particle particle;
     bool hasParticle;
     bool hasChildren;
     float mass;
@@ -45,7 +48,6 @@ struct Node
         for (unsigned i = 0; i < NUMBER_OF_CHILDREN; ++i) {
             children[i] = nullptr;
         }
-        particle = nullptr;
         hasParticle = false;
         hasChildren = false;
     }
@@ -56,7 +58,7 @@ struct Node
         }
     }
 
-    void insertParticle(Particle& particle);
+    void insertParticle(Particle particle);
     Vector3f particleAcceleration(const Particle& particle);
     bool contains(const Particle& particle);
     void createChildren();
