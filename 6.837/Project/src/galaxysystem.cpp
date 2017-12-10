@@ -1,6 +1,7 @@
 #include "galaxysystem.h"
 
 #include <cassert>
+#include <iostream>
 #include "camera.h"
 #include "vertexrecorder.h"
 #include "octtree.h"
@@ -40,11 +41,13 @@ void GalaxySystem::createOctTree() {
     delete octTree;
     octTree = new OctTree(BOUNDS);
     // Create octtree
-    std::vector<Particle> particles;
+    particles.clear();
     for (unsigned idx = 0; idx < NUM_PARTICLES/2; idx += 2) {
         particles.push_back(Particle(m_vVecState[idx], MASS));
     }
+    std::cout << "inserting particles" << std::endl;
     octTree->insertParticles(particles);
+    std::cout << "finished inserting particles" << std::endl;
 }
 
 std::vector<Vector3f> GalaxySystem::evalF(const std::vector<Vector3f>& state)
@@ -58,7 +61,6 @@ std::vector<Vector3f> GalaxySystem::evalF(const std::vector<Vector3f>& state)
         const auto nextPositionDerivative = currentVelocity;
         const Particle particle(currentPosition, MASS);
         const auto nextVelocityDerivative = octTree->particleAcceleration(particle);
-
         f[idx] = nextPositionDerivative;
         f[idx+1] = nextVelocityDerivative;
     }

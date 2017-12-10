@@ -10,14 +10,14 @@ endif()
 
 if (UNIX)
   set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=gnu++11")
-  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g0")
+  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
   set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-unused-variable")
   # recommended but not set by default
   # set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
   if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
   endif()
-  set(CMAKE_CXX_FLAGS_DEBUG "-g0")
+  set(CMAKE_CXX_FLAGS_DEBUG "-g")
   set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 elseif(MSVC)
   # recommended but not set by default

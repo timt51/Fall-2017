@@ -19,6 +19,7 @@ public:
     // std::vector<Vector3f> m_vVecState;
 private:
     OctTree* octTree;
+    std::vector<Particle> particles;
     void createOctTree();
 };
 

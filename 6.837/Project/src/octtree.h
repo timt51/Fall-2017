@@ -46,13 +46,14 @@ struct Node
             children[i] = nullptr;
         }
         particle = nullptr;
+        hasParticle = false;
+        hasChildren = false;
     }
 
     ~Node() {
         for (unsigned i = 0; i < NUMBER_OF_CHILDREN; ++i) {
             delete children[i];
         }
-        delete particle;
     }
 
     void insertParticle(Particle& particle);

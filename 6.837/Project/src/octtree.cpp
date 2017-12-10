@@ -2,6 +2,7 @@
 #include "octtree.h"
 
 #include <vector>
+#include <iostream>
 
 const float MAX_MAC = 0.5;
 const float EPSILON = 0.01f;
@@ -10,6 +11,7 @@ void Node::insertParticle(Particle& particle) {
     if (hasParticle) {
         if (!hasChildren) {
             createChildren();
+            hasChildren = true;
         }
         insertParticleIntoChildren(*this->particle);
         insertParticleIntoChildren(particle);
@@ -53,20 +55,21 @@ bool Node::contains(const Particle& particle){
 }
 
 void Node::createChildren() {
-    const Vector3f newCoords = (bounds.maxCoords - bounds.minCoords) / 2;
+    const Vector3f newCoords = (bounds.maxCoords + bounds.minCoords) / 2;
     const float xIntervals[2][2] = { { bounds.minCoords.x(), newCoords.x() },
                                    { newCoords.x(), bounds.maxCoords.x() }};
     const float yIntervals[2][2] = { { bounds.minCoords.y(), newCoords.y() },
                                    { newCoords.y(), bounds.maxCoords.y() }};
     const float zIntervals[2][2] = { { bounds.minCoords.z(), newCoords.z() },
                                    { newCoords.z(), bounds.maxCoords.z() }};
-    const int index = 0;
+    int index = 0;
     for (auto xInterval : xIntervals) {
         for (auto yInterval : yIntervals) {
             for (auto zInterval : zIntervals) {
                 const BoundingBox bounds(Vector3f(xInterval[0], yInterval[0], zInterval[0]),
                                          Vector3f(xInterval[1], yInterval[1], zInterval[1]));
-                children[0] = new Node(bounds);
+                children[index] = new Node(bounds);
+                index += 1;
             }
         }
     }
