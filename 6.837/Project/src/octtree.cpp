@@ -8,25 +8,11 @@ const float MAX_MAC = 0.5;
 const float EPSILON = 0.01f;
 
 void Node::insertParticle(Particle particle) {
-    std::cout << "inserting particle at ";
-    particle.position.print();
-    std::cout << "minCoords: " << std::endl;
-    bounds.minCoords.print();
-    std::cout << "maxCoords: " << std::endl;
-    bounds.maxCoords.print();
-    std::cout << "which has particle at position ";
-    if (hasParticle) {
-        this->particle.position.print();
-    } else {
-        std::cout << "no particle" << std::endl;
-    }
     if (hasParticle) {
         if (!hasChildren) {
             createChildren();
             hasChildren = true;
         }
-        std::cout << "this particle pos" << std::endl;
-        this->particle.position.print();
         insertParticleIntoChildren(this->particle);
         hasParticle = false;
         insertParticleIntoChildren(particle);
@@ -34,8 +20,6 @@ void Node::insertParticle(Particle particle) {
         this->particle = particle;
         hasParticle = true;
     }
-    std::cout << "new particle at" << std::endl;
-    this->particle.position.print();
 }
 
 Vector3f Node::particleAcceleration(const Particle& particle) {
@@ -95,20 +79,12 @@ void Node::createChildren() {
 void Node::insertParticleIntoChildren(Particle& particle) {
     // determine child particle belongs to (lazy way)
     // insert particle into child
-    std::cout << "starting to insert into children..." << std::endl;
     for (auto child : children) {
         if (child->contains(particle)) {
-            std::cout << "particle at ... is contained by...";
-            particle.position.print();
-            std::cout << "minCoords: " << std::endl;
-            child->bounds.minCoords.print();
-            std::cout << "maxCoords: " << std::endl;
-            child->bounds.maxCoords.print();
             child->insertParticle(particle);
             break;
         }
     }
-    std::cout << "finished inserting into children..." << std::endl;
 }
 
 void Node::establishRepInvariant() {
@@ -135,8 +111,6 @@ void Node::establishRepInvariant() {
 void OctTree::insertParticles(const std::vector<Particle>& particles) {
     for (auto particle : particles) {
         if (root->contains(particle)) {
-            std::cout << "top level insert";
-            particle.position.print();
             root->insertParticle(particle);
         }
     }

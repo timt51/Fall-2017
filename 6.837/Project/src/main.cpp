@@ -16,6 +16,7 @@
 #include "pendulumsystem.h"
 #include "clothsystem.h"
 #include "galaxysystem.h"
+#include "Image.h"
 
 using namespace std;
 
@@ -261,8 +262,9 @@ int main(int argc, char** argv)
     h = (float)atof(argv[2]);
     printf("Using Integrator %c with time step %.4f\n", integrator, h);
 
-
-    GLFWwindow* window = createOpenGLWindow(1024, 1024, "Assignment 3");
+    const int width = 1024;
+    const int height = 1024;
+    GLFWwindow* window = createOpenGLWindow(width, height, "Assignment 3");
 
     // setup the event handlers
     glfwSetKeyCallback(window, keyCallback);
@@ -296,6 +298,9 @@ int main(int argc, char** argv)
     initSystem();
 
     // Main Loop
+    GLfloat* pixels = new GLfloat[width*height*3];
+    int frameIndex = 0;
+    glReadBuffer(GL_FRONT);
     uint64_t freq = glfwGetTimerFrequency();
     resetTime();
     while (!glfwWindowShouldClose(window)) {
@@ -323,6 +328,20 @@ int main(int argc, char** argv)
         // Make back buffer visible
         glfwSwapBuffers(window);
 
+        // Save image
+        // glReadPixels(0, 0, width, height, GL_RGB, GL_FLOAT, pixels);
+        // Image image(width, height);
+        // int index = 0;
+        // for(int i=0; i < width; ++i) {
+        //     for(int j=0; j < height; ++j) {
+        //         const Vector3f color(pixels[index], pixels[index+1], pixels[index+2]);
+        //         image.setPixel(j, i, color);
+        //         index += 3;
+        //     }
+        // }
+        // image.savePNG("../frames/" + std::to_string(frameIndex) + ".png");
+        // frameIndex += 1;
+        // ffmpeg -framerate 25 -i %000d.png -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p output.mp4
         // Check if any input happened during the last frame
         glfwPollEvents();
     }
@@ -331,6 +350,7 @@ int main(int argc, char** argv)
     // glGen* or glCreate* must be freed.
     glDeleteProgram(program_color);
     glDeleteProgram(program_light);
+    delete pixels;
 
 
     return 0;	// This line is never reached.

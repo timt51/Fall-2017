@@ -7,15 +7,15 @@
 #include "octtree.h"
 
 // TODO adjust to number of particles.
-const unsigned NUM_PARTICLES = 250;
+const unsigned NUM_PARTICLES = 50000;
 const Vector3f ACC_DUE_TO_GRAVITY = Vector3f(0, -9.81f, 0);
 float MASS = 1.0f;
 const float DRAG_COEF = 0.3f;
 const float STIFFNESS = 32.0f;
 const float REST_LENGTH = 0.15;
 const float EPSILON = 0.01f;
-const float MIN_COORD = -5;
-const float MAX_COORD = 5;
+const float MIN_COORD = -100;
+const float MAX_COORD = 100;
 const BoundingBox BOUNDS = BoundingBox(Vector3f(MIN_COORD), Vector3f(MAX_COORD));
 
 GalaxySystem::GalaxySystem()
@@ -25,12 +25,12 @@ GalaxySystem::GalaxySystem()
     // in your initial conditions.
     for (unsigned idx = 0; idx < NUM_PARTICLES/2; ++idx) {
         m_vVecState.push_back(Vector3f(rand_uniform(-1.0f, 1.0f), rand_uniform(-4.0f, -2.0f), rand_uniform(-1.0f, 1.0f)));
-        m_vVecState.push_back(Vector3f(2, 0, 0));
+        m_vVecState.push_back(Vector3f(10, 0, 0));
     }
 
     for (unsigned idx = 0; idx < NUM_PARTICLES/2; ++idx) {
         m_vVecState.push_back(Vector3f(rand_uniform(-1.0f, 1.0f), rand_uniform(2.0f, 4.0f), rand_uniform(-1.0f, 1.0f)));
-        m_vVecState.push_back(Vector3f(-2, 0, 0));
+        m_vVecState.push_back(Vector3f(-10, 0, 0));
     }
 
     octTree = nullptr;
@@ -42,7 +42,7 @@ void GalaxySystem::createOctTree() {
     octTree = new OctTree(BOUNDS);
     // Create octtree
     particles.clear();
-    for (unsigned idx = 0; idx < NUM_PARTICLES/2; idx += 2) {
+    for (unsigned idx = 0; idx < 2*NUM_PARTICLES; idx += 2) {
         particles.push_back(Particle(m_vVecState[idx], MASS));
     }
     octTree->insertParticles(particles);
@@ -58,9 +58,8 @@ std::vector<Vector3f> GalaxySystem::evalF(const std::vector<Vector3f>& state)
 
         const auto nextPositionDerivative = currentVelocity;
         const Particle particle(currentPosition, MASS);
-        std::cout<<"getting derivative...";
         const auto nextVelocityDerivative = octTree->particleAcceleration(particle);
-        nextVelocityDerivative.print();
+        
         f[idx] = nextPositionDerivative;
         f[idx+1] = nextVelocityDerivative;
     }
@@ -75,25 +74,27 @@ void GalaxySystem::setState(const std::vector<Vector3f>  & newState) {
 // render the system (ie draw the particles)
 void GalaxySystem::draw(GLProgram& gl)
 {
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     Vector3f PENDULUM_COLOR(0.73f, 0.0f, 0.83f);
-    gl.updateMaterial(PENDULUM_COLOR, PENDULUM_COLOR);
+    gl.updateMaterial(Vector3f::ZERO, PENDULUM_COLOR, Vector3f::ZERO, 1.0F, 0.8F);
 
     // TODO 4.2, 4.3
 
     // example code. Replace with your own drawing  code
     for (unsigned idx = 0; idx < NUM_PARTICLES; idx += 2) {
         gl.updateModelMatrix(Matrix4f::translation(m_vVecState[idx]));
-        drawSphere(0.03f, 10, 10);
+        drawSphere(0.05f, 10, 10);
     }
 
     PENDULUM_COLOR = Vector3f(1.0f, 1.0f, 1.0f);
-    gl.updateMaterial(PENDULUM_COLOR, PENDULUM_COLOR);
+    gl.updateMaterial(Vector3f::ZERO, PENDULUM_COLOR, Vector3f::ZERO, 1.0F, 0.8F);
 
     // TODO 4.2, 4.3
 
     // example code. Replace with your own drawing  code
     for (unsigned idx = NUM_PARTICLES; idx < 2*NUM_PARTICLES; idx += 2) {
         gl.updateModelMatrix(Matrix4f::translation(m_vVecState[idx]));
-        drawSphere(0.03f, 10, 10);
+        drawSphere(0.05f, 10, 10);
     }
 }

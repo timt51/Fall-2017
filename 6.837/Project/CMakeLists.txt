@@ -63,6 +63,8 @@ list (APPEND A3_SRC
   src/simplesystem.cpp
   src/galaxysystem.cpp
   src/octtree.cpp
+  src/stb.cpp
+  src/Image.cpp
 )
 list (APPEND A3_HEADER
   src/gl.h
@@ -76,6 +78,9 @@ list (APPEND A3_HEADER
   src/simplesystem.h
   src/galaxysystem.h
   src/octtree.h
+  src/stb_image.h
+  src/stb_image_write.h
+  src/Image.h
 )
 
 add_executable(a3 ${A3_SRC} ${A3_HEADER})
