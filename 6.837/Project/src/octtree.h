@@ -54,6 +54,8 @@ struct Node
     void insertParticle(Particle& particle);
     Vector3f particleAcceleration(const Particle& particle);
     bool contains(const Particle& particle);
+    void createChildren();
+    void insertParticleIntoChildren(Particle& particle);
     void establishRepInvariant();
 };
 
