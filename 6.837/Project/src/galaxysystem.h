@@ -20,6 +20,7 @@ public:
 private:
     OctTree* octTree;
     std::vector<Particle> particles;
+    std::vector<Vector3f> lastEvalF;
     void createOctTree();
 };
 

@@ -291,13 +291,15 @@ int main(int argc, char** argv)
     }
 
     camera.SetDimensions(600, 600);
-    camera.SetPerspective(100);
+    camera.SetPerspective(75);
     camera.SetDistance(10);
 
     // Setup particle system
     initSystem();
 
     // Main Loop
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     GLfloat* pixels = new GLfloat[width*height*3];
     int frameIndex = 0;
     glReadBuffer(GL_FRONT);
