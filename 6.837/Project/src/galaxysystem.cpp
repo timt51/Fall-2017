@@ -41,15 +41,31 @@ GalaxySystem::GalaxySystem()
     // To add a bit of randomness, use e.g.
     // float f = rand_uniform(-0.5f, 0.5f);
     // in your initial conditions.
-    for (unsigned idx = 0; idx < NUM_PARTICLES/2; ++idx) {
-        m_vVecState.push_back(Vector3f(rand_uniform(-1.0f, 1.0f), rand_uniform(-4.0f, -2.0f), rand_uniform(-1.0f, 1.0f)));
-        m_vVecState.push_back(Vector3f(2, 0, 0));
+    const float velFactor = 10.0f;
+    for (unsigned idx = 0; idx < NUM_PARTICLES; ++idx) {
+        const float x = rand_uniform(-1.0f, 1.0f);
+        const float y = rand_uniform(-1.0f, 1.0f);
+        const float z = rand_uniform(-0.1f, 0.1f);
+        const Vector3f position = Vector3f(x, y, z);
+        m_vVecState.push_back(position);
+
+        // Get velocity
+        const float xVel = -y; //rand_uniform(-1.0f, 0.0f);
+        const float yVel = x; //rand_uniform(-1.0f, 1.0f);
+        const float zVel = 0; //-(x*xVel+y*yVel)/z;
+        const Vector3f velocity = velFactor*Vector3f(xVel, yVel, zVel).normalized();
+        m_vVecState.push_back(velocity);
     }
 
-    for (unsigned idx = 0; idx < NUM_PARTICLES/2; ++idx) {
-        m_vVecState.push_back(Vector3f(rand_uniform(-1.0f, 1.0f), rand_uniform(2.0f, 4.0f), rand_uniform(-1.0f, 1.0f)));
-        m_vVecState.push_back(Vector3f(-2, 0, 0));
-    }
+    // for (unsigned idx = 0; idx < NUM_PARTICLES/2; ++idx) {
+    //     m_vVecState.push_back(Vector3f(rand_uniform(-1.0f, 1.0f), rand_uniform(-4.0f, -2.0f), rand_uniform(-1.0f, 1.0f)));
+    //     m_vVecState.push_back(Vector3f(2, 0, 0));
+    // }
+
+    // for (unsigned idx = 0; idx < NUM_PARTICLES/2; ++idx) {
+    //     m_vVecState.push_back(Vector3f(rand_uniform(-1.0f, 1.0f), rand_uniform(2.0f, 4.0f), rand_uniform(-1.0f, 1.0f)));
+    //     m_vVecState.push_back(Vector3f(-2, 0, 0));
+    // }
 
     octTree = nullptr;
     createOctTree();
